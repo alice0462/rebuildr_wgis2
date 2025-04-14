@@ -1,0 +1,75 @@
+
+.app {
+  background-color: #282c34;
+  text-align: center;
+}
+
+#background {
+  background-color: #445679;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 50%;
+  margin-left: 25%;
+}
+
+#profile-pic {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  background-color: #3a5f3a;
+  border-radius: 50%;
+  height: 7rem;
+  width: 7rem;
+  border: 3px solid #170303;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) 
+}
+
+.stats {
+  display: flex;
+  color: antiquewhite;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.stats > div {
+  flex: 1 1 0;
+  text-align: center; 
+  padding: 1rem; 
+  background-color: rgb(3, 52, 38);
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#treeBox {
+  flex: 1; 
+  margin:10px; 
+  text-align: center; 
+  padding: 20px; 
+  background-color: rgb(3, 52, 38);
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+#tree {
+  width: 40%;
+  height: auto;
+}
+
+#curiosa {
+  flex: 1; 
+  margin: 10px;
+  text-align: center; 
+  padding: 30px; 
+  background-color: rgb(3, 52, 38);
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
