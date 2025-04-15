@@ -69,6 +69,11 @@
   height: auto;
 }
 
+#medal {
+  width: 30%;
+  height: auto;
+}
+
 #curiosa {
   flex: 1; 
   margin: 10px;
