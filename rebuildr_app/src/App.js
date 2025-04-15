@@ -1,6 +1,16 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ReviewPage from './reviewpage';
+import React, { useState, useEffect } from 'react';
 
-function App() {
+function HomePage() {
+  const [storedRating, setStoredRating] = useState(null);
+
+  useEffect(() => {
+    const rating = localStorage.getItem("avgRating");
+    setStoredRating(rating);
+  }, []);
+  
   return (
     <div className="app">
       <div id = "background"> 
@@ -19,9 +29,12 @@ function App() {
             <div id="co2">
               Emission
             </div>
-            <div id="reviews">
-              Reviews
-            </div>
+
+              <div id="reviews">
+                <Link to="/reviewpage" className="avg-rating-link">
+                  {storedRating ? storedRating : 'No reviews yet'} / 5
+                </Link>
+              </div>
 
           </div>
           <div id = "treeBox">
@@ -34,6 +47,17 @@ function App() {
         
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/reviewpage" element={<ReviewPage />} />
+      </Routes>
+    </Router>
   );
 }
 
