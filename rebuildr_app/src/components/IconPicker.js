@@ -46,21 +46,55 @@ const IconPicker = () => {
         setLoadingId(null);
     };
 
+    const categories = [
+        { id: 'trees', label: 'Trees' },
+        { id: 'fruits', label: 'Fruits' },
+        { id: 'animals', label: 'Animals'},
+        { id: 'flowers', label: 'Flowers'},
+        { id: 'random', label: 'Random'}
+      ];
+    const [selectedCategory, setSelectedCategory] = useState('trees');
+      
+    const filteredIcons = ICONS.filter(icon => icon.category === selectedCategory);
+
     return (
         <div ref={ref} className="icon-picker">
+        
             <ICON
                 onClick={() => {
                     setShowIconListVisibility((showIconList) => !showIconList);
                 }}
                 {...currentActiveIcon}
             />
-            <ICONS_List
-                visible={showIconList}
-                ICONS={ICONS}
-                onIconSelection={onIconSelection}
-                loadingId={loadingId}
+
+            <div className={classNames('icons-list', showIconList && 'visible')}>
+
+            <div className="category-tabs">
+                {categories.map(cat => (
+                <div
+                    key={cat.id}
+                    className={classNames('tab', cat.id === selectedCategory && 'active')}
+                    onClick={() => setSelectedCategory(cat.id)}
+                >
+                    {cat.label}
+                </div>
+            ))}
+            </div>
+        
+            <div className="icon-grid">
+            {filteredIcons.map((icon) => (
+            <ICON
+                loading={icon.id === loadingId}
+                onClick={onIconSelection}
+                {...icon}
+                key={icon.id}
             />
+            ))}
+            
+            </div>
         </div>
+        </div>
+        
     );
 };
 
