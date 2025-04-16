@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ReviewPage from './reviewpage';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
+import RankProgressBar from './components/RankProgressBar.js';
 
 function HomePage() {
   const [storedRating, setStoredRating] = useState(null);
@@ -10,6 +11,9 @@ function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
   const [emissions, setEmissions] = useState(0);
   const [curiosa, setCuriosa] = useState('');
+  const [showRankProgress, setShowRankProgress] = useState(false);
+  const [currentRank, setCurrentRank] = useState('bronze');
+  const [currentCo2, setCurrentCo2] = useState(0);
 
   useEffect(() => {
     const randomEmissions = Math.floor(Math.random() * 100);
@@ -42,20 +46,33 @@ function HomePage() {
     }
   });
 
-
-
-
   useEffect(() => {
     fetch('/data/userData.json')
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error('Error loading user data:', err));
   }, []);
+
   const handleNextUser = () => {
     // Move to next index, wrap around if at end
     setCurrentIndex((prevIndex) => (prevIndex + 1) % users.length);
   };
   const user = users[currentIndex];
+
+  useEffect(() => {
+    if (user) {
+      const co2Value = parseInt(user.totalCo2Saved);
+      setCurrentCo2(co2Value);
+      
+      if (co2Value < 300) {
+        setCurrentRank('bronze');
+      } else if (co2Value < 700) {
+        setCurrentRank('silver');
+      } else {
+        setCurrentRank('gold');
+      }
+    }
+  }, [user]);
 
   let medalSrc = '';
   if (user) {
@@ -72,6 +89,14 @@ function HomePage() {
     const rating = localStorage.getItem("avgRating");
     setStoredRating(rating);
   }, []);
+
+  const handleMedalClick = () => {
+    setShowRankProgress(true);
+  };
+  
+  const handleCloseRankProgress = () => {
+    setShowRankProgress(false);
+  };
   
   return (
     <div className="app">
@@ -86,7 +111,7 @@ function HomePage() {
         
         <div id="body">
           <div className="stats">
-            <div id="rank">
+          <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
             {user && (
               <img src={medalSrc} alt="user rank medal" id="medal" />
              )}
@@ -111,6 +136,16 @@ function HomePage() {
         </div>
         
       </div>
+      {showRankProgress && (
+        <>
+          <div className="rank-overlay" onClick={handleCloseRankProgress}></div>
+          <RankProgressBar 
+            currentCo2={currentCo2}
+            currentRank={currentRank}
+            onClose={handleCloseRankProgress}
+          />
+        </>
+      )}
     </div>
   );
 }
