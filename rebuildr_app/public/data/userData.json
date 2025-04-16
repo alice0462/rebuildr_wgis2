@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "name": "Samantha Green",
+      "age": 29,
+      "rank":"silver",
+      "totalCo2Saved": "435 kg",
+      "positiveReviews": 42,
+      "negativeReviews": 3,
+      "climateImpactFact": "Uses a bicycle instead of a car for daily commute, reducing emissions significantly."
+    },
+    {
+      "id": 2,
+      "name": "Daniel Woods",
+      "age": 35,
+      "rank":"gold",
+      "totalCo2Saved": "890 kg",
+      "positiveReviews": 60,
+      "negativeReviews": 1,
+      "climateImpactFact": "Installed solar panels on his roof and powers his home with 100% renewable energy."
+    },
+    {
+      "id": 3,
+      "name": "Leila Ahmad",
+      "age": 24,
+      "rank":"bronze",
+      "totalCo2Saved": "220 kg",
+      "positiveReviews": 30,
+      "negativeReviews": 5,
+      "climateImpactFact": "Organized local clean-up events that removed over 1 ton of plastic waste from parks and rivers."
+    },
+    {
+      "id": 4,
+      "name": "Jorge Mendes",
+      "age": 41,
+      "rank":"gold",
+      "totalCo2Saved": "760 kg",
+      "positiveReviews": 55,
+      "negativeReviews": 2,
+      "climateImpactFact": "Advocates for plant-based diets and helped convert his office cafeteria to a meatless Monday program."
+    },
+    {
+      "id": 5,
+      "name": "Emily Zhang",
+      "age": 32,
+      "rank":"silver",
+      "totalCo2Saved": "510 kg",
+      "positiveReviews": 38,
+      "negativeReviews": 4,
+      "climateImpactFact": "Created a local app that connects people to share rides and reduce car usage in her community."
+    }
+  ]

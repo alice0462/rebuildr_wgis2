@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ReviewPage from './reviewpage';
 import React, { useState, useEffect } from 'react';
+import IconPicker from './components/IconPicker.js';
 
 function HomePage() {
   const [storedRating, setStoredRating] = useState(null);
@@ -102,7 +103,7 @@ function HomePage() {
 
           </div>
           <div id = "treeBox">
-            <img src="/tree.svg" alt="Tree" id='tree'/>
+            <IconPicker />
           </div>
           <div id = "curiosa">
           {curiosa}
