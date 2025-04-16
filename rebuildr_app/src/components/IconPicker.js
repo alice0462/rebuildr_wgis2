@@ -16,7 +16,7 @@ const ICON = ({ id, source, label, onClick, loading }) => {
     );
 };
 
-const ICONS_List = ({ onIconSelection, ICONS, visible, loadingId }) => {
+const ICONS_LIST = ({ onIconSelection, ICONS, visible, loadingId }) => {
     return (
         <div className={classNames('icons-list', visible && 'visible')}>
             {ICONS.map((icon) => (
@@ -67,6 +67,7 @@ const IconPicker = () => {
                 {...currentActiveIcon}
             />
 
+
             <div className={classNames('icons-list', showIconList && 'visible')}>
 
             <div className="category-tabs">
@@ -88,6 +89,7 @@ const IconPicker = () => {
                 onClick={onIconSelection}
                 {...icon}
                 key={icon.id}
+
             />
             ))}
             
