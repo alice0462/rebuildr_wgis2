@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import ReviewPage from './reviewpage';
+import ReviewPage from './views/reviewpage';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
 
