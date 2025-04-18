@@ -1,0 +1,102 @@
+[
+    {
+      "user_id": 1,
+      "email": "contact@greenbuildsolutions.com",
+      "username": "GreenBuild Solutions",
+      "password_hash": "fakehash_greenbuild123",
+      "location": "Seattle, WA",
+      "profile_picture": "https://example.com/profiles/alice.jpg",
+      "interests": ["bricks", "lumber"],
+      "co2_saved": 120.5
+    },
+    {
+      "user_id": 2,
+      "email": "bob@example.com",
+      "username": "BobBuilder",
+      "password_hash": "fakehash_bob456",
+      "location": "Portland, OR",
+      "profile_picture": null,
+      "interests": ["tiles", "concrete"],
+      "co2_saved": 85.0
+    },
+    {
+      "user_id": 3,
+      "email": "info@reclaimbuildco.com",
+      "username": "ReclaimBuild Co",
+      "password_hash": "fakehash_reclaim789",
+      "location": "Austin, TX",
+      "profile_picture": "https://example.com/profiles/carol.jpg",
+      "interests": ["lumber", "steel"],
+      "co2_saved": 200.0
+    },
+    {
+      "user_id": 4,
+      "email": "dave@example.com",
+      "username": "DaveRecycle",
+      "password_hash": "fakehash_dave101",
+      "location": "Denver, CO",
+      "profile_picture": null,
+      "interests": ["bricks", "glass"],
+      "co2_saved": 45.3
+    },
+    {
+      "user_id": 5,
+      "email": "sales@ecoconstructinc.com",
+      "username": "EcoConstruct Inc",
+      "password_hash": "fakehash_eco202",
+      "location": "Miami, FL",
+      "profile_picture": "https://example.com/profiles/emma.jpg",
+      "interests": ["tiles", "lumber"],
+      "co2_saved": 150.7
+    },
+    {
+      "user_id": 6,
+      "email": "frank@example.com",
+      "username": "FrankFixer",
+      "password_hash": "fakehash_frank303",
+      "location": "Chicago, IL",
+      "profile_picture": null,
+      "interests": ["concrete", "steel"],
+      "co2_saved": 90.0
+    },
+    {
+      "user_id": 7,
+      "email": "info@sustainbuildllc.com",
+      "username": "SustainBuild LLC",
+      "password_hash": "fakehash_sustain404",
+      "location": "Boston, MA",
+      "profile_picture": "https://example.com/profiles/grace.jpg",
+      "interests": ["bricks", "tiles"],
+      "co2_saved": 175.2
+    },
+    {
+      "user_id": 8,
+      "email": "henry@example.com",
+      "username": "HenryBuild",
+      "password_hash": "fakehash_henry505",
+      "location": "Phoenix, AZ",
+      "profile_picture": null,
+      "interests": ["lumber", "glass"],
+      "co2_saved": 60.8
+    },
+    {
+      "user_id": 9,
+      "email": "contact@recycleworks.com",
+      "username": "RecycleWorks",
+      "password_hash": "fakehash_recycle606",
+      "location": "New York, NY",
+      "profile_picture": "https://example.com/profiles/isabel.jpg",
+      "interests": ["steel", "bricks"],
+      "co2_saved": 130.4
+    },
+    {
+      "user_id": 10,
+      "email": "jack@example.com",
+      "username": "JackReuse",
+      "password_hash": "fakehash_jack707",
+      "location": "San Francisco, CA",
+      "profile_picture": null,
+      "interests": ["tiles", "concrete"],
+      "co2_saved": 95.6
+    }
+  ]
