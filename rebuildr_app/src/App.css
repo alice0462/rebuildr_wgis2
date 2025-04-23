@@ -72,14 +72,43 @@
   cursor: pointer;
 }
 
-#tree {
-  width: 40%;
+
+.icon-img {
+  width: 100%;
+  max-width: 40%; /* justera efter behov */
   height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.close-button {
+  position: absolute;
+  right: -4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: white;
+}
+.plus-button {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.plus-button:hover {
+  color: #333;
 }
 
 .category-tabs {
   display: flex;
-  gap: 10px;
+  gap: 11px;
   margin-bottom: 10px;
 }
 
@@ -92,6 +121,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
+  height: 1.5rem;
 }
 
 .category-tabs .tab.active {
@@ -100,7 +130,7 @@
 }
 
 .icons-list {
-  display: grid;
+  /*display: grid*/
   flex-direction: column;
   gap: 2%;
   padding: 1rem;
@@ -111,8 +141,10 @@
   opacity: 0;
   transition: opacity 0.4s ease-in-out, visbility 0.4s linear, transform 0.6s ease-in-out;
   visibility: hidden;
-  max-height: 90px; 
+  height: 300px;
+  max-height: 225px; 
   overflow-y: auto;
+  
   
 }
 .icons-list::-webkit-scrollbar {
@@ -122,19 +154,35 @@
 .icons-list > div {
   background-color: beige;
   border-radius: 8px;
-  height: 90%;
 }
 
 .icons-list.visible {
   visibility: visible;
   opacity: 1;
-  transform: translateY(25%) translateX(-1.5%);
+  transform: translateY(-225%) translateX(-1.5%);
 }
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
+  padding: 1.2rem;
+  
 }
+
+.icon-lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  pointer-events: none; 
+  z-index: 5; 
+}
+.icon-img.faded {
+  opacity: 0.2;
+}
+
+
 
 #medal {
   width: 30%;

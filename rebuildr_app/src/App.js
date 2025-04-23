@@ -110,6 +110,7 @@ function HomePage() {
         </div>
         
         <div id="body">
+          
           <div className="stats">
           <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
             {user && (
@@ -128,7 +129,7 @@ function HomePage() {
 
           </div>
           <div id = "treeBox">
-            <IconPicker />
+          <IconPicker userId={user ? user.id : null}/>
           </div>
           <div id = "curiosa">
           {curiosa}
