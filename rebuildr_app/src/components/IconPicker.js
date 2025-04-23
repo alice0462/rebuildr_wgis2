@@ -6,16 +6,6 @@ import useClickOutside from './ClickOutside.js';
 
 const STANDARD_ICON_ID = 2;
 
-
-const ICON = ({ id, source, label, onClick, loading }) => {
-    return (
-        <div className="Icon" onClick={() => onClick(id)}>
-            <img src={source} alt={label} id="tree" />
-            {loading && <div className="loader"></div>}
-        </div>
-    );
-};
-
 const ICONS_LIST = ({ onIconSelection, ICONS, visible, loadingId }) => {
     return (
         <div className={classNames('icons-list', visible && 'visible')}>
@@ -30,6 +20,14 @@ const ICONS_LIST = ({ onIconSelection, ICONS, visible, loadingId }) => {
         </div>
     );
 };
+const ICON = ({ id, source, label, onClick, loading}) => {
+    return (
+        <div className="Icon" onClick={() => onClick(id)}>
+            <img src={source} alt={label} id="tree" />
+            {loading && <div className="loader"></div>}
+        </div>
+    );
+};
 
 const IconPicker = () => {
     const [selectedIcon, setSelectedIcon] = useState(STANDARD_ICON_ID);
@@ -38,6 +36,13 @@ const IconPicker = () => {
     const [showIconList, setShowIconListVisibility] = useState(false);
 
     const ref = useClickOutside(() => setShowIconListVisibility(false));
+
+    const onClose = () => {
+        setShowIconListVisibility(false); 
+      };
+    const plusButton = () => {
+        setShowIconListVisibility(true);
+    };
 
     const onIconSelection = async (id) => {
         setLoadingId(id);
@@ -59,7 +64,7 @@ const IconPicker = () => {
 
     return (
         <div ref={ref} className="icon-picker">
-        
+            <div className="plus-button" onClick={plusButton}>+</div>
             <ICON
                 onClick={() => {
                     setShowIconListVisibility((showIconList) => !showIconList);
@@ -69,6 +74,7 @@ const IconPicker = () => {
 
 
             <div className={classNames('icons-list', showIconList && 'visible')}>
+            <button className="close-button" onClick={onClose}>×</button>
 
             <div className="category-tabs">
                 {categories.map(cat => (

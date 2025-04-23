@@ -56,11 +56,28 @@ export const ICONS = [
     label: "Regular Tree",
     category: "trees"
     },
+    
+    {
+    id: 8,
+    source: "/SvgIcons/curvyTree.svg",
+    alt: "Curvy Tree",
+    label: "Curvy Tree",
+    category: "trees"
+    },
+
+    {
+    id: 9,
+    source: "/SvgIcons/palmTree.svg",
+    alt: "Palm Tree",
+    label: "Palm Tree",
+    category: "trees"
+    },
+
 
     //------fruits
 
     {
-    id: 8,
+    id: 10,
     source: "/SvgIcons/redApple.svg",
     alt: "Red Apple",
     label: "Red Apple",
@@ -69,7 +86,7 @@ export const ICONS = [
 
     //------animals
     {
-    id: 8,
+    id: 11,
     source: "/SvgIcons/smallBird.svg",
     alt: "Small Bird",
     label: "Small Bird",
@@ -78,7 +95,7 @@ export const ICONS = [
 
     //------flowers
     {
-    id: 9,
+    id: 12,
     source: "/SvgIcons/redFlower.svg",
     alt: "Red Flower",
     label: "Red Flower",
@@ -88,7 +105,7 @@ export const ICONS = [
     //------miscellaneous
 
     {
-    id: 10,
+    id: 13,
     source: "/SvgIcons/planet.svg",
     alt: "Planet",
     label: "Planet",

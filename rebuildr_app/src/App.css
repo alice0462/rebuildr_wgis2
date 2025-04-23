@@ -76,10 +76,33 @@
   width: 40%;
   height: auto;
 }
+.close-button {
+  position: absolute;
+  right: -4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: white;
+}
+.plus-button {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.plus-button:hover {
+  color: #333;
+}
 
 .category-tabs {
   display: flex;
-  gap: 10px;
+  gap: 11px;
   margin-bottom: 10px;
 }
 
@@ -111,7 +134,8 @@
   opacity: 0;
   transition: opacity 0.4s ease-in-out, visbility 0.4s linear, transform 0.6s ease-in-out;
   visibility: hidden;
-  max-height: 90px; 
+  height: 300px;
+  max-height: 225px; 
   overflow-y: auto;
   
 }
@@ -122,18 +146,21 @@
 .icons-list > div {
   background-color: beige;
   border-radius: 8px;
-  height: 90%;
+  height: 100%;
 }
 
 .icons-list.visible {
   visibility: visible;
   opacity: 1;
-  transform: translateY(25%) translateX(-1.5%);
+  transform: translateY(-225%) translateX(-1.5%);
 }
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
+  min-height: 200px;
+  background-color: beige;
+  padding: 1.2rem;
 }
 
 #medal {
