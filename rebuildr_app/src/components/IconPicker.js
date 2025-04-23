@@ -1,39 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { setIcon } from './utils.js';
 import { ICONS } from './Icons.js';
 import classNames from 'classnames';
 import useClickOutside from './ClickOutside.js';
 
-const STANDARD_ICON_ID = 2;
+const STANDARD_ICON_ID = 1;
 
-const ICONS_LIST = ({ onIconSelection, ICONS, visible, loadingId }) => {
+
+const ICON = ({ id, source, label, onClick, loading, locked}) => {
+    
     return (
-        <div className={classNames('icons-list', visible && 'visible')}>
-            {ICONS.map((icon) => (
-                <ICON
-                    loading={icon.id === loadingId}
-                    onClick={onIconSelection}
-                    {...icon}
-                    key={icon.id}
-                />
-            ))}
-        </div>
-    );
-};
-const ICON = ({ id, source, label, onClick, loading}) => {
-    return (
-        <div className="Icon" onClick={() => onClick(id)}>
-            <img src={source} alt={label} id="tree" />
+        <div className='icon-wrapper' style={{ position: 'relative' }} onClick={() => !locked && onClick(id)}>
+            <img src={source} alt={label} className={classNames('icon-img', locked && 'faded')} />
+            {locked && (
+                    <img src="/SvgIcons/padlock-lock.svg" className="icon-lock-overlay" />)}
             {loading && <div className="loader"></div>}
         </div>
     );
 };
 
-const IconPicker = () => {
+const IconPicker = ({userId}) => {
     const [selectedIcon, setSelectedIcon] = useState(STANDARD_ICON_ID);
     const [loadingId, setLoadingId] = useState(null);
     const currentActiveIcon = ICONS.find((icon) => icon.id === selectedIcon);
     const [showIconList, setShowIconListVisibility] = useState(false);
+    const [climateUsers, setClimateUsers] = useState([]);
 
     const ref = useClickOutside(() => setShowIconListVisibility(false));
 
@@ -44,11 +35,29 @@ const IconPicker = () => {
         setShowIconListVisibility(true);
     };
 
+    useEffect(() => {
+        fetch('/data/userData.json')
+            .then(response => response.json())
+            .then(data => setClimateUsers(data))
+            .catch(error => console.error('Error fetching user data:', error));
+    }, []);
+
+    const currentUser = climateUsers.find(user => user.id === userId);
+    const co2Saved = currentUser ? parseInt(currentUser.totalCo2Saved) : 0;
+
     const onIconSelection = async (id) => {
+
+        const selectedIcon = ICONS.find(icon => icon.id === id);
+        if (selectedIcon.unlockRequirement > co2Saved) {
+            alert("You haven't saved enough CO2 to unlock this icon!");
+            return;
+        }
+
         setLoadingId(id);
         await setIcon(id);
         setSelectedIcon(id);
         setLoadingId(null);
+
     };
 
     const categories = [
@@ -95,6 +104,7 @@ const IconPicker = () => {
                 onClick={onIconSelection}
                 {...icon}
                 key={icon.id}
+                locked={icon.unlockRequirement > co2Saved}
 
             />
             ))}

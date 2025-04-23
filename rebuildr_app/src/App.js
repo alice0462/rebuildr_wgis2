@@ -129,7 +129,7 @@ function HomePage() {
 
           </div>
           <div id = "treeBox">
-          <IconPicker />
+          <IconPicker userId={user ? user.id : null}/>
           </div>
           <div id = "curiosa">
           {curiosa}

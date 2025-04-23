@@ -72,10 +72,16 @@
   cursor: pointer;
 }
 
-#tree {
-  width: 40%;
+
+.icon-img {
+  width: 100%;
+  max-width: 40%; /* justera efter behov */
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
+
+
 .close-button {
   position: absolute;
   right: -4px;
@@ -115,6 +121,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
+  height: 1.5rem;
 }
 
 .category-tabs .tab.active {
@@ -123,7 +130,7 @@
 }
 
 .icons-list {
-  display: grid;
+  /*display: grid*/
   flex-direction: column;
   gap: 2%;
   padding: 1rem;
@@ -138,6 +145,7 @@
   max-height: 225px; 
   overflow-y: auto;
   
+  
 }
 .icons-list::-webkit-scrollbar {
   display: none;
@@ -146,7 +154,6 @@
 .icons-list > div {
   background-color: beige;
   border-radius: 8px;
-  height: 100%;
 }
 
 .icons-list.visible {
@@ -158,10 +165,24 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  min-height: 200px;
-  background-color: beige;
   padding: 1.2rem;
+  
 }
+
+.icon-lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  pointer-events: none; 
+  z-index: 5; 
+}
+.icon-img.faded {
+  opacity: 0.2;
+}
+
+
 
 #medal {
   width: 30%;
