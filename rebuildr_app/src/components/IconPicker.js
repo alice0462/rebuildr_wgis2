@@ -7,14 +7,14 @@ import useClickOutside from './ClickOutside.js';
 const STANDARD_ICON_ID = 1;
 
 
-const ICON = ({ id, source, label, onClick, loading, locked}) => {
+const ICON = ({ id, source, label, onClick, locked}) => {
     
     return (
         <div className='icon-wrapper' style={{ position: 'relative' }} onClick={() => !locked && onClick(id)}>
             <img src={source} alt={label} className={classNames('icon-img', locked && 'faded')} />
             {locked && (
                     <img src="/SvgIcons/padlock-lock.svg" className="icon-lock-overlay" />)}
-            {loading && <div className="loader"></div>}
+            
         </div>
     );
 };
@@ -74,12 +74,17 @@ const IconPicker = ({userId}) => {
     return (
         <div ref={ref} className="icon-picker">
             <div className="plus-button" onClick={plusButton}>+</div>
-            <ICON
+            
+            <div className="main-tree-container">
+            {loadingId !== null && <div className="loader"></div>}
+            <ICON    
                 onClick={() => {
                     setShowIconListVisibility((showIconList) => !showIconList);
                 }}
                 {...currentActiveIcon}
+                loading={false}
             />
+            </div>
 
 
             <div className={classNames('icons-list', showIconList && 'visible')}>
