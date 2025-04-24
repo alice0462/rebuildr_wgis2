@@ -84,7 +84,8 @@
 
 .close-button {
   position: absolute;
-  right: -4px;
+  right: 10px;
+  top: 5px;
   font-size: 24px;
   cursor: pointer;
   color: #666;
@@ -101,9 +102,21 @@
   cursor: pointer;
   color: white;
 }
-
 .plus-button:hover {
   color: #333;
+}
+.clear-button {
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  font-size: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(179, 36, 36);
+}
+.clear-button:hover {
+  color: #333
 }
 
 .category-tabs {
@@ -141,11 +154,8 @@
   opacity: 0;
   transition: opacity 0.4s ease-in-out, visbility 0.4s linear, transform 0.6s ease-in-out;
   visibility: hidden;
-  height: 300px;
   max-height: 225px; 
   overflow-y: auto;
-  
-  
 }
 .icons-list::-webkit-scrollbar {
   display: none;
@@ -161,12 +171,19 @@
   opacity: 1;
   transform: translateY(-225%) translateX(-1.5%);
 }
+.icons-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 1rem 1rem; /* lägger till lite space under */
+  
+  background-color: transparent !important;
+}
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  padding: 1.2rem;
-  
+  padding: 1.2rem; 
 }
 
 .icon-lock-overlay {
@@ -178,11 +195,53 @@
   pointer-events: none; 
   z-index: 5; 
 }
-.icon-img.faded {
+.main-tree-img.faded {
   opacity: 0.2;
 }
 
+.main-tree-img {
+    width: 100%;
+    max-width: 40%; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  
+}
+.main-tree-container {
+  cursor: default; /* eller grabbing via class */
+}
+body.grabbing * {
+  cursor: grabbing !important;
+}
 
+.placed-icon {
+  position: absolute;
+  cursor: grab; 
+  user-select: none;
+  pointer-events: auto;
+}
+.placed-icon:active {
+  cursor: grabbing;
+}
+.placed-icon.fruits {
+  width: 25px;
+  height: 25px;
+}
+.placed-icon.animals {
+  width: 50px;
+  height: 50px;
+}
+.placed-icon.flowers {
+  width: 70px;
+  height: 70px;
+}
+.placed-icon.random {
+  width: 100px;
+  height: 100px;
+}
+body.grabbing {
+  cursor: grabbing;
+}
 
 #medal {
   width: 30%;
