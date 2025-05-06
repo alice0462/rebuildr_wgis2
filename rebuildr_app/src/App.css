@@ -41,17 +41,38 @@
 .stats > div {
   flex: 1 1 0;
   text-align: center; 
+  align-items: center;
+  top: 50px;
   padding: 1rem; 
   background-color: rgb(3, 52, 38);
   border: 1px solid #ccc; 
   border-radius: 8px; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
+
+#reviews {
+  align-content: center;
+}
+
+#rank {
+  align-content: center;
+}
+
+#rank img {
+  width: 100px;
+  height: 100px;
+}
+
+
+
 .avg-rating-link {
   background-color: rgb(3, 52, 38);
   color: antiquewhite;
   cursor: pointer;
   text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 #treeBox {
@@ -66,12 +87,6 @@
   transition: border-color 0.4s ease-in-out;
   position: relative;
 }
-
-#treeBox:hover {
-  border: 1px solid rgb(48, 48, 48);
-  cursor: pointer;
-}
-
 
 .icon-img {
   width: 100%;
@@ -96,9 +111,9 @@
 }
 .plus-button {
   position: absolute;
-  right: 10px;
-  top: 4px;
-  font-size: 24px;
+  right: 15px;
+  top: 5px;
+  font-size: 30px;
   cursor: pointer;
   color: white;
 }
@@ -143,7 +158,6 @@
 }
 
 .icons-list {
-  /*display: grid*/
   flex-direction: column;
   gap: 2%;
   padding: 1rem;
@@ -151,10 +165,9 @@
   border-radius: 8px;
   position: absolute;
   transform: translateY(-35%) translateX(-1.5%); 
-  opacity: 0;
   transition: opacity 0.4s ease-in-out, visbility 0.4s linear, transform 0.6s ease-in-out;
   visibility: hidden;
-  max-height: 225px; 
+  max-height: 250px; 
   overflow-y: auto;
 }
 .icons-list::-webkit-scrollbar {
@@ -165,6 +178,7 @@
   background-color: beige;
   border-radius: 8px;
 }
+
 
 .icons-list.visible {
   visibility: visible;
@@ -224,20 +238,20 @@ body.grabbing * {
   cursor: grabbing;
 }
 .placed-icon.fruits {
-  width: 25px;
-  height: 25px;
+  width: 4vh;
+  height: 4vh;
 }
 .placed-icon.animals {
-  width: 50px;
-  height: 50px;
+  width: 8vh;
+  height: 8vh;
 }
 .placed-icon.flowers {
-  width: 70px;
-  height: 70px;
+  width: 4vh;
+  height: 4vh;
 }
 .placed-icon.random {
-  width: 100px;
-  height: 100px;
+  width: 10vh;
+  height: 10vh;
 }
 body.grabbing {
   cursor: grabbing;
@@ -285,4 +299,9 @@ body.grabbing {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.icon-img.faded {
+  opacity: 0.4;
+  pointer-events: none; /* för att undvika att man kan dra den av misstag */
 }
