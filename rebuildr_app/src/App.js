@@ -119,6 +119,7 @@ function HomePage() {
             </div>
             <div id="co2">
             <p>{user ? user.totalCo2Saved : 'Loading or user not found'}</p>
+            <teaPredictor />
             </div>
 
               <div id="reviews">

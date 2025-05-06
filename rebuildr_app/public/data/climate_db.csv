@@ -1,0 +1,199 @@
+Produktnamn,Kategori,"A1-A3 resursens klimatpåverkan, konservativt värde",A4 transporters klimatpåverkan GWP-GHG,"A5 byggspills klimatpåverkan GWP-GHG, konservativt värde",Enhet för klimatpåverkan,Omräkningsfaktor,Enhet för omräkningsfaktor
+Spånskiva,Byggskivor,0.488,0.0487,0.0536,kg CO₂e/kg,700.0,kg/m³
+"Glasull, skivor och rullar",Isolering,1.11,0.0348,0.0803,kg CO₂e/kg,18.7,kg/m³
+"Glasull, fasadskivor",Isolering,1.08,0.0348,0.0777,kg CO₂e/kg,55.0,kg/m³
+"Glasull, lösull, väggar",Isolering,1.2,0.0348,0.0123,kg CO₂e/kg,30.0,kg/m³
+"Glasull, lösull, bjälklag",Isolering,1.13,0.0348,0.0116,kg CO₂e/kg,26.0,kg/m³
+"Glasull, lösull, vindsbjälklag",Isolering,1.13,0.0348,0.0116,kg CO₂e/kg,15.0,kg/m³
+"Glasull, ljudisolering ",Isolering,1.49,0.0348,0.107,kg CO₂e/kg,14.0,kg/m³
+"Sågat virke, u 16 %, barrträ",Trävaror,0.08,0.0174,0.00974,kg CO₂e/kg,455.0,kg/m³
+"Gipsskiva, vindskiva",Byggskivor,0.333,0.0243,0.0428,kg CO₂e/kg,760.0,kg/m³
+"Gipsskiva, brandskiva",Byggskivor,0.32,0.0243,0.0413,kg CO₂e/kg,830.0,kg/m³
+"Gipsskiva, våtrumskiva",Byggskivor,0.325,0.0243,0.0419,kg CO₂e/kg,760.0,kg/m³
+"Gipsskiva, golvskiva",Byggskivor,0.296,0.0243,0.0385,kg CO₂e/kg,1120.0,kg/m³
+"Gipsskiva, standardskiva",Byggskivor,0.284,0.0243,0.037,kg CO₂e/kg,710.0,kg/m³
+"Gipsskiva, hårdskiva",Byggskivor,0.3,0.0243,0.0389,kg CO₂e/kg,930.0,kg/m³
+Fibergipsskiva med cellulosafiber,Byggskivor,0.495,0.0765,0.0686,kg CO₂e/kg,1180.0,kg/m³
+Plywood,Byggskivor,0.448,0.0417,0.0489,kg CO₂e/kg,460.0,kg/m³
+OSB,Byggskivor,0.448,0.0626,0.051,kg CO₂e/kg,607.0,kg/m³
+"Fabriksbetong, husbyggnad C20/25",Betong,0.122,0.0036,0.00377,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C20/25",Betong,0.0913,0.0036,0.00285,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C25/30",Betong,0.0963,0.0036,0.003,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C25/30",Betong,0.129,0.0036,0.00397,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C28/35",Betong,0.136,0.0036,0.0042,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C28/35",Betong,0.102,0.0036,0.00318,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C30/37",Betong,0.145,0.0036,0.00446,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C30/37",Betong,0.108,0.0036,0.00336,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C32/40",Betong,0.111,0.0036,0.00343,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C32/40",Betong,0.148,0.0036,0.00453,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C35/45",Betong,0.163,0.0036,0.00498,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C35/45",Betong,0.122,0.0036,0.00378,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C40/50",Betong,0.175,0.0036,0.00536,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C40/50",Betong,0.131,0.0036,0.00405,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C45/55",Betong,0.143,0.0036,0.00438,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C45/55",Betong,0.189,0.0036,0.00577,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C50/60",Betong,0.204,0.0036,0.00622,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C50/60",Betong,0.153,0.0036,0.00468,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C55/67",Betong,0.165,0.0036,0.00506,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C55/67",Betong,0.22,0.0036,0.00671,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad C60/75",Betong,0.23,0.0036,0.00701,kg CO₂e/kg,2350.0,kg/m³
+"Fabriksbetong, husbyggnad klimatförbättrad C60/75",Betong,0.173,0.0036,0.00528,kg CO₂e/kg,2350.0,kg/m³
+"TT-plattor, TT,TT/F och STT/F",Betong,0.274,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"TT-plattor, TT,TT/F och STT/F, klimatförbättrad",Betong,0.206,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Vägg/Ytterskiva,Betong,0.229,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Vägg/Ytterskiva, klimatförbättrad",Betong,0.171,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Innervägg, V, klimatförbättrad",Betong,0.146,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Innervägg, V",Betong,0.195,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m²
+"Halvsandwichväggar, VI",Betong,0.256,0.0417,0.0,kg CO₂e/kg,1300.0,kg/m³
+"Halvsandwichväggar, VI, klimatförbättrad",Betong,0.238,0.0417,0.0,kg CO₂e/kg,1300.0,kg/m³
+"Sandwichväggar, W, klimatförbättrad",Betong,0.219,0.0417,0.0,kg CO₂e/kg,1360.0,kg/m³
+"Sandwichväggar, W",Betong,0.291,0.0417,0.0,kg CO₂e/kg,1360.0,kg/m³
+"Hålbjälklag, HD/F",Betong,0.188,0.0417,0.0,kg CO₂e/kg,1350.0,kg/m³
+"Hålbjälklag, HD/F, klimatförbättrad",Betong,0.128,0.0417,0.0,kg CO₂e/kg,1350.0,kg/m³
+"Massivplattor,  RD, RD/F",Betong,0.229,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Massivplattor  RD, RD/F, klimatförbättrad",Betong,0.171,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Plattbärlag, PLE",Betong,0.23,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Plattbärlag, PLE, klimatförbättrad",Betong,0.173,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Skalvägg, VS",Betong,0.23,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Skalvägg, VS, klimatförbättrad",Betong,0.173,0.0348,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Pelare RP, OP",Betong,0.298,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Pelare RP, OP, klimatförbättrad",Betong,0.224,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Balkar B, slakarmerad",Betong,0.248,0.0417,0.0,kg CO₂e/kg,2460.0,kg/m³
+"Balkar B, slakarmerad, klimatförbättrad",Betong,0.186,0.0417,0.0228,kg CO₂e/kg,2460.0,kg/m³
+"Balkar B, förspänd",Betong,0.24,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Balkar B, förspänd, klimatförbättrad",Betong,0.18,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Balkonger och trappor, klimatförbättrad",Betong,0.196,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Balkonger och trappor,Betong,0.261,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Loftgångsplatta,Betong,0.274,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Loftgångsplatta, klimatförbättrad",Betong,0.205,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Prefabricerad armerat betongelement, övrigt",Betong,0.248,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Prefab armerat betongelement, övrigt, klimatförbättrad",Betong,0.186,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Betongtakpannor,Murblock och tegel,0.225,0.0487,0.0137,kg CO₂e/kg,2400.0,kg/m³
+"Betongtakpannor, klimatförbättrad",Murblock och tegel,0.169,0.0487,0.0109,kg CO₂e/kg,2400.0,kg/m³
+Tegeltakpannor,Murblock och tegel,0.27,0.0487,0.0159,kg CO₂e/kg,1800.0,kg/m³
+Tegelsten,Murblock och tegel,0.314,0.0487,0.0181,kg CO₂e/kg,1800.0,kg/m³
+"Tegelsten, frostbeständigt, hårdbränd",Murblock och tegel,0.544,0.0487,0.0296,kg CO₂e/kg,1800.0,kg/m³
+Kalksandsten,Murblock och tegel,0.158,0.0626,0.011,kg CO₂e/kg,1800.0,kg/m³
+"Lättklinkerblock, <10 % cement (650-700 kg/m³)",Murblock och tegel,0.24,0.0278,0.0134,kg CO₂e/kg,650.0,kg/m³
+"Lättklinkerblock, 10-14 % cement (700-770 kg/m³)",Murblock och tegel,0.243,0.0278,0.0135,kg CO₂e/kg,750.0,kg/m³
+"Lättklinkerblock, 15-17 % cement (700-770 kg/m³)",Murblock och tegel,0.274,0.0278,0.0151,kg CO₂e/kg,750.0,kg/m³
+"Lättklinkerblock, 18-24 % cement (700-770 kg/m³)",Murblock och tegel,0.323,0.0278,0.0175,kg CO₂e/kg,770.0,kg/m³
+Lättklinkerkulor,Murblock och tegel,0.324,0.0278,0.00703,kg CO₂e/kg,300.0,kg/m³
+Murbruk A (CS IV),Bruk och bindemedel,0.249,0.0348,0.0142,kg CO₂e/kg,1600.0,kg/m³
+Mur- och putsbruk B (CS III),Bruk och bindemedel,0.209,0.0348,0.0122,kg CO₂e/kg,1600.0,kg/m³
+Mur- och putsbruk C (CS II),Bruk och bindemedel,0.203,0.0278,0.0115,kg CO₂e/kg,1600.0,kg/m³
+"Putsbruk C (CS II), pumpbar",Bruk och bindemedel,0.203,0.0348,0.0237,kg CO₂e/kg,1600.0,kg/m³
+Kalkbruk D (CS I),Bruk och bindemedel,0.153,0.0278,0.00902,kg CO₂e/kg,1600.0,kg/m³
+"Putsbruk B (CS III), fiberförstärkt tvåskiktsbehandling",Bruk och bindemedel,0.3,0.0278,0.0164,kg CO₂e/kg,1600.0,kg/m³
+Gasbetongblock,Murblock och tegel,0.539,0.0765,0.0308,kg CO₂e/kg,400.0,kg/m³
+"Gasbetongelement, 5 % armering",Murblock och tegel,0.549,0.0765,0.0313,kg CO₂e/kg,550.0,kg/m³
+Avjämningsmassor < 17 % cement,Bruk och bindemedel,0.195,0.0278,0.0111,kg CO₂e/kg,1750.0,kg/m³
+Fiberförstärkta avjämningsmassor < 22 % cement,Bruk och bindemedel,0.268,0.0348,0.0302,kg CO₂e/kg,1750.0,kg/m³
+Avjämningsmassor < 30 % cement,Bruk och bindemedel,0.385,0.0278,0.0206,kg CO₂e/kg,1750.0,kg/m³
+Avjämningsmassor < 22 % cement,Bruk och bindemedel,0.22,0.0348,0.0255,kg CO₂e/kg,1750.0,kg/m³
+Snabba avjämningsmassor < 60 % cement,Bruk och bindemedel,0.436,0.0278,0.0232,kg CO₂e/kg,1750.0,kg/m³
+"Fönster, trä/aluminium, sidhängt, 3-glas","Fönster, dörrar och glas",2.88,0.0417,0.0,kg CO₂e/kg,39.2,kg/m²
+"Fönster, trä, sidhängt, 3-glas","Fönster, dörrar och glas",2.5,0.0417,0.0,kg CO₂e/kg,38.2,kg/m²
+"Fönster, trä, inåtgående, 3-glas","Fönster, dörrar och glas",2.13,0.0417,0.0,kg CO₂e/kg,35.6,kg/m²
+"Fönster, trä/aluminium, inåtgående, 3-glas","Fönster, dörrar och glas",2.5,0.0417,0.0,kg CO₂e/kg,40.2,kg/m²
+"Fönster, trä, vridfönster, 3-glas","Fönster, dörrar och glas",2.63,0.0417,0.0,kg CO₂e/kg,39.2,kg/m²
+"Fönster, trä/aluminium, vridfönster, 3-glas","Fönster, dörrar och glas",2.75,0.0417,0.0,kg CO₂e/kg,39.4,kg/m²
+"Fönster, trä, fast, 3-glas","Fönster, dörrar och glas",2.13,0.0417,0.0,kg CO₂e/kg,35.3,kg/m²
+"Fönster, trä/aluminium, fast, 3-glas","Fönster, dörrar och glas",2.25,0.0417,0.0,kg CO₂e/kg,35.5,kg/m²
+"Fönsterdörr, trä, halvglasad, 3-glas","Fönster, dörrar och glas",2.38,0.0417,0.0,kg CO₂e/kg,31.9,kg/m²
+"Fönsterdörr, trä/aluminium, halvglasad, 3-glas","Fönster, dörrar och glas",3.13,0.0417,0.0,kg CO₂e/kg,32.4,kg/m²
+"Fönsterdörr, trä, helglasad, 3-glas","Fönster, dörrar och glas",2.5,0.0417,0.0,kg CO₂e/kg,34.7,kg/m²
+"Fönsterdörr, trä/aluminium, helglasad, 3-glas","Fönster, dörrar och glas",2.75,0.0417,0.0,kg CO₂e/kg,36.0,kg/m²
+"Ytterdörr, stål, massiv ","Fönster, dörrar och glas",3.49,0.0417,0.0,kg CO₂e/kg,29.4,kg/m²
+"Ytterdörr utan glas, rostfritt stål","Fönster, dörrar och glas",5.69,0.0417,0.0,kg CO₂e/kg,32.9,kg/m²
+"Innerdörr utan glas, stål","Fönster, dörrar och glas",3.23,0.0417,0.0,kg CO₂e/kg,46.7,kg/m²
+"Ytterdörr utan glas, trä","Fönster, dörrar och glas",1.88,0.0417,0.0,kg CO₂e/kg,27.7,kg/m²
+"Tamburdörr utan glas, trä","Fönster, dörrar och glas",1.29,0.0417,0.0,kg CO₂e/kg,26.1,kg/m²
+"Innerdörr utan glas, laminerat trä, ljud och brandklassad","Fönster, dörrar och glas",0.388,0.0417,0.0,kg CO₂e/kg,27.1,kg/m²
+"Innerdörr utan glas, slät eller spegeldörr, oklassad ","Fönster, dörrar och glas",0.225,0.0417,0.0,kg CO₂e/kg,16.5,kg/m²
+Planglas,"Fönster, dörrar och glas",1.45,0.0348,0.297,kg CO₂e/kg,2500.0,kg/m³
+"Stenull, skivor och rullar",Isolering,1.6,0.0348,0.114,kg CO₂e/kg,29.0,kg/m³
+"Stenull, putsskiva",Isolering,1.61,0.0348,0.115,kg CO₂e/kg,70.0,kg/m³
+"Stenull, fasadskiva",Isolering,1.61,0.0348,0.115,kg CO₂e/kg,80.0,kg/m³
+"Stenull, markskiva",Isolering,1.6,0.0348,0.114,kg CO₂e/kg,140.0,kg/m³
+"Stenull, takskiva",Isolering,1.6,0.0348,0.114,kg CO₂e/kg,180.0,kg/m³
+"Stenull, lösull, vindsbjälklag",Isolering,1.6,0.0348,0.0163,kg CO₂e/kg,28.0,kg/m³
+"Stenull, lösull, golvbjälklag",Isolering,1.6,0.0348,0.0163,kg CO₂e/kg,65.0,kg/m³
+"Stenull, lösull, vägg",Isolering,1.6,0.0348,0.0163,kg CO₂e/kg,65.0,kg/m³
+Fenolbaserad isolering,Isolering,2.75,0.0348,0.139,kg CO₂e/kg,35.0,kg/m³
+"Träfiber, primar råvara, skivor",Isolering,0.371,0.0348,0.0284,kg CO₂e/kg,50.0,kg/m³
+Ytpapp,Tätskikt,0.7,0.0348,0.0367,kg CO₂e/kg,5.0,kg/m²
+Underlagspapp,Tätskikt,0.85,0.0348,0.0442,kg CO₂e/kg,4.0,kg/m²
+"Takspapp, enskiktstätning",Tätskikt,0.813,0.0348,0.0424,kg CO₂e/kg,5.5,kg/m²
+Takshingle,Tätskikt,0.5,0.0348,0.0267,kg CO₂e/kg,4.0,kg/m²
+"Utomhusfärg, vattenburen akryl",Färg och fog,3.13,0.0348,0.126,kg CO₂e/kg,0.1,kg/m²
+Silikatfärg,Färg och fog,1.5,0.0348,0.0614,kg CO₂e/kg,0.1,kg/m²
+Slamfärg,Färg och fog,0.75,0.0348,0.0314,kg CO₂e/kg,0.4,kg/m²
+"Fogmassa, silikon",Färg och fog,8.85,0.0348,0.355,kg CO₂e/kg,1150.0,kg/m³
+"Fogmassa, övrigt",Färg och fog,4.06,0.0348,0.164,kg CO₂e/kg,1150.0,kg/m³
+"Konstruktionsstål, alla sorter, 80 % primär råvara",Stål och andra metaller,3.15,0.0765,0.161,kg CO₂e/kg,7850.0,kg/m³
+"Konstruktionsstål, 100 % skrotbaserad exkl. legeringsämnen ",Stål och andra metaller,1.13,0.0765,0.0601,kg CO₂e/kg,7850.0,kg/m³
+"Lättreglar av stål, primär",Stål och andra metaller,3.01,0.0278,0.0608,kg CO₂e/kg,7850.0,kg/m³
+"Tunnplåt för beklädnad, 80 % primär",Stål och andra metaller,3.24,0.0765,0.166,kg CO₂e/kg,7850.0,kg/m³
+"Armeringsstål, obearbetad, 100 % skrotbaserad exkl legering",Stål och andra metaller,0.745,0.0765,0.0739,kg CO₂e/kg,7850.0,kg/m³
+"Spännarmering, stål, 100% skrotbaserad",Stål och andra metaller,1.25,0.0765,0.0663,kg CO₂e/kg,7850.0,kg/m³
+"Rostfri stålarmering, 72 % skrotbaserad",Stål och andra metaller,4.75,0.0765,0.241,kg CO₂e/kg,7900.0,kg/m³
+"Rostfria vattenrör, 86 % skrotbaserad",Stål och andra metaller,4.5,0.0765,0.229,kg CO₂e/kg,7900.0,kg/m³
+"Rostfri plåt, 65 % skrotbaserad",Stål och andra metaller,4.25,0.0765,0.216,kg CO₂e/kg,7900.0,kg/m³
+"Aluminiumprofiler, primär",Stål och andra metaller,7.5,0.0487,0.377,kg CO₂e/kg,2700.0,kg/m³
+"Aluminiumprofiler, skrotbaserad",Stål och andra metaller,2.13,0.0487,0.109,kg CO₂e/kg,2700.0,kg/m³
+"Aluminiumplåt, primär",Stål och andra metaller,12.5,0.0487,0.627,kg CO₂e/kg,2700.0,kg/m³
+"Kopparplåt, 51 % skrotbaserad",Stål och andra metaller,2.48,0.0765,0.128,kg CO₂e/kg,8960.0,kg/m³
+"Kopparplåt, 97 % skrotbaserad",Stål och andra metaller,0.625,0.0765,0.0351,kg CO₂e/kg,8960.0,kg/m³
+"Kopparrör, 51 % skrotbaserad",Stål och andra metaller,2.97,0.0765,0.153,kg CO₂e/kg,8960.0,kg/m³
+"Kopparrör, 100 % skrotbaserad",Stål och andra metaller,0.809,0.0765,0.0443,kg CO₂e/kg,8960.0,kg/m³
+"Kopparwire, primär",Stål och andra metaller,5.3,0.0765,0.269,kg CO₂e/kg,8960.0,kg/m³
+"Korslimmat trä, u 12 %, barrträ",Trävaror,0.12,0.0348,0.00774,kg CO₂e/kg,465.0,kg/m³
+"Limträ, u 12 %, gran",Trävaror,0.133,0.0348,0.00837,kg CO₂e/kg,434.0,kg/m³
+Formskiva,Byggskivor,0.805,0.0626,0.0868,kg CO₂e/kg,680.0,kg/m³
+"Tegelsten, dubbelbränt (ökade färgskiftningar)",Murblock och tegel,0.544,0.0487,0.0296,kg CO₂e/kg,1800.0,kg/m³
+"Cellulosafiber, oanvänt papper, skivor",Isolering,0.75,0.0348,0.0549,kg CO₂e/kg,36.0,kg/m³
+"Isolerruta, dubbelglas (4-16-4)","Fönster, dörrar och glas",1.95,0.111,0.0,kg CO₂e/kg,20.0,kg/m²
+"Isolerruta, treglas (4-14-4-14-4)","Fönster, dörrar och glas",2.06,0.111,0.0,kg CO₂e/kg,30.0,kg/m²
+Laminerat säkerhetsglas,"Fönster, dörrar och glas",1.73,0.0348,0.352,kg CO₂e/kg,2500.0,kg/m³
+Härdat säkerhetsglas,"Fönster, dörrar och glas",2.38,0.0348,0.482,kg CO₂e/kg,2500.0,kg/m³
+"Brandglas, 5/5 E30 - EW30 - EI30 ","Fönster, dörrar och glas",3.26,0.0348,0.659,kg CO₂e/kg,2500.0,kg/m³
+"Fibercementskivor, byggskiva, ≤ 60 vikt-% cement,",Byggskivor,0.849,0.0765,0.0925,kg CO₂e/kg,1550.0,kg/m³
+"Fibercementskivor, fasadskiva, ≤ 85 vikt-% cement,",Byggskivor,1.69,0.0765,0.176,kg CO₂e/kg,1950.0,kg/m³
+"Stenkompositfasadskiva, 12-17 % w/w polyesterbindemedel",Byggskivor,1.48,0.0626,0.154,kg CO₂e/kg,1960.0,kg/m³
+"Stenkompositfasadskiva, 18-20 % w/w polyesterbindemedel",Byggskivor,1.86,0.0626,0.193,kg CO₂e/kg,1960.0,kg/m³
+Fanerträ (LVL),Trävaror,0.383,0.0765,0.023,kg CO₂e/kg,510.0,kg/m³
+"Ytterdörr, aluminium, helglasad ","Fönster, dörrar och glas",4.88,0.0417,0.0,kg CO₂e/kg,39.6,kg/m²
+Putsbärarskiva av glasgranulat,Byggskivor,1.79,0.0765,0.186,kg CO₂e/kg,525.0,kg/m³
+"Spikar, fästdon och beslag, primär stål",Stål och andra metaller,3.24,0.0765,0.166,kg CO₂e/kg,7850.0,kg/m³
+"Hyvlat virke, u 16 %, barrträ",Trävaror,0.0919,0.0174,0.0109,kg CO₂e/kg,455.0,kg/m³
+"Cement, typ CEM II/A-LL 42,5 R",Bruk och bindemedel,0.813,0.0348,0.0254,kg CO₂e/kg,3040.0,kg/m³
+"Torrbruk, finbetong K30 (C32/40)",Bruk och bindemedel,0.24,0.0348,0.00824,kg CO₂e/kg,1900.0,kg/m³
+"Torrbruk, grovbetong K25 (C28/35)",Bruk och bindemedel,0.166,0.0348,0.00603,kg CO₂e/kg,1900.0,kg/m³
+Tegelbalk,Murblock och tegel,0.314,0.0487,0.0,kg CO₂e/kg,2114.0,kg/m³
+"Tegelbalk, dubbelbränt (ökade färgskiftningar)",Murblock och tegel,0.881,0.0487,0.0,kg CO₂e/kg,2114.0,kg/m³
+"Plastfolie, ångspärr",Tätskikt,2.75,0.0487,0.28,kg CO₂e/kg,900.0,kg/m³
+"Vindspärr fasader, spunnet polyetylen och polypropylen",Murblock och tegel,3.4,0.0487,0.345,kg CO₂e/kg,900.0,kg/m³
+"Plastfolie, varialbel ångspärr",Tätskikt,7.36,0.0487,0.741,kg CO₂e/kg,900.0,kg/m³
+"Hampaisolering, skivor, 8% polylaktid (PLA) som bindemedel",Isolering,0.805,0.111,0.0641,kg CO₂e/kg,36.0,kg/m³
+"Hampaisolering, skivor, 8 % polyester eller polyolefin",Isolering,0.805,0.111,0.0641,kg CO₂e/kg,36.0,kg/m³
+Hampabetongblock,Isolering,0.715,0.111,0.0578,kg CO₂e/kg,330.0,kg/m³
+"Fibercementskivor, inomhusskiva, ≤ 35 vikt-% cement,",Byggskivor,0.538,0.0765,0.0614,kg CO₂e/kg,1080.0,kg/m³
+"Plastprodukter typ termoplaster polyolefin, ospecificerat",Murblock och tegel,2.78,0.0487,0.282,kg CO₂e/kg,900.0,kg/m³
+Polyisocyanurat (PIR) värmeisolering,Isolering,4.4,0.0765,0.224,kg CO₂e/kg,32.0,kg/m³
+"Fönster, PVC, alla typer, 3-glas","Fönster, dörrar och glas",2.63,0.0417,0.0,kg CO₂e/kg,39.2,kg/m²
+"HDF-skiva, HDF (torr process)",Byggskivor,0.638,0.0626,0.07,kg CO₂e/kg,850.0,kg/m³
+"Hård skiva, HB (våt process)",Byggskivor,0.373,0.0626,0.0435,kg CO₂e/kg,940.0,kg/m³
+Skifferplattor inkl infästning av stål,Murblock och tegel,0.82,0.0487,0.0434,kg CO₂e/kg,2800.0,kg/m³
+"Skruvar, primär stål",Stål och andra metaller,5.89,0.187,0.304,kg CO₂e/kg,7850.0,kg/m³
+"Skruvar, rostfritt stål",Stål och andra metaller,7.9,0.187,0.404,kg CO₂e/kg,7850.0,kg/m³
+ Färdigblandad fyllnadsbruk (för håldäck mm),Bruk och bindemedel,0.22,0.0036,0.00671,kg CO₂e/kg,2350.0,kg/m³
+"Galvaniserade stålprodukter, 80 % primär",Stål och andra metaller,3.33,0.0765,0.17,kg CO₂e/kg,7850.0,kg/m³
+Cementbunden träullsplatta,Isolering,0.715,0.111,0.0578,kg CO₂e/kg,450.0,kg/m³
+"Takduk, PVC",Tätskikt,5.69,0.0417,0.286,kg CO₂e/kg,39.2,kg/m²
+"Fönster, aluminium, alla typer, 3-glas","Fönster, dörrar och glas",3.83,0.0626,0.0,kg CO₂e/kg,39.2,kg/m²
+Perlit,Isolering,0.25,0.0626,0.0156,kg CO₂e/kg,85.0,kg/m³
+"Cellglas, krossad, > 90% återvunnet glas",Isolering,0.313,0.0626,0.0113,kg CO₂e/kg,180.0,kg/m³
+"Cellglas, skivor, > 90% återvunnet glas",Isolering,1.02,0.0626,0.109,kg CO₂e/kg,140.0,kg/m³
+"Cellglas, skivor, > 50% återvunnet glas",Isolering,1.89,0.0626,0.195,kg CO₂e/kg,95.0,kg/m³
+"Torkbetong, exponeringsklass XC1",Bruk och bindemedel,0.222,0.0036,0.00678,kg CO₂e/kg,2350.0,kg/m³
