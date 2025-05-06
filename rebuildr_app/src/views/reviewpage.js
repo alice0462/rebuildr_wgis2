@@ -1,5 +1,7 @@
 import './reviewpage.css';
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useUserIndex } from '../components/UserIndexContext';
 
 function ReviewPage() {
   const reviews = [
@@ -8,7 +10,18 @@ function ReviewPage() {
     {name: "Agnes Berg", rating:5, comment: "I really recommend this seller and I appreciate how easy it is to save the planet by using this amazing app!"},
     {name: "Henrik Hult", rating: 1, comment: "Not okay. He selled me wood containing asbestos"},
   ];  
+  const { userIndex } = useUserIndex();
+  const [reviews2, setReviews] = useState([]);
+  useEffect(() => {
+    fetch('/data/reviews_db.json')
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.error('Error loading user data:', err));
+  }, []);
+
   
+
+
   const avgRating = (
     reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length).toFixed(1);
 

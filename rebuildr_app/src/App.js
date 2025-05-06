@@ -1,20 +1,22 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ReviewPage from './views/reviewpage';
+import ReviewPage2 from './views/reviewpage2';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
 import RankProgressBar from './components/RankProgressBar.js';
+import { UserIndexProvider, useUserIndex } from './components/UserIndexContext';
 
-function HomePage() {
+export function HomePage() {
   const [storedRating, setStoredRating] = useState(null);
   const [users, setUsers] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
+  const [currentIndex, setCurrentIndex] = useState(0); 
   const [emissions, setEmissions] = useState(0);
   const [curiosa, setCuriosa] = useState('');
   const [showRankProgress, setShowRankProgress] = useState(false);
   const [currentRank, setCurrentRank] = useState('bronze');
   const [currentCo2, setCurrentCo2] = useState(0);
-
+  const { userIndex, setUserIndex } = useUserIndex();
   useEffect(() => {
     const randomEmissions = Math.floor(Math.random() * 100);
     setEmissions(randomEmissions);
@@ -119,12 +121,17 @@ function HomePage() {
             </div>
             <div id="co2">
             <p>{user ? user.totalCo2Saved : 'Loading or user not found'}</p>
-            <teaPredictor />
             </div>
 
               <div id="reviews">
                 <Link to="/reviewpage" className="avg-rating-link">
                   {storedRating ? storedRating : 'No reviews yet'} / 5
+                </Link>
+              </div>
+
+              <div id="reviews2">
+                <Link to="/reviewpage2" className="avg-rating-link">
+                  reviews2
                 </Link>
               </div>
 
@@ -154,12 +161,15 @@ function HomePage() {
 
 function App() {
   return (
+    <UserIndexProvider>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/reviewpage" element={<ReviewPage />} />
+        <Route path="/reviewpage2" element={<ReviewPage2 />} />
       </Routes>
     </Router>
+    </UserIndexProvider>
   );
 }
 
