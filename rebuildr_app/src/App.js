@@ -151,7 +151,7 @@ function HomePage() {
              )}
             </div>
             <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
-              <p>{user ? user.totalCo2Saved : 'Loading or user not found'}</p>
+              <p>Saved Co2: <br/>{user ? user.totalCo2Saved : 'Loading or user not found'}</p>
 
             </div>
 
