@@ -12,7 +12,7 @@ const ICON = ({ id, source, label, onClick, locked}) => {
         <div className='icon-wrapper' style={{ position: 'relative' }} onClick={() => !locked && onClick(id)}>
             <img src={source} alt={label} className={classNames('icon-img', locked && 'faded')} />
             {locked && (
-                    <img src="/SvgIcons/padlock-lock.svg" className="icon-lock-overlay" />)}
+                    <img src="/SvgIcons/padlock_9088306.png" className="icon-lock-overlay" />)}
         </div>
     );
 };
