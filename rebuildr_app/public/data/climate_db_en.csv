@@ -1,0 +1,199 @@
+Produktnamn,Kategori,"A1-A3 resursens klimatpåverkan, konservativt värde",A4 transporters klimatpåverkan GWP-GHG,"A5 byggspills klimatpåverkan GWP-GHG, konservativt värde",Enhet för klimatpåverkan,Omräkningsfaktor,Enhet för omräkningsfaktor
+Chipboard,Building boards,0.488,0.0487,0.0536,kg CO₂e/kg,700.0,kg/m³
+"Glass wool, slices and rolls",Insulation,1.11,0.0348,0.0803,kg CO₂e/kg,18.7,kg/m³
+"Glass wool, facade slices",Insulation,1.08,0.0348,0.0777,kg CO₂e/kg,55.0,kg/m³
+"Glass wool, loose wool, walls",Insulation,1.2,0.0348,0.0123,kg CO₂e/kg,30.0,kg/m³
+"Glass wool, loose wool, joist",Insulation,1.13,0.0348,0.0116,kg CO₂e/kg,26.0,kg/m³
+"Glass wool, loose wool, attic",Insulation,1.13,0.0348,0.0116,kg CO₂e/kg,15.0,kg/m³
+"Glass wool, sound insulation",Insulation,1.49,0.0348,0.107,kg CO₂e/kg,14.0,kg/m³
+"Sawn timber, u 16 %, coniferous wood",Timber,0.08,0.0174,0.00974,kg CO₂e/kg,455.0,kg/m³
+"Plasterboard, windscreen",Building boards,0.333,0.0243,0.0428,kg CO₂e/kg,760.0,kg/m³
+"Plasterboard, fire disc",Building boards,0.32,0.0243,0.0413,kg CO₂e/kg,830.0,kg/m³
+"Plasterboard, wet room plate",Building boards,0.325,0.0243,0.0419,kg CO₂e/kg,760.0,kg/m³
+"Plasterboard, floorboard",Building boards,0.296,0.0243,0.0385,kg CO₂e/kg,1120.0,kg/m³
+"Plasterboard, default disc",Building boards,0.284,0.0243,0.037,kg CO₂e/kg,710.0,kg/m³
+"Plasterboard, hard disk",Building boards,0.3,0.0243,0.0389,kg CO₂e/kg,930.0,kg/m³
+Fibergip disc with cellulose fiber,Building boards,0.495,0.0765,0.0686,kg CO₂e/kg,1180.0,kg/m³
+Plywood,Building boards,0.448,0.0417,0.0489,kg CO₂e/kg,460.0,kg/m³
+Osb,Building boards,0.448,0.0626,0.051,kg CO₂e/kg,607.0,kg/m³
+"Factory concrete, house building C20/25",Concrete,0.122,0.0036,0.00377,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate Enhanced C20/25",Concrete,0.0913,0.0036,0.00285,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building climate -enhanced C25/30",Concrete,0.0963,0.0036,0.003,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C25/30",Concrete,0.129,0.0036,0.00397,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C28/35",Concrete,0.136,0.0036,0.0042,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate Enhanced C28/35",Concrete,0.102,0.0036,0.00318,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C30/37",Concrete,0.145,0.0036,0.00446,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate Enhanced C30/37",Concrete,0.108,0.0036,0.00336,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate -Enhanced C32/40",Concrete,0.111,0.0036,0.00343,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C32/40",Concrete,0.148,0.0036,0.00453,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C35/45",Concrete,0.163,0.0036,0.00498,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate -Enhanced C35/45",Concrete,0.122,0.0036,0.00378,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C40/50",Concrete,0.175,0.0036,0.00536,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate Enhanced C40/50",Concrete,0.131,0.0036,0.00405,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate -Enhanced C45/55",Concrete,0.143,0.0036,0.00438,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C45/55",Concrete,0.189,0.0036,0.00577,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C50/60",Concrete,0.204,0.0036,0.00622,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate Enhanced C50/60",Concrete,0.153,0.0036,0.00468,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate -Enhanced C55/67",Concrete,0.165,0.0036,0.00506,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C55/67",Concrete,0.22,0.0036,0.00671,kg CO₂e/kg,2350.0,kg/m³
+"Factory concrete, house building C60/75",Concrete,0.23,0.0036,0.00701,kg CO₂e/kg,2350.0,kg/m³
+"Factory Concrete, House Building Climate Established C60/75",Concrete,0.173,0.0036,0.00528,kg CO₂e/kg,2350.0,kg/m³
+"Tt-plates, tt, tt/f and stt/f",Concrete,0.274,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"TT plates, TT, TT/F and STT/F, Climate Enhanced",Concrete,0.206,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Wall/outer disc,Concrete,0.229,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Wall/outer board, climate -enhanced",Concrete,0.171,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Inner wall, V, climate -enhanced",Concrete,0.146,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Inner wall, v",Concrete,0.195,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m²
+"Half -sandwich walls, we",Concrete,0.256,0.0417,0.0,kg CO₂e/kg,1300.0,kg/m³
+"Half -sandwich walls, VI, climate -enhanced",Concrete,0.238,0.0417,0.0,kg CO₂e/kg,1300.0,kg/m³
+"Sandwich walls, W, climate -enhanced",Concrete,0.219,0.0417,0.0,kg CO₂e/kg,1360.0,kg/m³
+"Sandwich walls, w",Concrete,0.291,0.0417,0.0,kg CO₂e/kg,1360.0,kg/m³
+"Hole joists, hd/f",Concrete,0.188,0.0417,0.0,kg CO₂e/kg,1350.0,kg/m³
+"Hole joists, HD/F, climate -enhanced",Concrete,0.128,0.0417,0.0,kg CO₂e/kg,1350.0,kg/m³
+"Solid plates, RD, RD/F.",Concrete,0.229,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Massive plates RD, RD/F, Climate Enhanced",Concrete,0.171,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Plattelars, ple",Concrete,0.23,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Flat, PLE, climate -enhanced",Concrete,0.173,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Small wall, Vs",Concrete,0.23,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Small wall, VS, climate -enhanced",Concrete,0.173,0.0348,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Pillar rp, op",Concrete,0.298,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Pillar rp, op, climate -enhanced",Concrete,0.224,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Beams B, slack reinforced",Concrete,0.248,0.0417,0.0,kg CO₂e/kg,2460.0,kg/m³
+"Beams B, slack reinforced, climate -enhanced",Concrete,0.186,0.0417,0.0228,kg CO₂e/kg,2460.0,kg/m³
+"Beams B, biased",Concrete,0.24,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Beams B, biased, climate -enhanced",Concrete,0.18,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Balconies and stairs, climate -enhanced",Concrete,0.196,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Balconies and stairs,Concrete,0.261,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Loftwood plate,Concrete,0.274,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Loft walking plate, climate -enhanced",Concrete,0.205,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Prefabricated reinforced concrete elements, other",Concrete,0.248,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+"Prefab reinforced concrete elements, other, climate -enhanced",Concrete,0.186,0.0417,0.0,kg CO₂e/kg,2400.0,kg/m³
+Concrete roof boilers,Wall blocks and bricks,0.225,0.0487,0.0137,kg CO₂e/kg,2400.0,kg/m³
+"Concrete roof boilers, climate -enhanced",Wall blocks and bricks,0.169,0.0487,0.0109,kg CO₂e/kg,2400.0,kg/m³
+Tile roof boilers,Wall blocks and bricks,0.27,0.0487,0.0159,kg CO₂e/kg,1800.0,kg/m³
+Brick,Wall blocks and bricks,0.314,0.0487,0.0181,kg CO₂e/kg,1800.0,kg/m³
+"Brick, frost resistant, hard -burned",Wall blocks and bricks,0.544,0.0487,0.0296,kg CO₂e/kg,1800.0,kg/m³
+Lime sandstone,Wall blocks and bricks,0.158,0.0626,0.011,kg CO₂e/kg,1800.0,kg/m³
+"Light clinker block, <10 % cement (650-700 kg/m³)",Wall blocks and bricks,0.24,0.0278,0.0134,kg CO₂e/kg,650.0,kg/m³
+"Light clinker block, 10-14 % cement (700-770 kg/m³)",Wall blocks and bricks,0.243,0.0278,0.0135,kg CO₂e/kg,750.0,kg/m³
+"Light clinker block, 15-17 % cement (700-770 kg/m³)",Wall blocks and bricks,0.274,0.0278,0.0151,kg CO₂e/kg,750.0,kg/m³
+"Light clinker block, 18-24 % cement (700-770 kg/m³)",Wall blocks and bricks,0.323,0.0278,0.0175,kg CO₂e/kg,770.0,kg/m³
+Lightweight clinch balls,Wall blocks and bricks,0.324,0.0278,0.00703,kg CO₂e/kg,300.0,kg/m³
+Mortar A (CS IV),Use and binder,0.249,0.0348,0.0142,kg CO₂e/kg,1600.0,kg/m³
+Masonry and plaster Bruks B (CS III),Use and binder,0.209,0.0348,0.0122,kg CO₂e/kg,1600.0,kg/m³
+Masonry and Puts Mill C (CS II),Use and binder,0.203,0.0278,0.0115,kg CO₂e/kg,1600.0,kg/m³
+"Puts Mill C (CS II), Pumpbar",Use and binder,0.203,0.0348,0.0237,kg CO₂e/kg,1600.0,kg/m³
+Lime use D (CS I),Use and binder,0.153,0.0278,0.00902,kg CO₂e/kg,1600.0,kg/m³
+"Puts Mill B (CS III), Fiber reinforced two -layer",Use and binder,0.3,0.0278,0.0164,kg CO₂e/kg,1600.0,kg/m³
+Gas concrete block,Wall blocks and bricks,0.539,0.0765,0.0308,kg CO₂e/kg,400.0,kg/m³
+"Gas concrete element, 5 % reinforcement",Wall blocks and bricks,0.549,0.0765,0.0313,kg CO₂e/kg,550.0,kg/m³
+Equalization masses <17 % cement,Use and binder,0.195,0.0278,0.0111,kg CO₂e/kg,1750.0,kg/m³
+Fiber -reinforced leveling masses <22 % cement,Use and binder,0.268,0.0348,0.0302,kg CO₂e/kg,1750.0,kg/m³
+Equalization masses <30 % cement,Use and binder,0.385,0.0278,0.0206,kg CO₂e/kg,1750.0,kg/m³
+Equalization masses <22 % cement,Use and binder,0.22,0.0348,0.0255,kg CO₂e/kg,1750.0,kg/m³
+Fast Equal Mass <60 % Cement,Use and binder,0.436,0.0278,0.0232,kg CO₂e/kg,1750.0,kg/m³
+"Window, wood/aluminum, side-hung, 3-glass","Windows, doors and glasses",2.88,0.0417,0.0,kg CO₂e/kg,39.2,kg/m²
+"Window, wood, side-hung, 3-glass","Windows, doors and glasses",2.5,0.0417,0.0,kg CO₂e/kg,38.2,kg/m²
+"Window, wood, inward, 3-glass","Windows, doors and glasses",2.13,0.0417,0.0,kg CO₂e/kg,35.6,kg/m²
+"Window, wood/aluminum, inward, 3-glass","Windows, doors and glasses",2.5,0.0417,0.0,kg CO₂e/kg,40.2,kg/m²
+"Window, wood, twisting windows, 3-glass","Windows, doors and glasses",2.63,0.0417,0.0,kg CO₂e/kg,39.2,kg/m²
+"Window, wood/aluminum, twisting windows, 3-glass","Windows, doors and glasses",2.75,0.0417,0.0,kg CO₂e/kg,39.4,kg/m²
+"Window, wood, solid, 3-glass","Windows, doors and glasses",2.13,0.0417,0.0,kg CO₂e/kg,35.3,kg/m²
+"Window, wood/aluminum, solid, 3-glass","Windows, doors and glasses",2.25,0.0417,0.0,kg CO₂e/kg,35.5,kg/m²
+"Window door, wood, half-glazed, 3-glass","Windows, doors and glasses",2.38,0.0417,0.0,kg CO₂e/kg,31.9,kg/m²
+"Window door, wood/aluminum, half-glazed, 3-glass","Windows, doors and glasses",3.13,0.0417,0.0,kg CO₂e/kg,32.4,kg/m²
+"Window door, wood, fully glazed, 3-glass","Windows, doors and glasses",2.5,0.0417,0.0,kg CO₂e/kg,34.7,kg/m²
+"Window door, wood/aluminum, fully glazed, 3-glass","Windows, doors and glasses",2.75,0.0417,0.0,kg CO₂e/kg,36.0,kg/m²
+"Exterior door, steel, massive","Windows, doors and glasses",3.49,0.0417,0.0,kg CO₂e/kg,29.4,kg/m²
+"Outer door without glass, stainless steel","Windows, doors and glasses",5.69,0.0417,0.0,kg CO₂e/kg,32.9,kg/m²
+"Inner door without glass, steel","Windows, doors and glasses",3.23,0.0417,0.0,kg CO₂e/kg,46.7,kg/m²
+"Exterior door without glass, wood","Windows, doors and glasses",1.88,0.0417,0.0,kg CO₂e/kg,27.7,kg/m²
+"Tambour door without glass, wood","Windows, doors and glasses",1.29,0.0417,0.0,kg CO₂e/kg,26.1,kg/m²
+"Inner door without glass, laminated wood, sound and fire rated","Windows, doors and glasses",0.388,0.0417,0.0,kg CO₂e/kg,27.1,kg/m²
+"Inner door without glass, smooth or mirror door, unclassified","Windows, doors and glasses",0.225,0.0417,0.0,kg CO₂e/kg,16.5,kg/m²
+Flat glass,"Windows, doors and glasses",1.45,0.0348,0.297,kg CO₂e/kg,2500.0,kg/m³
+"Stone wool, slices and rolls",Insulation,1.6,0.0348,0.114,kg CO₂e/kg,29.0,kg/m³
+"Stone wool, plasterboard",Insulation,1.61,0.0348,0.115,kg CO₂e/kg,70.0,kg/m³
+"Stone wool, facade disc",Insulation,1.61,0.0348,0.115,kg CO₂e/kg,80.0,kg/m³
+"Stone wool, ground plate",Insulation,1.6,0.0348,0.114,kg CO₂e/kg,140.0,kg/m³
+"Stone wool, roof plate",Insulation,1.6,0.0348,0.114,kg CO₂e/kg,180.0,kg/m³
+"Stone wool, loose wool, attic",Insulation,1.6,0.0348,0.0163,kg CO₂e/kg,28.0,kg/m³
+"Stone wool, loose wool, floor joists",Insulation,1.6,0.0348,0.0163,kg CO₂e/kg,65.0,kg/m³
+"Stone wool, loose wool, wall",Insulation,1.6,0.0348,0.0163,kg CO₂e/kg,65.0,kg/m³
+Phenol -based insulation,Insulation,2.75,0.0348,0.139,kg CO₂e/kg,35.0,kg/m³
+"Wood fiber, primar raw material, slices",Insulation,0.371,0.0348,0.0284,kg CO₂e/kg,50.0,kg/m³
+Surface,Sealing layer,0.7,0.0348,0.0367,kg CO₂e/kg,5.0,kg/m²
+Underage board,Sealing layer,0.85,0.0348,0.0442,kg CO₂e/kg,4.0,kg/m²
+"Roof board, single -layer seal",Sealing layer,0.813,0.0348,0.0424,kg CO₂e/kg,5.5,kg/m²
+Takshingle,Sealing layer,0.5,0.0348,0.0267,kg CO₂e/kg,4.0,kg/m²
+"Outdoor paint, waterborne acrylic",Color and joint,3.13,0.0348,0.126,kg CO₂e/kg,0.1,kg/m²
+Silicate paint,Color and joint,1.5,0.0348,0.0614,kg CO₂e/kg,0.1,kg/m²
+Sludge color,Color and joint,0.75,0.0348,0.0314,kg CO₂e/kg,0.4,kg/m²
+"Grossing, silicone",Color and joint,8.85,0.0348,0.355,kg CO₂e/kg,1150.0,kg/m³
+"Joint mass, other",Color and joint,4.06,0.0348,0.164,kg CO₂e/kg,1150.0,kg/m³
+"Construction steel, all varieties, 80 % primary raw material",Steel and other metals,3.15,0.0765,0.161,kg CO₂e/kg,7850.0,kg/m³
+"Construction steel, 100 % scrap -based excl. Alloy substances",Steel and other metals,1.13,0.0765,0.0601,kg CO₂e/kg,7850.0,kg/m³
+"Lightweight steel, primary",Steel and other metals,3.01,0.0278,0.0608,kg CO₂e/kg,7850.0,kg/m³
+"Thin sheet for cladding, 80 % primary",Steel and other metals,3.24,0.0765,0.166,kg CO₂e/kg,7850.0,kg/m³
+"Reinforcement steel, unprocessed, 100 % scrap -based excluding alloy",Steel and other metals,0.745,0.0765,0.0739,kg CO₂e/kg,7850.0,kg/m³
+"Clamp reinforcement, steel, 100% scrap -based",Steel and other metals,1.25,0.0765,0.0663,kg CO₂e/kg,7850.0,kg/m³
+"Stainless steel reinforcement, 72 % scrap -based",Steel and other metals,4.75,0.0765,0.241,kg CO₂e/kg,7900.0,kg/m³
+"Stainless steel water pipes, 86 % scrap -based",Steel and other metals,4.5,0.0765,0.229,kg CO₂e/kg,7900.0,kg/m³
+"Stainless steel sheet, 65 % scrap -based",Steel and other metals,4.25,0.0765,0.216,kg CO₂e/kg,7900.0,kg/m³
+"Aluminum profiles, primary",Steel and other metals,7.5,0.0487,0.377,kg CO₂e/kg,2700.0,kg/m³
+"Aluminum profiles, scrap -based",Steel and other metals,2.13,0.0487,0.109,kg CO₂e/kg,2700.0,kg/m³
+"Aluminum sheet, primary",Steel and other metals,12.5,0.0487,0.627,kg CO₂e/kg,2700.0,kg/m³
+"Copper plate, 51 % scrap -based",Steel and other metals,2.48,0.0765,0.128,kg CO₂e/kg,8960.0,kg/m³
+"Copper plate, 97 % scrap -based",Steel and other metals,0.625,0.0765,0.0351,kg CO₂e/kg,8960.0,kg/m³
+"Copper pipe, 51 % scrap -based",Steel and other metals,2.97,0.0765,0.153,kg CO₂e/kg,8960.0,kg/m³
+"Copper pipes, 100 % scrap -based",Steel and other metals,0.809,0.0765,0.0443,kg CO₂e/kg,8960.0,kg/m³
+"Copperwire, primary",Steel and other metals,5.3,0.0765,0.269,kg CO₂e/kg,8960.0,kg/m³
+"Cross -glued wood, u 12 %, coniferous wood",Timber,0.12,0.0348,0.00774,kg CO₂e/kg,465.0,kg/m³
+"Glue wood, u 12 %, spruce",Timber,0.133,0.0348,0.00837,kg CO₂e/kg,434.0,kg/m³
+Form top,Building boards,0.805,0.0626,0.0868,kg CO₂e/kg,680.0,kg/m³
+"Bricks, double -burned (increased color shifts)",Wall blocks and bricks,0.544,0.0487,0.0296,kg CO₂e/kg,1800.0,kg/m³
+"Cellulose fiber, unused paper, slices",Insulation,0.75,0.0348,0.0549,kg CO₂e/kg,36.0,kg/m³
+"Insulating box, double glass (4-16-4)","Windows, doors and glasses",1.95,0.111,0.0,kg CO₂e/kg,20.0,kg/m²
+"Insulating box, three-grapes (4-14-4-14-4)","Windows, doors and glasses",2.06,0.111,0.0,kg CO₂e/kg,30.0,kg/m²
+Laminated safety glass,"Windows, doors and glasses",1.73,0.0348,0.352,kg CO₂e/kg,2500.0,kg/m³
+Cured security glass,"Windows, doors and glasses",2.38,0.0348,0.482,kg CO₂e/kg,2500.0,kg/m³
+"Fire glass, 5/5 E30 - EW30 - EI30","Windows, doors and glasses",3.26,0.0348,0.659,kg CO₂e/kg,2500.0,kg/m³
+"Fiber cement boards, construction board, ≤ 60 weight-% cement,",Building boards,0.849,0.0765,0.0925,kg CO₂e/kg,1550.0,kg/m³
+"Fiber cement discs, facade disc, ≤ 85 weight% cement,",Building boards,1.69,0.0765,0.176,kg CO₂e/kg,1950.0,kg/m³
+"Stone composite facade disc, 12-17 % W/W Polyester binding",Building boards,1.48,0.0626,0.154,kg CO₂e/kg,1960.0,kg/m³
+"Stone composite facade disc, 18-20 % W/W Polyester binding",Building boards,1.86,0.0626,0.193,kg CO₂e/kg,1960.0,kg/m³
+Veneer wood (lvl),Timber,0.383,0.0765,0.023,kg CO₂e/kg,510.0,kg/m³
+"Exterior door, aluminum, fully glazed","Windows, doors and glasses",4.88,0.0417,0.0,kg CO₂e/kg,39.6,kg/m²
+Plaster berry plate of glass granules,Building boards,1.79,0.0765,0.186,kg CO₂e/kg,525.0,kg/m³
+"Nails, fasteners and fittings, primary steel",Steel and other metals,3.24,0.0765,0.166,kg CO₂e/kg,7850.0,kg/m³
+"Planed wood, U 16 %, coniferous wood",Timber,0.0919,0.0174,0.0109,kg CO₂e/kg,455.0,kg/m³
+"Cement, type CEM II/A-LL 42.5 r",Use and binder,0.813,0.0348,0.0254,kg CO₂e/kg,3040.0,kg/m³
+"Dry use, fine concrete K30 (C32/40)",Use and binder,0.24,0.0348,0.00824,kg CO₂e/kg,1900.0,kg/m³
+"Dry use, rough concrete K25 (C28/35)",Use and binder,0.166,0.0348,0.00603,kg CO₂e/kg,1900.0,kg/m³
+Tegon beam,Wall blocks and bricks,0.314,0.0487,0.0,kg CO₂e/kg,2114.0,kg/m³
+"Tegel beam, double -burned (increased color changes)",Wall blocks and bricks,0.881,0.0487,0.0,kg CO₂e/kg,2114.0,kg/m³
+"Plastic wrap, vapor barrier",Sealing layer,2.75,0.0487,0.28,kg CO₂e/kg,900.0,kg/m³
+"Wind barrier facades, spun polyethylene and polypropylene",Wall blocks and bricks,3.4,0.0487,0.345,kg CO₂e/kg,900.0,kg/m³
+"Plastic wrap, variety vapor barrier",Sealing layer,7.36,0.0487,0.741,kg CO₂e/kg,900.0,kg/m³
+"Hampa insulation, slices, 8% polyquid (PLA) as binder",Insulation,0.805,0.111,0.0641,kg CO₂e/kg,36.0,kg/m³
+"Hampa insulation, slices, 8 % polyester or polyolefin",Insulation,0.805,0.111,0.0641,kg CO₂e/kg,36.0,kg/m³
+Hemp concrete block,Insulation,0.715,0.111,0.0578,kg CO₂e/kg,330.0,kg/m³
+"Fiber cement discs, indoor disc, ≤ 35 weight-% cement,",Building boards,0.538,0.0765,0.0614,kg CO₂e/kg,1080.0,kg/m³
+"Plastic products type thermoplasts polyolefin, unspecified",Wall blocks and bricks,2.78,0.0487,0.282,kg CO₂e/kg,900.0,kg/m³
+Polyisocyanurate (PIR) thermal insulation,Insulation,4.4,0.0765,0.224,kg CO₂e/kg,32.0,kg/m³
+"Window, pvc, all types, 3-glass","Windows, doors and glasses",2.63,0.0417,0.0,kg CO₂e/kg,39.2,kg/m²
+"HDF disc, HDF (dry process)",Building boards,0.638,0.0626,0.07,kg CO₂e/kg,850.0,kg/m³
+"Hard disc, Hb (wet process)",Building boards,0.373,0.0626,0.0435,kg CO₂e/kg,940.0,kg/m³
+Slate plates including attachment of steel,Wall blocks and bricks,0.82,0.0487,0.0434,kg CO₂e/kg,2800.0,kg/m³
+"Screws, primary steel",Steel and other metals,5.89,0.187,0.304,kg CO₂e/kg,7850.0,kg/m³
+"Screws, stainless steel",Steel and other metals,7.9,0.187,0.404,kg CO₂e/kg,7850.0,kg/m³
+Pre -mixed filling (for hole tires etc.),Use and binder,0.22,0.0036,0.00671,kg CO₂e/kg,2350.0,kg/m³
+"Galvanized steel products, 80 % primary",Steel and other metals,3.33,0.0765,0.17,kg CO₂e/kg,7850.0,kg/m³
+Cement -bound wood wool plate,Insulation,0.715,0.111,0.0578,kg CO₂e/kg,450.0,kg/m³
+"Roof cloth, PVC",Sealing layer,5.69,0.0417,0.286,kg CO₂e/kg,39.2,kg/m²
+"Windows, aluminum, all types, 3-glass","Windows, doors and glasses",3.83,0.0626,0.0,kg CO₂e/kg,39.2,kg/m²
+Perlite,Insulation,0.25,0.0626,0.0156,kg CO₂e/kg,85.0,kg/m³
+"Cell glass, crushed,> 90% recycled glass",Insulation,0.313,0.0626,0.0113,kg CO₂e/kg,180.0,kg/m³
+"Cell glass, slices,> 90% recycled glass",Insulation,1.02,0.0626,0.109,kg CO₂e/kg,140.0,kg/m³
+"Cell glass, slices,> 50% recycled glass",Insulation,1.89,0.0626,0.195,kg CO₂e/kg,95.0,kg/m³
+"Drying concrete, exposure class XC1",Use and binder,0.222,0.0036,0.00678,kg CO₂e/kg,2350.0,kg/m³
