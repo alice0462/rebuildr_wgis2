@@ -135,13 +135,13 @@ function HomePage() {
     <div className="app">
       <button onClick={handleNextUser}>Next User</button>
       <div id = "background"> 
-        <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-2.1875rem', left: 0, width: '100%', height: '11.25rem', objectFit: 'cover', zIndex: 0 }} />
-        <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.25rem', marginBottom: '2.1875rem', justifyContent: 'center', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
+        <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-2rem', left: 0, width: '100%', height: '11.25rem', objectFit: 'cover', zIndex: 0 }} />
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: '-1rem', marginBottom: '4rem', justifyContent: 'center', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
           <div id="user-name">
             <p>{user ? user.name : 'Loading or user not found'}</p>
           </div>
           <div id="profile-pic" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" style={{ width: '3.125rem', height: '3.125rem', objectFit: 'contain', marginLeft: '0.625rem' }} />
+            <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" />
           </div>
         </div>
         

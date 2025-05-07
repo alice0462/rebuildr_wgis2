@@ -183,7 +183,9 @@ const IconPicker = ({userId}) => {
 
     return (
         <div ref={ref} className="icon-picker">
-            <div className="plus-button" onClick={plusButton}>+</div>
+            <div className="plus-button" onClick={plusButton}>
+            <img src="/SvgIcons/Plus.png" alt="Plus" />
+            </div>
             
             <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
               
