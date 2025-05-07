@@ -135,38 +135,36 @@ function HomePage() {
     <div className="app">
       <button onClick={handleNextUser}>Next User</button>
       <div id = "background"> 
-        <div id="profile-pic">
-          Profile pic
-        </div>
-        <div id="user-name">
-        <p>{user ? user.name : 'Loading or user not found'}</p>
+        <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-35px', left: 0, width: '100%', height: '180px', objectFit: 'cover', zIndex: 0 }} />
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', marginBottom: '35px', justifyContent: 'center', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
+          <div id="user-name">
+            <p>{user ? user.name : 'Loading or user not found'}</p>
+          </div>
+          <div id="profile-pic" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" style={{ width: '50px', height: '50px', objectFit: 'contain', marginLeft: '10px' }} />
+          </div>
         </div>
         
-        <div id="body">
-          
+        <div id="body" style={{ position: 'relative', zIndex: 1 }}>
           <div className="stats">
-          <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
-            {user && (
-              <img src={medalSrc} alt="user rank medal" id="medal" />
-             )}
+            <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
+              {user && (
+                <img src={medalSrc} alt="user rank medal" id="medal" />
+              )}
             </div>
             <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
               <p>Saved Co2: <br/>{user ? user.totalCo2Saved : 'Loading or user not found'}</p>
-
             </div>
-
-              <div id="reviews">
-                <Link to="/reviewpage" className="avg-rating-link">
-                  {storedRating ? storedRating : 'No reviews yet'} / 5
-                </Link>
-              </div>
-
+            <div id="reviews">
+              <Link to="/reviewpage" className="avg-rating-link">
+                {storedRating ? storedRating : 'No reviews yet'} / 5
+              </Link>
+            </div>
           </div>
           <div id="treeBox">
             <IconPicker userId={user ? user.id : null}/>
           </div>
-          </div>
-        
+        </div>
       </div>
       {showRankProgress && (
         <>
