@@ -5,12 +5,12 @@
 
 #background {
   background-color: #176457ff;
-  min-height: 100vh;
+  min-height: 62.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(0.625rem + 0.125rem);
   color: white;
   width: 32%;
   margin-left: 34%;
@@ -250,23 +250,23 @@ body.grabbing * {
 }
 
 .placed-icon.fruits {
-  width: 4vh;
-  height: 4vh;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .placed-icon.animals {
-  width: 8vh;
-  height: 8vh;
+  width: 5rem;
+  height: 5rem;
 }
 
 .placed-icon.flowers {
-  width: 4vh;
-  height: 4vh;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .placed-icon.random {
-  width: 10vh;
-  height: 10vh;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 body.grabbing {
@@ -284,7 +284,7 @@ body.grabbing {
   text-align: center; 
   padding: 1.875rem; 
   background-color: rgb(3, 52, 38);
-  border: 1px solid #ccc; 
+  border: 0.0625rem solid #ccc; 
   border-radius: 0.5rem; 
   box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1)
 }
