@@ -4,48 +4,19 @@ import ReviewPage from './views/reviewpage';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
 import RankProgressBar from './components/RankProgressBar.js';
+import { calculateTreeFact } from './components/CO2TreeFactsCalculator.js'; 
 
 function HomePage() {
   const [storedRating, setStoredRating] = useState(null);
   const [users, setUsers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
-  const [emissions, setEmissions] = useState(0);
   const [curiosa, setCuriosa] = useState('');
   const [showRankProgress, setShowRankProgress] = useState(false);
   const [currentRank, setCurrentRank] = useState('bronze');
   const [currentCo2, setCurrentCo2] = useState(0);
   const [showCuriosa, setShowCuriosa] = useState(false);
 
-  useEffect(() => {
-    const randomEmissions = Math.floor(Math.random() * 100);
-    setEmissions(randomEmissions);
-    
-    if (randomEmissions < 20) {
-      const lowEmissionsCuriosa = [
-        "You've saved enough CO2 to fill 2 small balloons!",
-        "Your savings could power a light bulb for 3 days!",
-        "That's like not using your phone charger for a week!"
-      ];
-      const randomIndex = Math.floor(Math.random() * lowEmissionsCuriosa.length);
-      setCuriosa(lowEmissionsCuriosa[randomIndex]);
 
-    } else if (randomEmissions < 40) {
-      const mediumLowEmissionsCuriosa = [
-        "Your savings equal the CO2 absorbed by 1 tree in a year!",
-        "You've prevented the same CO2 as a 5-mile car trip!",
-        "That's like turning off your TV for 2 weeks!"
-      ];
-      const randomIndex = Math.floor(Math.random() * mediumLowEmissionsCuriosa.length);
-      setCuriosa(mediumLowEmissionsCuriosa[randomIndex]);
-   
-    } else if (randomEmissions < 60) {
-      setCuriosa("You've prevented the same CO2 as burning 5 gallons of gasoline!");
-    } else if (randomEmissions < 80) {
-      setCuriosa("Your impact is like taking a small car off the road for a week!");
-    } else {
-      setCuriosa("Amazing! You've saved enough CO2 to fill a small room!");
-    }
-  });
 
   useEffect(() => {
     fetch('/data/userData.json')
@@ -99,32 +70,18 @@ function HomePage() {
     setShowRankProgress(false);
   };
 
-  const handleCo2Click = () => {
-    const randomEmissions = Math.floor(Math.random() * 100);
-    if (randomEmissions < 20) {
-      const lowEmissionsCuriosa = [
-        "You've saved enough CO2 to fill 2 small balloons!",
-        "Your savings could power a light bulb for 3 days!",
-        "That's like not using your phone charger for a week!"
-      ];
-      const randomIndex = Math.floor(Math.random() * lowEmissionsCuriosa.length);
-      setCuriosa(lowEmissionsCuriosa[randomIndex]);
-    } else if (randomEmissions < 40) {
-      const mediumLowEmissionsCuriosa = [
-        "Your savings equal the CO2 absorbed by 1 tree in a year!",
-        "You've prevented the same CO2 as a 5-mile car trip!",
-        "That's like turning off your TV for 2 weeks!"
-      ];
-      const randomIndex = Math.floor(Math.random() * mediumLowEmissionsCuriosa.length);
-      setCuriosa(mediumLowEmissionsCuriosa[randomIndex]);
-    } else if (randomEmissions < 60) {
-      setCuriosa("You've prevented the same CO2 as burning 5 gallons of gasoline!");
-    } else if (randomEmissions < 80) {
-      setCuriosa("Your impact is like taking a small car off the road for a week!");
-    } else {
-      setCuriosa("Amazing! You've saved enough CO2 to fill a small room!");
+  const handleCo2Click = async () => {
+    if (user && user.id) {
+      try {
+        const treeFact = await calculateTreeFact(user.id);
+        setCuriosa(treeFact);
+        setShowCuriosa(true);
+      } catch (error) {
+        console.error('Error fetching tree fact:', error);
+        setCuriosa('Error fetching tree fact. Please try again later.');  
+        setShowCuriosa(true);
+      }
     }
-    setShowCuriosa(true);
   };
 
   const handleCloseCuriosa = () => {
