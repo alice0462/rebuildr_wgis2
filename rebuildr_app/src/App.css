@@ -26,10 +26,7 @@
   border-radius: 50%;
   height: 5.3rem;
   width: 5.3rem;
-  /*border: 3px solid #170303;*/
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
 }
 
 .stats {
@@ -46,11 +43,11 @@
   flex: 1 1 0;
   text-align: center; 
   align-items: center;
-  top: 50px;
+  top: 3.125rem;
   padding: 0.4rem; 
   background-color: #f8f1e3ff;
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 0.5rem; 
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); 
   max-width: 6.5rem;
   height: 4.5rem;
   display: flex;
@@ -67,8 +64,8 @@
 }
 
 #rank img {
-  width: 55px;
-  height: 55px;
+  width: 3.4375rem;
+  height: 3.4375rem;
 }
 
 .avg-rating-link {
@@ -83,21 +80,21 @@
 
 #treeBox {
   flex: 1; 
-  margin: 10px; 
-  margin-top: 30px;
+  margin: 0.625rem; 
   text-align: center; 
-  padding: 20px; 
+  padding: 1.25rem; 
   background-color: #d5e6dcff;
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem; 
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: border-color 0.4s ease-in-out;
   position: relative;
-  min-height: 280px;
+  width: 85%;
+  min-height: 17.5rem;
 }
 
 .icon-img {
   width: 100%;
-  max-width: 40%; /* justera efter behov */
+  max-width: 40%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -105,9 +102,9 @@
 
 .close-button {
   position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 24px;
+  right: 0.625rem;
+  top: 0.3125rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #666;
 }
@@ -115,35 +112,39 @@
 .close-button:hover {
   color: white;
 }
+
 .plus-button {
   position: absolute;
-  right: 15px;
-  top: 5px;
-  font-size: 30px;
+  right: 0.9375rem;
+  top: 0.3125rem;
+  font-size: 1.875rem;
   cursor: pointer;
   color: white;
 }
+
 .plus-button:hover {
   color: #333;
 }
+
 .clear-button {
   position: absolute;
-  left: 18px;
-  top: 10px;
-  font-size: 10px;
-  border-radius: 5px;
+  left: 1.125rem;
+  top: 0.625rem;
+  font-size: 0.625rem;
+  border-radius: 0.3125rem;
   cursor: pointer;
   color: white;
   background-color: rgb(179, 36, 36);
 }
+
 .clear-button:hover {
   color: #333
 }
 
 .category-tabs {
   display: flex;
-  gap: 11px;
-  margin-bottom: 10px;
+  gap: 0.6875rem;
+  margin-bottom: 0.625rem;
 }
 
 .category-tabs .tab {
@@ -151,7 +152,7 @@
   color: rgb(3, 52, 38);
   padding: 0.5rem 2rem;  
   font-size: 1rem;      
-  border-radius: 6px;
+  border-radius: 0.375rem;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.2s;
@@ -168,21 +169,22 @@
   gap: 2%;
   padding: 1rem;
   background-color: antiquewhite;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   position: absolute;
-  transform: translateY(-15%) translateX(-20%); 
+  transform: translateY(-15%) translateX(-1.5%); 
   transition: opacity 0.4s ease-in-out, visbility 0.4s linear, transform 0.6s ease-in-out;
   visibility: hidden;
-  max-height: 250px; 
+  max-height: 15.625rem; 
   overflow-y: auto;
 }
+
 .icons-list::-webkit-scrollbar {
   display: none;
 }
 
 .icons-list > div {
   background-color: beige;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .icons-list.visible {
@@ -190,14 +192,15 @@
   opacity: 1;
   transform: translateY(-200%) translateX(-20%);
 }
+
 .icons-list-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem 1rem 1rem; /* lägger till lite space under */
-  
+  padding: 0.5rem 1rem 1rem 1rem;
   background-color: transparent !important;
 }
+
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -214,20 +217,23 @@
   pointer-events: none; 
   z-index: 5; 
 }
+
 .main-tree-img.faded {
   opacity: 0.2;
 }
 
 .main-tree-img {
-    width: 100%;
-    max-width: 80%; 
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 80%; 
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
+
 .main-tree-container {
   cursor: default; /* eller grabbing via class */
 }
+
 body.grabbing * {
   cursor: grabbing !important;
 }
@@ -238,25 +244,31 @@ body.grabbing * {
   user-select: none;
   pointer-events: auto;
 }
+
 .placed-icon:active {
   cursor: grabbing;
 }
+
 .placed-icon.fruits {
   width: 4vh;
   height: 4vh;
 }
+
 .placed-icon.animals {
   width: 8vh;
   height: 8vh;
 }
+
 .placed-icon.flowers {
   width: 4vh;
   height: 4vh;
 }
+
 .placed-icon.random {
   width: 10vh;
   height: 10vh;
 }
+
 body.grabbing {
   cursor: grabbing;
 }
@@ -268,14 +280,15 @@ body.grabbing {
 
 #curiosa {
   flex: 1; 
-  margin: 10px;
+  margin: 0.625rem;
   text-align: center; 
-  padding: 30px; 
+  padding: 1.875rem; 
   background-color: rgb(3, 52, 38);
   border: 1px solid #ccc; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  border-radius: 0.5rem; 
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1)
 }
+
 .main-tree-container {
   position: relative;
   width: fit-content;
@@ -289,8 +302,8 @@ body.grabbing {
   width: 4rem;
   height: 4rem;
   margin: -2rem 0 0 -2rem;
-  border: 5px solid rgba(255, 255, 255, 0.6);
-  border-top: 5px solid transparent;
+  border: 0.3125rem solid rgba(255, 255, 255, 0.6);
+  border-top: 0.3125rem solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   z-index: 2;
