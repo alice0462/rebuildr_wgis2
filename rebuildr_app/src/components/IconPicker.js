@@ -147,7 +147,7 @@ const IconPicker = ({userId}) => {
     }, []);
 
     const currentUser = climateUsers.find(user => user.id === userId);
-    const co2Saved = currentUser ? parseInt(currentUser.totalCo2SavedKg) : 0;
+    const co2Saved = currentUser ? parseInt(currentUser.totalCo2Saved) : 0;
 
     const onIconSelection = async (id) => {
 
