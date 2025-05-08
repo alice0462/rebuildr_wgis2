@@ -231,7 +231,7 @@ const IconPicker = ({userId}) => {
             <div className="icons-list-header">
                 <p>Customize tree by adding icons</p>
                 <button className="close-button" onClick={onClose}>×</button>
-                <button className="clear-button" onClick={() => setPlacedItems([])}>Rensa</button>
+                <button className="clear-button" onClick={() => setPlacedItems([])}>Clear</button>
             </div>
 
             <div className="category-tabs">
