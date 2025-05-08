@@ -49,5 +49,18 @@ export const CO2TREEFACTS = [
         stores: 14.4
     },
 
+    {
+        id: 7,
+        type: "Google searches",
+        stores: 0.00025
+    },
+
+    {
+        id : 8,
+        type: "Chat GPT 3.5 prompts",
+        stores: 0.0035
+
+    }
+
 ]
 
