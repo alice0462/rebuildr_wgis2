@@ -5,13 +5,17 @@ import ReviewPage from './views/reviewpage';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
 import RankProgressBar from './components/RankProgressBar.js';
+import { calculateTreeFact } from './components/CO2TreeFactsCalculator.js'; 
 
 export function HomePage({userIndex,handleNextIndex,avgRating}) {
   
   const [users, setUsers] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
+  const [curiosa, setCuriosa] = useState('');
   const [showRankProgress, setShowRankProgress] = useState(false);
   const [currentRank, setCurrentRank] = useState('bronze');
   const [currentCo2, setCurrentCo2] = useState(0);
+  const [showCuriosa, setShowCuriosa] = useState(false);
 
 useEffect(() => {
     fetch('/data/user_db.json')
@@ -56,42 +60,64 @@ useEffect(() => {
   const handleCloseRankProgress = () => {
     setShowRankProgress(false);
   };
-  
+
+  const handleCo2Click = async () => {
+    if (user && user.id) {
+      try {
+        const treeFact = await calculateTreeFact(user.id);
+        setCuriosa(treeFact);
+        setShowCuriosa(true);
+      } catch (error) {
+        console.error('Error fetching tree fact:', error);
+        setCuriosa('Error fetching tree fact. Please try again later.');  
+        setShowCuriosa(true);
+      }
+    }
+  };
+
+  const handleCloseCuriosa = () => {
+    setShowCuriosa(false);
+  };
+
   return (
     <div className="app">
-      <button onClick={handleNextIndex}>Next User {userIndex} </button>
       <div id = "background"> 
-        <div id="profile-pic">
-          Profile pic
-        </div>
+        <div style={{ position: 'absolute', width: '100%' }}>
+          <img src="/images/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 2 }}/>
+          <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-27rem', left: '0rem', width: '100%', zIndex: 1, opacity: 0.4 }}/>
 
-        <div id="user-name">
-        <p>{user ? user.username : 'Loading or user not found'}</p>
         </div>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '90%', marginRight: '2rem'}}>
+          <div id="user-name">
+            <p>Hi {user ? user.name : 'Loading or user not found'}</p>
+          </div>
+          <div id="profile-pic" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" />
+          </div>
+          </div>
         
-        <div id="body">
-          
+        <div id="body" style={{ position: 'relative', zIndex: 1 }}>
+        <div className='handleUser'> <button onClick={handleNextUser}>User</button> </div>
           <div className="stats">
-          <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
-            {user && (
-              <img src={medalSrc} alt="user rank medal" id="medal" />
-             )}
+            <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
+              {user && (
+                <img src={medalSrc} alt="user rank medal" id="medal" />
+              )}
             </div>
-            <div id="co2">
-            <p>{user ? user.co2_saved : 'Loading or user not found'}</p>
+            <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
+              <p>Saved Co2: <br/>{user ? user.co2_saved : 'Loading or user not found'}</p>
             </div>
-
-              <div id="reviews">
-                <Link to="/reviewpage" className="avg-rating-link">
-                  <p>{avgRating} / 5</p> 
-                </Link>
-              </div>
+            <div id="reviews">
+              <Link to="/reviewpage" className="avg-rating-link">
+                <p>{avgRating} / 5</p>
+              </Link>
+            </div>
           </div>
-          <div id = "treeBox">
-          <IconPicker userId={user ? user.user_id : null}/>
+          <div id="treeBox">
+            <IconPicker userId={user ? user.id : null}/>
+
           </div>
         </div>
-        
       </div>
       {showRankProgress && (
         <>
@@ -101,6 +127,20 @@ useEffect(() => {
             currentRank={currentRank}
             onClose={handleCloseRankProgress}
           />
+        </>
+      )}
+      {showCuriosa && (
+        <>
+          <div className="rank-overlay" onClick={handleCloseCuriosa}></div>
+          <div className="rank-progress-container">
+            <div className="rank-progress-header">
+              <h3>Congrats!</h3>
+              <button className="close-button" onClick={handleCloseCuriosa}>×</button>
+            </div>
+            <div className="rank-info">
+              <p>{curiosa}</p>
+            </div>
+          </div>
         </>
       )}
     </div>

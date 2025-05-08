@@ -7,12 +7,32 @@ import useClickOutside from './ClickOutside.js';
 const STANDARD_ICON_ID = 1;
 
 
-const ICON = ({ id, source, label, onClick, locked}) => {
-    return (
-        <div className='icon-wrapper' style={{ position: 'relative' }} onClick={() => !locked && onClick(id)}>
-            <img src={source} alt={label} className={classNames('icon-img', locked && 'faded')} />
+const ICON = ({ id, source, label, locked, onClick, used, category}) => {
+  const handleDragStart = (e) => {
+    if (locked || category === 'trees') {
+        e.preventDefault();
+        return;
+    }
+    e.dataTransfer.setData("application/icon-id", id);
+};  
+const handleClick = () => {
+    if (locked) return;
+    if (category === 'trees' && onClick) {
+        onClick(id);
+    }
+  };
+  
+  return (
+    <div
+      className='icon-wrapper'
+      style={{ position: 'relative' }}
+      draggable={!locked && !used && category !== 'trees'}
+      onDragStart={handleDragStart}
+      onClick={handleClick}
+  >
+            <img src={source} alt={label} className={classNames('icon-img', (locked || used) && 'faded')} />
             {locked && (
-                    <img src="/SvgIcons/padlock-lock.svg" className="icon-lock-overlay" />)}
+                    <img src="/SvgIcons/padlock_9088306.png" className="icon-lock-overlay" />)}
         </div>
     );
 };
@@ -31,29 +51,39 @@ const IconPicker = ({userId}) => {
     
     const handleTreeClick = (e) => {
         if (!itemToPlace) return;
-        
-        const alreadyPlaced = placedItems.some(item => item.id === itemToPlace.id);
-        if (alreadyPlaced) return;
       
         const rect = e.currentTarget.getBoundingClientRect();
-        const sizeMap = {
-            fruits: 20,
-            random: 100,
-            animals: 50,
-            flowers: 50,
-          };
         
-        const iconSize = sizeMap[itemToPlace.category] || 30;
         
-        const x = e.clientX - rect.left - iconSize / 2;
-        const y = e.clientY - rect.top - iconSize / 2;
         
-        setPlacedItems([...placedItems, { ...itemToPlace, x, y }]);
+        
+        
         setItemToPlace(null);
         };
+
+        const handleDrop = (e) => {
+          e.preventDefault();
+        
+          const iconId = e.dataTransfer.getData("application/icon-id");
+          const icon = ICONS.find((i) => i.id === parseInt(iconId));
+        
+          if (!icon || icon.unlockRequirement > co2Saved || icon.category === 'trees') return;
+        
+          const rect = treeRef.current.getBoundingClientRect();
+          const x = e.clientX - rect.left - 25;
+          const y = e.clientY - rect.top - 25;
+        
+          const alreadyPlaced = placedItems.some(item => item.id === icon.id);
+          if (alreadyPlaced) return;
+        
+          setPlacedItems(prev => [...prev, { ...icon, x, y }]);
+        };
+        
         
         const handleStartDrag = (e, index) => {
             e.preventDefault(); // Stoppar t.ex. scroll på mobil
+            
+            e.stopPropagation(); // Extra säkerhet
             setDraggingItemIndex(index);
             document.body.classList.add("grabbing");
           };
@@ -128,17 +158,18 @@ const IconPicker = ({userId}) => {
             alert("You haven't saved enough CO2 to unlock this icon!");
             return;
         }
-        if (selectedIcon.category !== 'trees') {
-            setItemToPlace(selectedIcon); // sätter objektet i placeringsläge
+        if (selectedIcon.category == 'trees') {
+          setLoadingId(id);
+          await setIcon(id); // spara trädet
+          setSelectedIcon(id); // byt trädet
+          setLoadingId(null); // sätter objektet i placeringsläge
             return;
           }
           
-
         setLoadingId(id);
         await setIcon(id);
         setSelectedIcon(id);
         setLoadingId(null);
-
     };
 
     const categories = [
@@ -154,14 +185,22 @@ const IconPicker = ({userId}) => {
 
     return (
         <div ref={ref} className="icon-picker">
-            <div className="plus-button" onClick={plusButton}>+</div>
+            <div className="plus-button" onClick={plusButton}>
+            <img src="/SvgIcons/Plus.png" alt="Plus" />
+            </div>
             
-            <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick}>
-                {loadingId !== null && <div className="loader"></div>}
+            <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
+              
+                {loadingId !== null && <div className="loader"> </div>}
+                
+
                 <img
                     src={currentActiveIcon.source}
                     alt="tree"
-                    className="main-tree-img"/>
+                    className="main-tree-img"
+                    draggable={false}
+                    />
+                    
                 {placedItems.map((item, index) => (
     
                  <img
@@ -188,12 +227,11 @@ const IconPicker = ({userId}) => {
   ))}
 </div>
 
-
-
             <div className={classNames('icons-list', showIconList && 'visible')}>
             <div className="icons-list-header">
+                <p>Customize tree by adding icons</p>
                 <button className="close-button" onClick={onClose}>×</button>
-                <button className="clear-button" onClick={() => setPlacedItems([])}>Clean</button>
+                <button className="clear-button" onClick={() => setPlacedItems([])}>Clear</button>
             </div>
 
             <div className="category-tabs">
@@ -212,10 +250,11 @@ const IconPicker = ({userId}) => {
             {filteredIcons.map((icon) => (
             <ICON
                 loading={icon.id === loadingId}
-                onClick={onIconSelection}
                 {...icon}
                 key={icon.id}
                 locked={icon.unlockRequirement > co2Saved}
+                onClick={onIconSelection}
+                used={placedItems.some(item => item.id === icon.id)}
 
             />
             ))}

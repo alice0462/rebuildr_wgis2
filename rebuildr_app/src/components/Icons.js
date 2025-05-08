@@ -1,7 +1,7 @@
 export const ICONS = [
     {
         id: 1,
-        source: "/SvgIcons/stump.svg",
+        source: "/SvgIcons/Trees/stump.png", 
         alt: "Stump Icon",
         label: "Tree Stump",
         category: "trees",
@@ -10,71 +10,71 @@ export const ICONS = [
    
       {
        id: 2,
-       source: "/SvgIcons/sprout.svg", 
-       alt: "Sprout Icon",
-       label: 'Sprout Tree',
+       source: "/SvgIcons/Trees/cedar.png", 
+       alt: "Cedar Icon",
+       label: 'Cedar Tree',
        category: "trees",
        unlockRequirement: 25,
       },
   
       {
        id: 3,
-       source: "/SvgIcons/cooltree.svg",
-       alt: "Cool Icon",
-       label: "Cool Tree",
+       source: "/SvgIcons/Trees/jacaranda.png",
+       alt: "Jacaranda Icon",
+       label: "Jacaranda Tree",
        category: "trees",
        unlockRequirement: 50
       },
   
       {
        id: 4,
-       source: "/SvgIcons/tree.svg",  
-       alt: "Basic Icon",
-       label: 'Basic Tree',
+       source: "/SvgIcons/Trees/tamarind.png",  
+       alt: "Tamarind Icon",
+       label: 'Tamarind Tree',
        category: "trees",
        unlockRequirement: 100
       },
   
       {
        id: 5,
-       source: "/SvgIcons/roundtree.svg",
-       alt: "Round Icon",
-       label: "Round Tree",
+       source: "/SvgIcons/Trees/bonsai_7151778.png",
+       alt: "Bonsai Icon",
+       label: "Bonsai Tree",
        category: "trees",
        unlockRequirement: 200
       },
   
       {
        id: 6,
-       source: "/SvgIcons/regulartree.svg",
-       alt: "Tree Icon",
-       label: "Regular Tree",
+       source: "/SvgIcons/Trees/sequoia_7151761.png",
+       alt: "Sequoia Icon",
+       label: "Sequoia Tree",
        category: "trees",
        unlockRequirement: 350
       },
       {
         id: 7,
-        source: "/SvgIcons/curvyTree.svg",
-        alt: "Curvy Tree",
-        label: "Curvy Tree",
+        source: "/SvgIcons/Trees/argan_7151876.png",
+        alt: "Argan Tree",
+        label: "Argan Tree",
         category: "trees",
         unlockRequirement: 500
         },
     
         {
         id: 8,
-        source: "/SvgIcons/palmTree.svg",
-        alt: "Palm Tree",
-        label: "Palm Tree",
+        source: "/SvgIcons/Trees/beech_7151776.png",
+        alt: "Beech Tree",
+        label: "Beech Tree",
         category: "trees",
         unlockRequirement: 800
         },
    
       {
        id: 9,
-       source: "/SvgIcons/BigTree.svg", 
-       alt: "Big Icon",
-       label: 'Big Tree',
+       source: "/SvgIcons/Trees/wisteria_7151841.png", 
+       alt: "Wisteria Icon",
+       label: 'Wisteria Tree',
        category: "trees",
        unlockRequirement: 1000
       },
@@ -86,7 +86,7 @@ export const ICONS = [
 
     {
     id: 10,
-    source: "/SvgIcons/redApple.svg",
+    source: "/SvgIcons/Fruits/apple_877661.png",
     alt: "Red Apple",
     label: "Red Apple",
     category: "fruits",
@@ -94,47 +94,47 @@ export const ICONS = [
     },
     {
     id: 11,
-    source: "/SvgIcons/banana.svg",
-    alt: "Banana",
-    label: "Banana",
+    source: "/SvgIcons/Fruits/cherry_676424.png",
+    alt: "Cherry",
+    label: "Cherry",
     category: "fruits",
     unlockRequirement: 300
     },
     {
     id: 12,
-    source: "/SvgIcons/grapes.svg",
-    alt: "Grapes",
-    label: "Grapes",
+    source: "/SvgIcons/Fruits/olives_5727842.png",
+    alt: "Plums",
+    label: "Plums",
     category: "fruits",
     unlockRequirement: 400
     },
     {
     id: 13,
-    source: "/SvgIcons/kiwi.svg",
-    alt: "Kiwi",
-    label: "Kiwi",
+    source: "/SvgIcons/Fruits/orange_2396168.png",
+    alt: "Orange",
+    label: "Orange",
     category: "fruits",
     unlockRequirement: 500
     },
     {
     id: 14,
-    source: "/SvgIcons/greenApple.svg",
-    alt: "Green Apple",
-    label: "Green Apple",
+    source: "/SvgIcons/Fruits/banana_8716302.png",
+    alt: "Banana",
+    label: "Banana",
     category: "fruits",
     unlockRequirement: 600
     },
     {
     id: 15,
-    source: "/SvgIcons/papaya.svg",
-    alt: "Papaya",
-    label: "Papaya",
+    source: "/SvgIcons/Fruits/grapes_2753898.png",
+    alt: "Grapes",
+    label: "Grapes",
     category: "fruits",
     unlockRequirement: 700
     },
     {
     id: 16,
-    source: "/SvgIcons/mango.svg",
+    source: "/SvgIcons/Fruits/mango_1155263.png",
     alt: "Mango",
     label: "Mango",
     category: "fruits",
@@ -142,7 +142,7 @@ export const ICONS = [
     },
     {
     id: 17,
-    source: "/SvgIcons/pineapple.svg",
+    source: "/SvgIcons/Fruits/pineapple_2225623.png",
     alt: "Pineapple",
     label: "Pineapple",
     category: "fruits",
@@ -150,9 +150,9 @@ export const ICONS = [
     },
     {
     id: 18,
-    source: "/SvgIcons/goldApple.svg",
-    alt: "Gold Apple",
-    label: "Gold Apple",
+    source: "/SvgIcons/Fruits/dragon-fruit_6975888.png",
+    alt: "Dragon Fruit",
+    label: "Dragon Fruit",
     category: "fruits",
     unlockRequirement: 1000
     },
@@ -160,63 +160,63 @@ export const ICONS = [
     //------animals
     {
     id: 19,
-    source: "/SvgIcons/bug.svg",
-    alt: "Bug",
-    label: "Bug",
+    source: "/SvgIcons/Animals/bee_2253660.png",
+    alt: "Bee",
+    label: "Bee",
     category: "animals",
     unlockRequirement: 450
     },
     {
     id: 20,
-    source: "/SvgIcons/birdInEgg.svg",
-    alt: "Bird In Egg",
-    label: "Bird In Egg",
+    source: "/SvgIcons/Animals/spider_2253716.png",
+    alt: "Spider",
+    label: "Spider",
     category: "animals",
     unlockRequirement: 500
     },
     {
     id: 21,
-    source: "/SvgIcons/smallBird.svg",
-    alt: "Small Bird",
-    label: "Small Bird",
+    source: "/SvgIcons/Animals/frog_4148196.png",
+    alt: "Frog",
+    label: "Frog",
     category: "animals",
     unlockRequirement: 600
     },
     {
     id: 22,
-    source: "/SvgIcons/squirrel.svg",
-    alt: "Squirrel",
-    label: "Squirrel",
+    source: "/SvgIcons/Animals/owl_3969793.png",
+    alt: "Owl",
+    label: "Owl",
     category: "animals",
     unlockRequirement: 700
     },
     {
     id: 23,
-    source: "/SvgIcons/grasshopper.svg",
-    alt: "Grasshopper",
-    label: "Grasshopper",
+    source: "/SvgIcons/Animals/butterfly_3571234.png",
+    alt: "Butterfly",
+    label: "Butterfly",
     category: "animals",
     unlockRequirement: 800
     },
     {
     id: 24,
-    source: "/SvgIcons/tukan.svg",
-    alt: "Tukan",
-    label: "Tukan",
+    source: "/SvgIcons/Animals/snake_1778814.png",
+    alt: "Snake",
+    label: "Snake",
     category: "animals",
     unlockRequirement: 900
     },
     {
     id: 25,
-    source: "/SvgIcons/deer.svg",
-    alt: "Deer",
-    label: "Deer",
+    source: "/SvgIcons/Animals/parrot_1778873.png",
+    alt: "Parrot",
+    label: "Parrot",
     category: "animals",
     unlockRequirement: 1000
     },
     {
     id: 26,
-    source: "/SvgIcons/tiger.svg",
+    source: "/SvgIcons/Animals/tiger_2253714.png",
     alt: "Tiger",
     label: "Tiger",
     category: "animals",
@@ -224,9 +224,9 @@ export const ICONS = [
     },
     {
     id: 27,
-    source: "/SvgIcons/bear.svg",
-    alt: "Bear",
-    label: "Bear",
+    source: "/SvgIcons/Animals/panda-bear_2253706.png",
+    alt: "Panda Bear",
+    label: "Panda Bear",
     category: "animals",
     unlockRequirement: 2000
     },
@@ -234,47 +234,47 @@ export const ICONS = [
     //------flowers
     {
     id: 50,
-    source: "/SvgIcons/grass.svg",
-    alt: "Grass",
-    label: "Grass",
+    source: "/SvgIcons/Flowers/catharanthus_3021202.png",
+    alt: "Catharanthus",
+    label: "Catharanthus",
     category: "flowers",
     unlockRequirement: 100
     },
     {
     id: 51,
-    source: "/SvgIcons/yellowFlower.svg",
-    alt: "Yellow Flower",
-    label: "Yellow Flower",
+    source: "/SvgIcons/Flowers/bougainvillea_6730352.png",
+    alt: "Bougainvillea",
+    label: "Bougainvillea",
     category: "flowers",
     unlockRequirement: 200
     },
     {
     id: 52,
-    source: "/SvgIcons/OrangeFlower.svg",
-    alt: "Orange Flower",
-    label: "Orange Flower",
+    source: "/SvgIcons/Flowers/freesia_4861547.png",
+    alt: "Freesia",
+    label: "Freesia",
     category: "flowers",
     unlockRequirement: 300
     },
     {
     id: 53,
-    source: "/SvgIcons/blueFlower.svg",
-    alt: "Blue Flower",
-    label: "Blue Flower",
+    source: "/SvgIcons/Flowers/rose_1488438.png",
+    alt: "Rose",
+    label: "Rose",
     category: "flowers",
     unlockRequirement: 400
     },
     {
     id: 54,
-    source: "/SvgIcons/tulips.svg",
-    alt: "Tulips",
-    label: "Tulips",
+    source: "/SvgIcons/Flowers/floral-design_6686458.png",
+    alt: "Florals",
+    label: "Florals",
     category: "flowers",
     unlockRequirement: 500
     },
     {
     id: 55,
-    source: "/SvgIcons/roses.svg",
+    source: "/SvgIcons/Flowers/rose_4156607.png",
     alt: "Roses",
     label: "Roses",
     category: "flowers",
@@ -282,7 +282,7 @@ export const ICONS = [
     },
     {
     id: 56,
-    source: "/SvgIcons/sunFlower.svg",
+    source: "/SvgIcons/Flowers/sunflower_3267261.png",
     alt: "Sun Flower",
     label: "Sun Flower",
     category: "flowers",
@@ -290,17 +290,17 @@ export const ICONS = [
     },
     {
     id: 57,
-    source: "/SvgIcons/purpleFlower.svg",
-    alt: "Purple Flower",
-    label: "Purple Flower",
+    source: "/SvgIcons/Flowers/cherry-blossom_4286963.png",
+    alt: "Cherry blossom",
+    label: "Cherry blossom",
     category: "flowers",
     unlockRequirement: 800
     },
     {
     id: 58,
-    source: "/SvgIcons/goldFlower.svg",
-    alt: "Gold Flower",
-    label: "Gold Flower",
+    source: "/SvgIcons/Flowers/cactus_6730363.png",
+    alt: "Cactus",
+    label: "Cactus",
     category: "flowers",
     unlockRequirement: 1000
     },
@@ -310,63 +310,63 @@ export const ICONS = [
     
     {
     id: 80,
-    source: "/SvgIcons/cloud.svg",
-    alt: "Cloud",
-    label: "Cloud",
+    source: "/SvgIcons/Random/fence_3981731.png",
+    alt: "Fence",
+    label: "Fence",
     category: "random",
     unlockRequirement: 400
     },
     {
     id: 81,
-    source: "/SvgIcons/football.svg",
-    alt: "Football",
-    label: "Football",
+    source: "/SvgIcons/Random/watering-can_3981740.png",
+    alt: "Watering Can",
+    label: "Watering Can",
     category: "random",
     unlockRequirement: 500
     },
     {
     id: 82,
-    source: "/SvgIcons/basket.svg",
-    alt: "Basket",
-    label: "Basket",
+    source: "/SvgIcons/Random/soil_3981898.png",
+    alt: "Soil",
+    label: "Soil",
     category: "random",
     unlockRequirement: 600
     },
     {
     id: 83,
-    source: "/SvgIcons/sun.svg",
-    alt: "Sun",
-    label: "Sun",
+    source: "/SvgIcons/Random/clouds-sun_3372565.png",
+    alt: "Cloud Sun",
+    label: "Cloud Sun",
     category: "random",
     unlockRequirement: 700
     },
     {
     id: 84,
-    source: "/SvgIcons/table.svg",
-    alt: "Table",
-    label: "Table",
+    source: "/SvgIcons/Random/bench_501591.png",
+    alt: "Bench",
+    label: "Bench",
     category: "random",
     unlockRequirement: 800
     },
     { 
     id: 85,
-    source: "/SvgIcons/swing.svg",
-    alt: "Swing",
-    label: "Swing",
+    source: "/SvgIcons/Random/playground_4162808.png",
+    alt: "Playground",
+    label: "Playground",
     category: "random",
     unlockRequirement: 900
     },
     {
     id: 86,
-    source: "/SvgIcons/star.svg",
-    alt: "Star",
-    label: "Star",
+    source: "/SvgIcons/Random/tractor_3981817.png",
+    alt: "Tractor",
+    label: "Tractor",
     category: "random",
     unlockRequirement: 1000
     },
     {
     id: 87,
-    source: "/SvgIcons/planet.svg",
+    source: "/SvgIcons/Random/saturn_650272.png",
     alt: "Planet",
     label: "Planet",
     category: "random",
@@ -374,9 +374,9 @@ export const ICONS = [
     },
     {
     id: 88,
-    source: "/SvgIcons/galaxy.svg",
-    alt: "Galaxy",
-    label: "Galaxy",
+    source: "/SvgIcons/Random/rocket_650254.png",
+    alt: "Rocket",
+    label: "Rocket",
     category: "random",
     unlockRequirement: 1500
     },
@@ -384,7 +384,7 @@ export const ICONS = [
     //------lock
     {
     id: 100,
-    source: "/SvgIcons/padlock-lock.svg",
+    source: "/SvgIcons/padlock_9088306.png",
     alt: "Padlock",
     label: "Padlock",
     category: "none",

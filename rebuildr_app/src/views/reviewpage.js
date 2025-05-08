@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 export function ReviewPage({userIndex,avgRating,userReviews}) {
 
   return (
-    <div className="review-container">
-        
-          <p>index {userIndex}</p>     
-      <h1>Your Reviews</h1>
+      <div className='background'>
+        <div className="review-container">
+        <h1>Your Reviews</h1>
+
 
       <div className="avg-rating">
         <p>
@@ -45,6 +45,7 @@ export function ReviewPage({userIndex,avgRating,userReviews}) {
           </Link>
         </div>
       
+      </div>
       </div>
 
       
