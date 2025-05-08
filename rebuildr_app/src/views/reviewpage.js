@@ -15,7 +15,8 @@ function ReviewPage() {
     localStorage.setItem("avgRating", avgRating);
   
   return (
-      <div className="review-container">
+      <div className='background'>
+        <div className="review-container">
         <h1>Your Reviews</h1>
 
         <div className='avg-rating'>
@@ -38,6 +39,7 @@ function ReviewPage() {
           </Link>
         </div>
       
+      </div>
       </div>
 
       

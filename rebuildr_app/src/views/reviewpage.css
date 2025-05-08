@@ -1,12 +1,27 @@
-.review-container {
-    margin: 1rem;
-    text-align: center;  
+
+.background {
+  background-color: #282c34;
+  text-align: center;
+}
+
+.review-container {  
+    background-color: #176457ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(0.625rem + 0.125rem);
+    color: white;
+    width: 32%;
+    margin-left: 34%;
+    position: relative;
+    
   }
-  
+
   .review-container h1 {
     font-size: 2rem;
     margin: 2rem;
-    color: black;
+    color: #f8f1e3ff;
   }
   
   .avg-rating {
@@ -22,7 +37,7 @@
   }
 
   .all-reviews {
-    width: 50rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -63,3 +78,60 @@
     text-decoration: none;
     color: antiquewhite;
   }
+
+  @media screen and (max-width: 800px) {
+    .review-container {
+      width: 95%;
+      margin: 0 auto;
+      padding: 1rem;
+      
+    }
+  
+    .review-container h1 {
+      font-size: 1.7rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+  
+    .avg-rating {
+      width: 7rem;
+      height: 2rem;
+      font-size: 0.9rem;
+      padding: 0.4rem;
+    }
+  
+    .all-reviews {
+      gap: 1rem;
+      font-size: 1.7rem;
+    }
+  
+    .review-card {
+      padding: 1rem;
+      font-size: 0.9rem;
+      width: 95%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0;
+    }
+  
+    .review-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+  
+    .review-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  
+    .return-container {
+      width: 90%;
+      height: 2.8rem;
+      margin: 2rem auto 1rem;
+    }
+  
+    .returnbutton {
+      font-size: 1rem;
+    }
+  }
+   
