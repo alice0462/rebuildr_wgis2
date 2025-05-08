@@ -1,6 +1,6 @@
 [
     {
-      "user_id": 1,
+      "user_id": 0,
       "email": "contact@greenbuildsolutions.com",
       "username": "GreenBuild Solutions",
       "password_hash": "fakehash_greenbuild123",
@@ -10,7 +10,7 @@
       "co2_saved": 120.5
     },
     {
-      "user_id": 2,
+      "user_id": 1,
       "email": "bob@example.com",
       "username": "BobBuilder",
       "password_hash": "fakehash_bob456",
@@ -20,7 +20,7 @@
       "co2_saved": 85.0
     },
     {
-      "user_id": 3,
+      "user_id": 2,
       "email": "info@reclaimbuildco.com",
       "username": "ReclaimBuild Co",
       "password_hash": "fakehash_reclaim789",
@@ -30,7 +30,7 @@
       "co2_saved": 200.0
     },
     {
-      "user_id": 4,
+      "user_id": 3,
       "email": "dave@example.com",
       "username": "DaveRecycle",
       "password_hash": "fakehash_dave101",
@@ -40,7 +40,7 @@
       "co2_saved": 45.3
     },
     {
-      "user_id": 5,
+      "user_id": 4,
       "email": "sales@ecoconstructinc.com",
       "username": "EcoConstruct Inc",
       "password_hash": "fakehash_eco202",
@@ -50,7 +50,7 @@
       "co2_saved": 150.7
     },
     {
-      "user_id": 6,
+      "user_id": 5,
       "email": "frank@example.com",
       "username": "FrankFixer",
       "password_hash": "fakehash_frank303",
@@ -60,7 +60,7 @@
       "co2_saved": 90.0
     },
     {
-      "user_id": 7,
+      "user_id": 6,
       "email": "info@sustainbuildllc.com",
       "username": "SustainBuild LLC",
       "password_hash": "fakehash_sustain404",
@@ -70,7 +70,7 @@
       "co2_saved": 175.2
     },
     {
-      "user_id": 8,
+      "user_id": 7,
       "email": "henry@example.com",
       "username": "HenryBuild",
       "password_hash": "fakehash_henry505",
@@ -80,7 +80,7 @@
       "co2_saved": 60.8
     },
     {
-      "user_id": 9,
+      "user_id": 8,
       "email": "contact@recycleworks.com",
       "username": "RecycleWorks",
       "password_hash": "fakehash_recycle606",
@@ -90,7 +90,7 @@
       "co2_saved": 130.4
     },
     {
-      "user_id": 10,
+      "user_id": 9,
       "email": "jack@example.com",
       "username": "JackReuse",
       "password_hash": "fakehash_jack707",
