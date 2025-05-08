@@ -19,7 +19,11 @@ export async function calculateTreeFact(userId) {
 
     const calculation = Math.floor((parseInt(co2Saved) / randomTree.stores));
 
-    return "You have saved " + co2Saved + " Co2, which is equivalent to how much " + calculation + " fully grown " + randomTree.type + " trees absorbs in a year.";
+    if (randomIndex < 7) {
+        return "You have saved " + co2Saved + " Co2, which is equivalent to how much " + calculation + " fully grown " + randomTree.type + " trees absorbs in a year."}
+    else if (6 < randomIndex < 9){
+        return "You have saved " + co2Saved + " Co2, which is equivalent to how much " + calculation + " " + randomTree.type + " costs."
+    }
 
 }
 
