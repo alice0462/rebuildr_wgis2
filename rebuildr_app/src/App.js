@@ -90,19 +90,24 @@ function HomePage() {
 
   return (
     <div className="app">
-      <button onClick={handleNextUser}>Next User</button>
+      
       <div id = "background"> 
-        <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-2rem', left: 0, width: '100%', height: '11.25rem', objectFit: 'cover', zIndex: 0 }} />
-        <div style={{ display: 'flex', alignItems: 'center', marginTop: '-1rem', marginBottom: '4rem', justifyContent: 'center', gap: '1.5rem', position: 'relative', zIndex: 1 }}>
+        <div style={{ position: 'absolute', width: '100%' }}>
+          <img src="/images/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 2 }}/>
+          <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-27rem', left: '0rem', width: '100%', zIndex: 1, opacity: 0.4 }}/>
+          
+        </div>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '90%', marginRight: '2rem'}}>
           <div id="user-name">
-            <p>{user ? user.name : 'Loading or user not found'}</p>
+            <p>Hi {user ? user.name : 'Loading or user not found'}</p>
           </div>
-          <div id="profile-pic" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div id="profile-pic" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" />
           </div>
-        </div>
+          </div>
         
         <div id="body" style={{ position: 'relative', zIndex: 1 }}>
+        <div className='handleUser'> <button onClick={handleNextUser}>User</button> </div>
           <div className="stats">
             <div id="rank" onClick={handleMedalClick} style={{ cursor: 'pointer' }}>
               {user && (
@@ -138,7 +143,7 @@ function HomePage() {
           <div className="rank-overlay" onClick={handleCloseCuriosa}></div>
           <div className="rank-progress-container">
             <div className="rank-progress-header">
-              <h3>Curiosa</h3>
+              <h3>Congrats!</h3>
               <button className="close-button" onClick={handleCloseCuriosa}>×</button>
             </div>
             <div className="rank-info">

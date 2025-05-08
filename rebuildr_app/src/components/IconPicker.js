@@ -82,6 +82,8 @@ const IconPicker = ({userId}) => {
         
         const handleStartDrag = (e, index) => {
             e.preventDefault(); // Stoppar t.ex. scroll på mobil
+            
+            e.stopPropagation(); // Extra säkerhet
             setDraggingItemIndex(index);
             document.body.classList.add("grabbing");
           };
@@ -227,8 +229,9 @@ const IconPicker = ({userId}) => {
 
             <div className={classNames('icons-list', showIconList && 'visible')}>
             <div className="icons-list-header">
+                <p>Customize tree by adding icons</p>
                 <button className="close-button" onClick={onClose}>×</button>
-                <button className="clear-button" onClick={() => setPlacedItems([])}>Clear</button>
+                <button className="clear-button" onClick={() => setPlacedItems([])}>Rensa</button>
             </div>
 
             <div className="category-tabs">
