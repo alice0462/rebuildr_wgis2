@@ -220,7 +220,6 @@
     position: relative;
     width: 85%;
     min-height: 23.5rem;
-    
   }
   
   .icon-img {
@@ -267,6 +266,25 @@
     color: white;
     background-color: #DDC7FF
   }
+
+  .yesNo-buttons {
+    display: flex;
+    gap: 7rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .yesNo-buttons button {
+    background-color: #DDC7FF;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
   
   .clear-button:hover {
     color: #333
@@ -370,8 +388,6 @@
     opacity: 0.2;
   }
   
-  
-  
   .main-tree-img {
     width: 100%;
     max-width: 80%; 
@@ -463,6 +479,9 @@
   .loader.hidden {
     display: none;
   }
+
+
+  
   
   @keyframes spin {
     0% { transform: rotate(0deg); }
