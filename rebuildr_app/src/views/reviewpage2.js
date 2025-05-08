@@ -1,13 +1,29 @@
 import './reviewpage.css';
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useUserIndex } from '../components/UserIndexContext';
+function ReviewPage2() {
+  const [reviews, setReviews] = useState([]);
+  const { userIndex } = useUserIndex();
+  useEffect(() => {
+    fetch('/data/reviews_db.json')
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.error('Error loading user data:', err));
+  }, []);
 
-export function ReviewPage({userIndex,avgRating,userReviews}) {
+  const userReviews = reviews.filter((review) => review.reviewer_id === 1);
+  const avgRating =
+    userReviews.length > 0
+      ? (
+          userReviews.reduce((sum, review) => sum + review.rating, 0) /
+          userReviews.length
+        ).toFixed(1)
+      : 0;
 
   return (
-      <div className='background'>
-        <div className="review-container">
-        <h1>Your Reviews</h1>
-
+    <div className="review-container">
+      <h1>Your Reviews</h1>
 
       <div className="avg-rating">
         <p>
@@ -46,10 +62,8 @@ export function ReviewPage({userIndex,avgRating,userReviews}) {
         </div>
       
       </div>
-      </div>
 
       
     );
   }
-export default ReviewPage;
-
+export default ReviewPage2;

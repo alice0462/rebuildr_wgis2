@@ -1,13 +1,14 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ReviewPage from './views/reviewpage';
+//import Avtal from './views/avtal';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
 import RankProgressBar from './components/RankProgressBar.js';
 import { calculateTreeFact } from './components/CO2TreeFactsCalculator.js'; 
 
-function HomePage() {
-  const [storedRating, setStoredRating] = useState(null);
+export function HomePage({userIndex,handleNextIndex,avgRating}) {
+  
   const [users, setUsers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
   const [curiosa, setCuriosa] = useState('');
@@ -16,24 +17,18 @@ function HomePage() {
   const [currentCo2, setCurrentCo2] = useState(0);
   const [showCuriosa, setShowCuriosa] = useState(false);
 
-
-
-  useEffect(() => {
-    fetch('/data/userData.json')
+useEffect(() => {
+    fetch('/data/user_db.json')
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error('Error loading user data:', err));
   }, []);
-
-  const handleNextUser = () => {
-    // Move to next index, wrap around if at end
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % users.length);
-  };
-  const user = users[currentIndex];
+  
+  const user = users[userIndex];
 
   useEffect(() => {
     if (user) {
-      const co2Value = parseInt(user.totalCo2Saved);
+      const co2Value = parseInt(user.co2_saved);
       setCurrentCo2(co2Value);
       
       if (co2Value < 300) {
@@ -48,7 +43,7 @@ function HomePage() {
 
   let medalSrc = '';
   if (user) {
-    const co2Value = parseInt(user.totalCo2Saved); // extracts number from "435 kg"
+    const co2Value = parseInt(user.co2_saved); // extracts number from "435 kg"
     if (co2Value < 300) {
       medalSrc = '/images/bronze-medal2.svg';
     } else if (co2Value < 700) {
@@ -57,10 +52,6 @@ function HomePage() {
       medalSrc = '/images/gold-medal2.svg';
     }
   }
-  useEffect(() => {
-    const rating = localStorage.getItem("avgRating");
-    setStoredRating(rating);
-  }, []);
 
   const handleMedalClick = () => {
     setShowRankProgress(true);
@@ -90,12 +81,11 @@ function HomePage() {
 
   return (
     <div className="app">
-      
       <div id = "background"> 
         <div style={{ position: 'absolute', width: '100%' }}>
           <img src="/images/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 2 }}/>
           <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-27rem', left: '0rem', width: '100%', zIndex: 1, opacity: 0.4 }}/>
-          
+
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '90%', marginRight: '2rem'}}>
           <div id="user-name">
@@ -115,16 +105,17 @@ function HomePage() {
               )}
             </div>
             <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
-              <p>Saved Co2: <br/>{user ? user.totalCo2Saved : 'Loading or user not found'}</p>
+              <p>Saved Co2: <br/>{user ? user.co2_saved : 'Loading or user not found'}</p>
             </div>
             <div id="reviews">
               <Link to="/reviewpage" className="avg-rating-link">
-                {storedRating ? storedRating : 'No reviews yet'} / 5
+                <p>{avgRating} / 5</p>
               </Link>
             </div>
           </div>
           <div id="treeBox">
             <IconPicker userId={user ? user.id : null}/>
+
           </div>
         </div>
       </div>
@@ -157,11 +148,47 @@ function HomePage() {
 }
 
 function App() {
+  const [userIndex, setIndex] = useState(0);
+  const handleNextIndex = () => {
+    // Move to next index, wrap around if at end
+    setIndex((prevIndex) => (prevIndex + 1) % 10);
+  };
+
+  const [reviews, setReviews] = useState([]);
+  //const { userId, setUserId } = useUser();
+
+  useEffect(() => {
+    fetch('/data/reviews_db.json')
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+      .catch((err) => console.error('Error loading user data:', err));
+  }, []);
+
+  const userReviews = reviews.filter((review) => review.reviewer_id === userIndex);
+  const avgRating =
+    userReviews.length > 0
+      ? (
+          userReviews.reduce((sum, review) => sum + review.rating, 0) /
+          userReviews.length
+        ).toFixed(1)
+      : 0;
+  
+
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/reviewpage" element={<ReviewPage />} />
+        <Route path="/" element={<HomePage 
+        userIndex={userIndex} 
+        handleNextIndex={handleNextIndex}
+        avgRating={avgRating} 
+        />} />
+        <Route path="/reviewpage" element={<ReviewPage 
+        userIndex={userIndex} 
+        handleNextIndex={handleNextIndex}
+        userReviews={userReviews}
+        avgRating={avgRating} 
+        />} />
       </Routes>
     </Router>
   );
