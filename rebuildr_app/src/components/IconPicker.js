@@ -6,7 +6,6 @@ import useClickOutside from './ClickOutside.js';
 
 const STANDARD_ICON_ID = 1;
 
-
 const ICON = ({ id, source, label, locked, onClick, used, category}) => {
   const handleDragStart = (e) => {
     if (locked || category === 'trees') {
@@ -16,11 +15,18 @@ const ICON = ({ id, source, label, locked, onClick, used, category}) => {
     e.dataTransfer.setData("application/icon-id", id);
 };  
 const handleClick = () => {
-    if (locked) return;
-    if (category === 'trees' && onClick) {
-        onClick(id);
-    }
-  };
+  if (category !== 'trees') return;
+  
+  if (locked) {
+    onClick && onClick("You haven't saved enough CO₂ to unlock this icon!");
+    return;
+  }
+
+  if (onClick) {
+    onClick(id);
+  }
+};
+
   
   return (
     <div
@@ -40,23 +46,27 @@ const handleClick = () => {
 const IconPicker = ({userId}) => {
     const [selectedIcon, setSelectedIcon] = useState(STANDARD_ICON_ID);
     const [loadingId, setLoadingId] = useState(null);
-    const currentActiveIcon = ICONS.find((icon) => icon.id === selectedIcon);
+    const currentActiveIcon = ICONS.find(icon => icon.id === selectedIcon);
     const [showIconList, setShowIconListVisibility] = useState(false);
     const [climateUsers, setClimateUsers] = useState([]);
     const [itemToPlace, setItemToPlace] = useState(null);
     const [placedItems, setPlacedItems] = useState([]);
     const [draggingItemIndex, setDraggingItemIndex] = useState(null);
     const treeRef = useRef(null);
+    const [toastMessage, setToastMessage] = useState(null);
 
+    
+    useEffect(() => {
+      if (toastMessage) {
+        const timer = setTimeout(() => setToastMessage(null), 2000);
+        return () => clearTimeout(timer);
+      }
+    }, [toastMessage]);
     
     const handleTreeClick = (e) => {
         if (!itemToPlace) return;
       
         const rect = e.currentTarget.getBoundingClientRect();
-        
-        
-        
-        
         
         setItemToPlace(null);
         };
@@ -159,27 +169,30 @@ const IconPicker = ({userId}) => {
     const currentUser = climateUsers.find(user => parseInt(user.user_id) === parseInt(userId));
     const co2Saved = currentUser ? parseFloat(currentUser.co2_saved) : 0;
 
-    const onIconSelection = async (id) => {
-
-        const selectedIcon = ICONS.find(icon => icon.id === id);
-        if (selectedIcon.unlockRequirement > co2Saved) {
-            alert("You haven't saved enough CO2 to unlock this icon!");
-            return;
-        }
-        if (selectedIcon.category == 'trees') {
-          setLoadingId(id);
-          await setIcon(id); // spara trädet
-          setSelectedIcon(id); // byt trädet
-          setLoadingId(null); // sätter objektet i placeringsläge
-            return;
-          }
-          
+    const onIconSelection = async (arg) => {
+      if (typeof arg === 'string') {
+        setToastMessage(arg); // visa toast om vi får text
+        return;
+      }
+    
+      const id = arg;
+      const selectedIcon = ICONS.find(icon => icon.id === id);
+      if (!selectedIcon) return;
+    
+      if (selectedIcon.category === 'trees') {
         setLoadingId(id);
         await setIcon(id);
         setSelectedIcon(id);
         setLoadingId(null);
+        return;
+      }
+    
+      setLoadingId(id);
+      await setIcon(id);
+      setSelectedIcon(id);
+      setLoadingId(null);
     };
-
+    
     const categories = [
         { id: 'trees', label: 'Trees' },
         { id: 'fruits', label: 'Fruits' },
@@ -193,25 +206,21 @@ const IconPicker = ({userId}) => {
 
     return (
         <div ref={ref} className="icon-picker">
-            <div className="plus-button" onClick={plusButton}>
+          <div className="plus-button" onClick={plusButton}>
             <img src="/SvgIcons/Plus.png" alt="Plus" />
-            </div>
+          </div>
+          <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
+            {loadingId !== null && <div className="loader"></div>}
             
-            <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
-              
-                {loadingId !== null && <div className="loader"> </div>}
-                
-
+              <img
+                src={currentActiveIcon.source}
+                alt="tree"
+                className="main-tree-img"
+                draggable={false}
+              />
+            
+            {placedItems.map((item, index) => (
                 <img
-                    src={currentActiveIcon.source}
-                    alt="tree"
-                    className="main-tree-img"
-                    draggable={false}
-                    />
-                    
-                {placedItems.map((item, index) => (
-    
-                 <img
                     key={index}
                     src={item.source}
                     alt={item.label}
@@ -228,14 +237,18 @@ const IconPicker = ({userId}) => {
                             
                             setPlacedItems(prev =>
                             prev.filter((p, i) => i !== index)
-                        );
-                }}
-                />
+                            );
+                        }}/>
    
-  ))}
-</div>
+            ))}
+            {toastMessage && (
+            <div className="toast">
+              {toastMessage}
+            </div>
+            )}
+          </div>
 
-            <div className={classNames('icons-list', showIconList && 'visible')}>
+          <div className={classNames('icons-list', showIconList && 'visible')}>
             <div className="icons-list-header">
                 <p>Customize tree by adding icons</p>
                 <button className="close-button" onClick={onClose}>×</button>
@@ -263,15 +276,16 @@ const IconPicker = ({userId}) => {
                 locked={icon.unlockRequirement > co2Saved}
                 onClick={onIconSelection}
                 used={placedItems.some(item => item.id === icon.id)}
-
             />
-            ))}
-            
+            ))} 
             </div>
-        </div>
+          </div>
         </div>
         
     );
+    
 };
 
 export default IconPicker;
+
+

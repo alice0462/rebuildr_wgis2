@@ -382,6 +382,20 @@
     right: 1rem; 
     width: 1.5rem;
   }
+  .toast {
+    position: fixed;
+    align-items: center;
+    top: 13.3rem;
+    background-color: #96969B;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    z-index: 5;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    
+  }
+  
   
   
   @keyframes spin {
