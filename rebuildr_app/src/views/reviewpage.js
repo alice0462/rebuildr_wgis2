@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 export function ReviewPage({userIndex,avgRating,userReviews}) {
 
   return (
-      <div className='background'>
+      <div className='app'>
+        
+        <img src="/SvgIcons/figma_pic1.png" alt="figma1" className="figma-image" />
+        <img src="/SvgIcons/Header (1).png" alt="header" className="background-image" />
+
         <div className="review-container">
         <h1>Your Reviews</h1>
 
