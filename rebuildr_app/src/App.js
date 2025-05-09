@@ -156,7 +156,18 @@ useEffect(() => {
             </div>
             <div id="reviews">
               <Link to="/reviewpage" className="avg-rating-link">
-                <p>{avgRating} / 5</p>
+                <div className="rating-text">
+                  {avgRating} / 5
+                </div>
+                <div className='avg-star-rating'>
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <img
+                    key={index}
+                    src={index < Math.round(avgRating) ? "/images/rating-star.png" : ""}
+                    alt={index < Math.round(avgRating) ? "filled star" : ""}
+                    />
+                  ))}
+                </div>
               </Link>
             </div>
           </div>

@@ -68,9 +68,38 @@
   flex-direction: column;
   justify-content: center;
 }
+
 #reviews {
-  align-content: center;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
 }
+
+.avg-star-rating {
+  color: black;
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+
+}
+
+.avg-star-rating img {
+  width: 1rem; 
+  height: auto;
+  text-decoration: none;
+}
+
+.rating-text {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.rating-text a {
+  text-decoration: none;
+}
+
+
 #rank {
   align-content: center;
 }
@@ -89,13 +118,8 @@
   flex: 1;
 }
 .avg-rating-link {
-  background-color: #FBF8F1;
-  color: rgb(0, 0, 0);
   cursor: pointer;
   text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
   }
 #treeBox {
     flex: 1; 
