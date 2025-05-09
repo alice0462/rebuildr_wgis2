@@ -18,6 +18,7 @@ export function HomePage({userIndex,handleNextIndex,avgRating}) {
   const [currentCo2, setCurrentCo2] = useState(0);
   const [showCuriosa, setShowCuriosa] = useState(false);
   const [showDownload, setDownload] = useState(false);
+  const [showInfo, setInfo] = useState(false);
 
 useEffect(() => {
     fetch('/data/user_db.json')
@@ -63,6 +64,14 @@ useEffect(() => {
     setShowRankProgress(false);
   };
 
+  const handleShowInfo = () => {
+    setInfo(true);
+  };
+  
+  const handleCloseInfo= () => {
+    setInfo(false);
+  };
+
   const handleDownload = () => {
     setDownload(true);
   };
@@ -71,25 +80,31 @@ useEffect(() => {
     setDownload(false);
   };
 
+
   const handleDownloadTreeBox = () => {
     const element = document.getElementById('treeBox');
     const plusBtn = document.querySelector('.plus-button');
     const downloadBtn = document.querySelector('.emailSignature');
+    const infoBtn = document.querySelector('.infoBox')
     
     if (!element) return;
 
+    element.classList.add('transparent-export');
     plusBtn && (plusBtn.style.display = 'none');
     downloadBtn && (downloadBtn.style.display = 'none');
+    infoBtn && (infoBtn.style.display = 'none');
   
-    html2canvas(element).then((canvas) => {
+    html2canvas(element, { backgroundColor: null }).then((canvas) => {
       const link = document.createElement('a');
       link.download = 'treeBox.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
     });
 
+    element.classList.remove('transparent-export');
     plusBtn && (plusBtn.style.display = '');
     downloadBtn && (downloadBtn.style.display = '');
+    infoBtn && (infoBtn.style.display = '');
   };
 
   const handleCo2Click = async () => {
@@ -137,7 +152,7 @@ useEffect(() => {
               )}
             </div>
             <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
-              <p>Saved Co2: <br/>{user ? user.co2_saved : 'Loading or user not found'}</p>
+              <p>Saved <br/>{user ? user.co2_saved : 'Loading or user not found'} kg CO₂</p>
             </div>
             <div id="reviews">
               <Link to="/reviewpage" className="avg-rating-link">
@@ -149,8 +164,10 @@ useEffect(() => {
             <IconPicker userId={user ? user.user_id : null}/>
             <div className='emailSignature'  onClick={handleDownload} style={{ cursor: 'pointer' }}>
               <img src="/SvgIcons/Download.png" alt="download" className="download-icon"/>
-              
-    
+            </div>
+            
+            <div className='infoBox' onClick={handleShowInfo} style={{ cursor: 'pointer' }}>
+              <img src="/SvgIcons/Info.png" alt="info" className="info-icon"/>
             </div>
 
           </div>
@@ -158,7 +175,7 @@ useEffect(() => {
       </div>
       {showRankProgress && (
         <>
-          <div className="rank-overlay" onClick={handleCloseRankProgress}></div>
+          
           <RankProgressBar 
             currentCo2={currentCo2}
             currentRank={currentRank}
@@ -169,7 +186,6 @@ useEffect(() => {
 
 {showDownload && (
   <>
-    <div className="rank-overlay" onClick={handleCloseDownload}></div>
     <div className="rank-progress-container">
       <div className="rank-progress-header">
         <h3>Download to PNG?</h3>
@@ -187,7 +203,6 @@ useEffect(() => {
 )}
       {showCuriosa && (
         <>
-          <div className="rank-overlay" onClick={handleCloseCuriosa}></div>
           <div className="rank-progress-container">
             <div className="rank-progress-header">
               <h3>Congrats!</h3>
@@ -199,9 +214,23 @@ useEffect(() => {
           </div>
         </>
       )}
+
+{showInfo && (
+  <>
+    <div className="rank-progress-container">
+      <div className="rank-progress-header">
+        <h3>Information</h3>
+        <button className="close-button" onClick={handleCloseInfo}>×</button>
+      </div>
+      <p>Click the plus button to customize your tree. Drag icons to position them, and unlock more features by saving additional CO₂ </p>
+    </div>
+  </>
+)}
     </div>
   );
 }
+
+
 
 function App() {
   const [userIndex, setIndex] = useState(0);

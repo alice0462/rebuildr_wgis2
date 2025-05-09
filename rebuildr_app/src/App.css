@@ -368,7 +368,18 @@
   .download-icon {
     position: absolute;
     bottom: 1rem;
-    left: 1rem; /* eller right: 1rem, beroende på var du vill ha den */
+    left: 1rem; 
+    width: 1.5rem;
+  }
+
+  .transparent-export {
+    background: transparent !important;
+  }
+
+  .info-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem; 
     width: 1.5rem;
   }
   
