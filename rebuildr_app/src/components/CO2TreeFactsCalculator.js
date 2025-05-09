@@ -4,10 +4,10 @@ import { CO2TREEFACTS } from "./CO2TreeFacts";
 
 export async function calculateTreeFact(userId) {
 
-    const response = await fetch('/data/userData.json');
+    const response = await fetch('/data/user_db.json');
     const data = await response.json();
 
-    const user = data.find(user => user.id === userId);
+    const user = data.find(user => user.user_id === userId);
 
     if (!user) return "User not found";
     
@@ -15,7 +15,7 @@ export async function calculateTreeFact(userId) {
 
     const randomTree = CO2TREEFACTS[randomIndex]
 
-    const co2Saved = user.totalCo2Saved;
+    const co2Saved = user.co2_saved;
 
     const calculation = Math.floor((parseInt(co2Saved) / randomTree.stores));
 

@@ -89,6 +89,8 @@ const IconPicker = ({userId}) => {
           };
         
           useEffect(() => {
+            
+            
             const move = (e) => {
               if (draggingItemIndex === null || !treeRef.current) return;
           
@@ -130,7 +132,13 @@ const IconPicker = ({userId}) => {
           }, [draggingItemIndex]);
           
           
-          
+          useEffect(() => {
+            console.log("Användar-ID från props:", userId);
+            console.log("Alla användare:", climateUsers);
+            const currentUserTest = climateUsers.find(user => parseInt(user.user_id) === parseInt(userId));
+            console.log("Hittad användare:", currentUserTest);
+        }, [climateUsers, userId]);
+        
 
     const ref = useClickOutside(() => setShowIconListVisibility(false));
 
@@ -142,14 +150,14 @@ const IconPicker = ({userId}) => {
     };
 
     useEffect(() => {
-        fetch('/data/userData.json')
+        fetch('/data/user_db.json')
             .then(response => response.json())
-            .then(data => setClimateUsers(data))
+            .then(data => setClimateUsers(data)) 
             .catch(error => console.error('Error fetching user data:', error));
     }, []);
 
-    const currentUser = climateUsers.find(user => user.id === userId);
-    const co2Saved = currentUser ? parseInt(currentUser.totalCo2Saved) : 0;
+    const currentUser = climateUsers.find(user => parseInt(user.user_id) === parseInt(userId));
+    const co2Saved = currentUser ? parseFloat(currentUser.co2_saved) : 0;
 
     const onIconSelection = async (id) => {
 

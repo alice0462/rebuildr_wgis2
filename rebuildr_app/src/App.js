@@ -93,9 +93,10 @@ useEffect(() => {
   };
 
   const handleCo2Click = async () => {
-    if (user && user.id) {
+    if (user && user.user_id !== undefined)
+      {
       try {
-        const treeFact = await calculateTreeFact(user.id);
+        const treeFact = await calculateTreeFact(user.user_id);
         setCuriosa(treeFact);
         setShowCuriosa(true);
       } catch (error) {
@@ -120,7 +121,7 @@ useEffect(() => {
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '90%', marginRight: '2rem'}}>
           <div id="user-name">
-            <p>User?{user ? user.name : 'Loading or user not found'}</p>
+            <p>{user ? user.username : 'Loading or user not found'}</p>
           </div>
           <div id="profile-pic" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" />
@@ -145,7 +146,7 @@ useEffect(() => {
             </div>
           </div>
           <div id="treeBox">
-            <IconPicker userId={user ? user.id : null}/>
+            <IconPicker userId={user ? user.user_id : null}/>
             <div className='emailSignature'  onClick={handleDownload} style={{ cursor: 'pointer' }}>
               <img src="/SvgIcons/Download.png" alt="download" className="download-icon"/>
               
@@ -171,7 +172,7 @@ useEffect(() => {
     <div className="rank-overlay" onClick={handleCloseDownload}></div>
     <div className="rank-progress-container">
       <div className="rank-progress-header">
-        <h3>Download to pdf?</h3>
+        <h3>Download to PNG?</h3>
         
       </div>
       <div className="rank-info">
