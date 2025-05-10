@@ -130,7 +130,7 @@ useEffect(() => {
     <div className="app">
       <div id = "background"> 
         <div style={{ position: 'absolute', width: '100%' }}>
-          <img src="/SvgIcons/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 2 }}/>
+          <img src="/SvgIcons/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 1 }}/>
           <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-27rem', left: '0rem', width: '100%', zIndex: 1, opacity: 0.4 }}/>
 
         </div>
