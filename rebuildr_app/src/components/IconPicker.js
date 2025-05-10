@@ -204,6 +204,16 @@ const IconPicker = ({userId}) => {
       
     const filteredIcons = ICONS.filter(icon => icon.category === selectedCategory);
 
+    const getRankBanner = () => {
+      if (co2Saved < 300) {
+        return <img src="/SvgIcons/BannerBronze.png" alt="Bronze Banner" className="rank-banner-img" />;
+      } else if (co2Saved < 700) {
+        return <img src="/SvgIcons/BannerSilver.png" alt="Silver Banner" className="rank-banner-img" />;
+      } else {
+        return <img src="/SvgIcons/BannerGold.png" alt="Gold Banner" className="rank-banner-img" />;
+      }
+    };
+
     return (
         <div ref={ref} className="icon-picker">
           <div className="plus-button" onClick={plusButton}>
@@ -211,14 +221,12 @@ const IconPicker = ({userId}) => {
           </div>
           <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
             {loadingId !== null && <div className="loader"></div>}
-            
-              <img
+            <img
                 src={currentActiveIcon.source}
                 alt="tree"
                 className="main-tree-img"
                 draggable={false}
-              />
-            
+            />
             {placedItems.map((item, index) => (
                 <img
                     key={index}
@@ -228,24 +236,22 @@ const IconPicker = ({userId}) => {
                     style={{
                         left: item.x,
                         top: item.y,
-                        }}
-                        onMouseDown={(e) => handleStartDrag(e, index)}
-                        onTouchStart={(e) => handleStartDrag(e, index)}
-
-                        onDoubleClick={(e) => {
-                            e.stopPropagation();
-                            
-                            setPlacedItems(prev =>
-                            prev.filter((p, i) => i !== index)
-                            );
-                        }}/>
-   
+                    }}
+                    onMouseDown={(e) => handleStartDrag(e, index)}
+                    onTouchStart={(e) => handleStartDrag(e, index)}
+                    onDoubleClick={(e) => {
+                        e.stopPropagation();
+                        setPlacedItems(prev => prev.filter((p, i) => i !== index));
+                    }}
+                />
             ))}
             {toastMessage && (
-            <div className="toast">
-              {toastMessage}
-            </div>
+                <div className="toast">
+                    {toastMessage}
+                </div>
             )}
+            {/* Decorative rank banner under the tree */}
+            {getRankBanner()}
           </div>
 
           <div className={classNames('icons-list', showIconList && 'visible')}>
