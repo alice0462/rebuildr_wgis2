@@ -1,0 +1,118 @@
+
+    """
+    Predict CO2 savings (kg CO₂e) for a given material and weight.
+    
+    Parameters:
+    - material_name (str): Name of the material (Produktnamn).
+    - weight_kg (float): Weight of the material in kg.
+    - climate_df (pd.DataFrame): DataFrame with material data.
+    - model: Trained model pipeline.
+    - features (list): List of feature names used by the model.
+    
+    Returns:
+    - float: Predicted CO2 savings in kg CO₂e.
+    ==============================================
+    ==============================================
+    
+    features = pd.DataFrame({
+    'volume':volume,
+    'Kategori':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'Kategori'].iloc[0]],
+    'A1-A3':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A1-A3'].iloc[0]],
+    'A4':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A4'].iloc[0]],
+    'A5':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A5'].iloc[0]],
+    'Omräkningsfaktor':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'Omräkningsfaktor'].iloc[0]]
+    })
+
+    # Find material in climate_df
+    material_row = climate_db[climate_db['Produktnamn'] == material_name]
+    if material_row.empty:
+        raise ValueError(f"Material '{material_name}' not found in climate_df")
+    
+    # Extract features for the material
+
+    
+    # Predict log-transformed CO2 savings
+    co2_savings_log_pred = model.predict(features)[0]
+    
+    # Reverse log transformation
+    co2_savings_pred = np.expm1(co2_savings_log_pred)
+    weight_kg = volume * material_row['Omräkningsfaktor'].iloc[0]
+    # Scale by weight (assuming CO2_savings_log was trained on total CO2 savings)
+    total_co2_savings = co2_savings_pred * weight_kg / material_row['Omräkningsfaktor'].iloc[0]
+    
+    """
+
+
+
+
+    input_data = pd.DataFrame({
+    'volume':volume,
+    'Kategori':[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'Kategori'].iloc[0]],
+    'A1-A3':[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'A1-A3'].iloc[0]],
+    'A4':[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'A4'].iloc[0]],
+    'A5':[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'A5'].iloc[0]],
+    'Omräkningsfaktor':[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'Omräkningsfaktor'].iloc[0]]
+    })   
+    
+    co2_savings_log_pred = model.predict(input_data)[0]
+    co2_savings = np.expm1(co2_savings_log_pred)            
+            
+    co2_saved += co2_savings 
+
+
+
+
+
+
+
+def predict_co2_savings(material_name, volume, climate_db, model):
+
+    Predict CO2 savings (kg CO₂e) for a given material and weight.
+    
+    Parameters:
+    - material_name (str): Name of the material (Produktnamn).
+    - weight_kg (float): Weight of the material in kg.
+    - climate_df (pd.DataFrame): DataFrame with material data.
+    - model: Trained model pipeline.
+    - features (list): List of feature names used by the model.
+    
+    Returns:
+    - float: Predicted CO2 savings in kg CO₂e.
+    
+    features = pd.DataFrame({
+    'volume':volume,
+    'Kategori':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'Kategori'].iloc[0]],
+    'A1-A3':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A1-A3'].iloc[0]],
+    'A4':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A4'].iloc[0]],
+    'A5':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A5'].iloc[0]],
+    'Omräkningsfaktor':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'Omräkningsfaktor'].iloc[0]]
+    })
+
+    # Find material in climate_df
+    material_row = climate_db[climate_db['Produktnamn'] == material_name]
+    if material_row.empty:
+        raise ValueError(f"Material '{material_name}' not found in climate_df")
+    
+    # Extract features for the material
+
+    
+    # Predict log-transformed CO2 savings
+    co2_savings_log_pred = model.predict(features)[0]
+    
+    # Reverse log transformation
+    co2_savings_pred = np.expm1(co2_savings_log_pred)
+    weight_kg = volume * material_row['Omräkningsfaktor'].iloc[0]
+    # Scale by weight (assuming CO2_savings_log was trained on total CO2 savings)
+    total_co2_savings = co2_savings_pred * weight_kg / material_row['Omräkningsfaktor'].iloc[0]
+    
+    return total_co2_savings
+
+
+co2 = predict_co2_savings('Spånskiva',1,climate_df,model)
+print(co2)
+weight = 1 * climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'Omräkningsfaktor'].iloc[0]
+co2_factor1= climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'A1-A3'].iloc[0]
+co2_factor2= climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'A4'].iloc[0]
+co2_factor3= climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'A5'].iloc[0]
+print(weight*(co2_factor1+co2_factor2+co2_factor3))
+

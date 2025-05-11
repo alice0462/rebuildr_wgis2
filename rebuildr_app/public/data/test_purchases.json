@@ -1,0 +1,14 @@
+[
+    {
+        "purchase_id": 1,
+        "seller_id": 1,
+        "buyer_id": 2,
+        "price": 300,
+        "description": "red clay bricks",
+        "height": 65,
+        "length": 215,
+        "width": 105,
+        "Unit": "CM",
+        "timestamp": "2025-04-01T09:00:00Z"
+    }
+]

@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ReviewPage from './views/reviewpage';
+import Purchase from './views/purchase.js';
 //import Avtal from './views/avtal';
 import React, { useState, useEffect } from 'react';
 import IconPicker from './components/IconPicker.js';
@@ -11,13 +12,28 @@ import html2canvas from 'html2canvas';
 export function HomePage({userIndex,handleNextIndex,avgRating}) {
   
   const [users, setUsers] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
+  //const [currentIndex, setCurrentIndex] = useState(0); // Track current user index
   const [curiosa, setCuriosa] = useState('');
   const [showRankProgress, setShowRankProgress] = useState(false);
   const [currentRank, setCurrentRank] = useState('bronze');
   const [currentCo2, setCurrentCo2] = useState(0);
   const [showCuriosa, setShowCuriosa] = useState(false);
   const [showDownload, setDownload] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState(null);
+  const [co2Savings, setCo2Savings] = useState(0);
+
+useEffect(() => {
+  fetch(`http://localhost:8080/co2-savings/${userIndex}` ,{
+    method:"GET"
+  })
+  .then((response) => response.json())
+  .then(data => setCo2Savings(data))
+  .catch(error => console.error(error));
+  }, []);
+
+
 
 useEffect(() => {
     fetch('/data/user_db.json')
@@ -137,7 +153,7 @@ useEffect(() => {
               )}
             </div>
             <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
-              <p>Saved Co2: <br/>{user ? user.co2_saved : 'Loading or user not found'}</p>
+              <p>Saved Co2: <br/>{co2Savings.total_co2_savings}</p>
             </div>
             <div id="reviews">
               <Link to="/reviewpage" className="avg-rating-link">
@@ -245,6 +261,7 @@ function App() {
         userReviews={userReviews}
         avgRating={avgRating} 
         />} />
+        <Route path="/purchase" element={<Purchase/>} />
       </Routes>
     </Router>
   );
