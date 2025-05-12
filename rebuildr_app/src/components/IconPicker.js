@@ -6,7 +6,6 @@ import useClickOutside from './ClickOutside.js';
 
 const STANDARD_ICON_ID = 1;
 
-
 const ICON = ({ id, source, label, locked, onClick, used, category}) => {
   const handleDragStart = (e) => {
     if (locked || category === 'trees') {
@@ -16,11 +15,14 @@ const ICON = ({ id, source, label, locked, onClick, used, category}) => {
     e.dataTransfer.setData("application/icon-id", id);
 };  
 const handleClick = () => {
-    if (locked) return;
-    if (category === 'trees' && onClick) {
-        onClick(id);
-    }
-  };
+  if (locked) {
+    onClick && onClick("You haven't saved enough CO₂ to unlock this icon!");
+    return;
+  }
+
+  onClick && onClick(id); // Alla upplåsta ikoner kan klickas
+};
+
   
   return (
     <div
@@ -40,23 +42,27 @@ const handleClick = () => {
 const IconPicker = ({userId,co2Savings}) => {
     const [selectedIcon, setSelectedIcon] = useState(STANDARD_ICON_ID);
     const [loadingId, setLoadingId] = useState(null);
-    const currentActiveIcon = ICONS.find((icon) => icon.id === selectedIcon);
+    const currentActiveIcon = ICONS.find(icon => icon.id === selectedIcon);
     const [showIconList, setShowIconListVisibility] = useState(false);
     const [climateUsers, setClimateUsers] = useState([]);
     const [itemToPlace, setItemToPlace] = useState(null);
     const [placedItems, setPlacedItems] = useState([]);
     const [draggingItemIndex, setDraggingItemIndex] = useState(null);
     const treeRef = useRef(null);
+    const [toastMessage, setToastMessage] = useState(null);
 
+    
+    useEffect(() => {
+      if (toastMessage) {
+        const timer = setTimeout(() => setToastMessage(null), 2000);
+        return () => clearTimeout(timer);
+      }
+    }, [toastMessage]);
     
     const handleTreeClick = (e) => {
         if (!itemToPlace) return;
       
         const rect = e.currentTarget.getBoundingClientRect();
-        
-        
-        
-        
         
         setItemToPlace(null);
         };
@@ -159,27 +165,29 @@ const IconPicker = ({userId,co2Savings}) => {
     const currentUser = climateUsers.find(user => parseInt(user.user_id) === parseInt(userId));
     const co2Saved = currentUser ? parseFloat(co2Savings[userId].co2_savings) : 0;
 
-    const onIconSelection = async (id) => {
-
-        const selectedIcon = ICONS.find(icon => icon.id === id);
-        if (selectedIcon.unlockRequirement > co2Saved) {
-            alert("You haven't saved enough CO2 to unlock this icon!");
-            return;
-        }
-        if (selectedIcon.category == 'trees') {
-          setLoadingId(id);
-          await setIcon(id); // spara trädet
-          setSelectedIcon(id); // byt trädet
-          setLoadingId(null); // sätter objektet i placeringsläge
-            return;
-          }
-          
+    const onIconSelection = async (arg) => {
+      if (typeof arg === 'string') {
+        setToastMessage(arg); // visa toast om vi får text
+        return;
+      }
+    
+      const id = arg;
+      const selectedIcon = ICONS.find(icon => icon.id === id);
+      if (!selectedIcon) return;
+    
+      if (selectedIcon.unlockRequirement > co2Saved) {
+        setToastMessage("You haven't saved enough CO₂ to unlock this icon!");
+        return;
+      }
+    
+      if (selectedIcon.category === 'trees') {
         setLoadingId(id);
-        await setIcon(id);
-        setSelectedIcon(id);
+        await setIcon(id);             // sparar som huvudträd i backend
+        setSelectedIcon(id);           // visar trädet i UI
         setLoadingId(null);
+      } 
     };
-
+    
     const categories = [
         { id: 'trees', label: 'Trees' },
         { id: 'fruits', label: 'Fruits' },
@@ -191,27 +199,31 @@ const IconPicker = ({userId,co2Savings}) => {
       
     const filteredIcons = ICONS.filter(icon => icon.category === selectedCategory);
 
+    const getRankBanner = () => {
+      if (co2Saved < 300) {
+        return <img src="/SvgIcons/BannerBronze.png" alt="Bronze Banner" className="rank-banner-img" />;
+      } else if (co2Saved < 700) {
+        return <img src="/SvgIcons/BannerSilver.png" alt="Silver Banner" className="rank-banner-img" />;
+      } else {
+        return <img src="/SvgIcons/BannerGold.png" alt="Gold Banner" className="rank-banner-img" />;
+      }
+    };
+
     return (
         <div ref={ref} className="icon-picker">
-            <div className="plus-button" onClick={plusButton}>
+          <div className="plus-button" onClick={plusButton}>
             <img src="/SvgIcons/Plus.png" alt="Plus" />
-            </div>
-            
-            <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
-              
-                {loadingId !== null && <div className="loader"> </div>}
-                
-
+          </div>
+          <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
+            {loadingId !== null && <div className="loader"></div>}
+            <img
+                src={currentActiveIcon.source}
+                alt="tree"
+                className="main-tree-img"
+                draggable={false}
+            />
+            {placedItems.map((item, index) => (
                 <img
-                    src={currentActiveIcon.source}
-                    alt="tree"
-                    className="main-tree-img"
-                    draggable={false}
-                    />
-                    
-                {placedItems.map((item, index) => (
-    
-                 <img
                     key={index}
                     src={item.source}
                     alt={item.label}
@@ -219,23 +231,25 @@ const IconPicker = ({userId,co2Savings}) => {
                     style={{
                         left: item.x,
                         top: item.y,
-                        }}
-                        onMouseDown={(e) => handleStartDrag(e, index)}
-                        onTouchStart={(e) => handleStartDrag(e, index)}
-
-                        onDoubleClick={(e) => {
-                            e.stopPropagation();
-                            
-                            setPlacedItems(prev =>
-                            prev.filter((p, i) => i !== index)
-                        );
-                }}
+                    }}
+                    onMouseDown={(e) => handleStartDrag(e, index)}
+                    onTouchStart={(e) => handleStartDrag(e, index)}
+                    onDoubleClick={(e) => {
+                        e.stopPropagation();
+                        setPlacedItems(prev => prev.filter((p, i) => i !== index));
+                    }}
                 />
-   
-  ))}
-</div>
+            ))}
+            {toastMessage && (
+                <div className="toast">
+                    {toastMessage}
+                </div>
+            )}
+            {/* Decorative rank banner under the tree */}
+            {getRankBanner()}
+          </div>
 
-            <div className={classNames('icons-list', showIconList && 'visible')}>
+          <div className={classNames('icons-list', showIconList && 'visible')}>
             <div className="icons-list-header">
                 <p>Customize tree by adding icons</p>
                 <button className="close-button" onClick={onClose}>×</button>
@@ -263,15 +277,16 @@ const IconPicker = ({userId,co2Savings}) => {
                 locked={icon.unlockRequirement > co2Saved}
                 onClick={onIconSelection}
                 used={placedItems.some(item => item.id === icon.id)}
-
             />
-            ))}
-            
+            ))} 
             </div>
-        </div>
+          </div>
         </div>
         
     );
+    
 };
 
 export default IconPicker;
+
+

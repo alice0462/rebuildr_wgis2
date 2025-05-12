@@ -19,6 +19,7 @@ export function HomePage({userIndex,handleNextIndex,avgRating,co2Savings}) {
   const [currentCo2, setCurrentCo2] = useState(0);
   const [showCuriosa, setShowCuriosa] = useState(false);
   const [showDownload, setDownload] = useState(false);
+  const [showInfo, setInfo] = useState(false);
 
 
 useEffect(() => {
@@ -65,6 +66,14 @@ useEffect(() => {
     setShowRankProgress(false);
   };
 
+  const handleShowInfo = () => {
+    setInfo(true);
+  };
+  
+  const handleCloseInfo= () => {
+    setInfo(false);
+  };
+
   const handleDownload = () => {
     setDownload(true);
   };
@@ -73,25 +82,31 @@ useEffect(() => {
     setDownload(false);
   };
 
+
   const handleDownloadTreeBox = () => {
     const element = document.getElementById('treeBox');
     const plusBtn = document.querySelector('.plus-button');
     const downloadBtn = document.querySelector('.emailSignature');
+    const infoBtn = document.querySelector('.infoBox')
     
     if (!element) return;
 
+    element.classList.add('transparent-export');
     plusBtn && (plusBtn.style.display = 'none');
     downloadBtn && (downloadBtn.style.display = 'none');
+    infoBtn && (infoBtn.style.display = 'none');
   
-    html2canvas(element).then((canvas) => {
+    html2canvas(element, { backgroundColor: null }).then((canvas) => {
       const link = document.createElement('a');
       link.download = 'treeBox.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
     });
 
+    element.classList.remove('transparent-export');
     plusBtn && (plusBtn.style.display = '');
     downloadBtn && (downloadBtn.style.display = '');
+    infoBtn && (infoBtn.style.display = '');
   };
 
   const handleCo2Click = async () => {
@@ -117,7 +132,7 @@ useEffect(() => {
     <div className="app">
       <div id = "background"> 
         <div style={{ position: 'absolute', width: '100%' }}>
-          <img src="/SvgIcons/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 2 }}/>
+          <img src="/SvgIcons/figma_pic1.png" alt="figma1" style={{ position: 'absolute', top: '-25.5rem', left: '0rem', width: '100%', zIndex: 1 }}/>
           <img src="/SvgIcons/Header (1).png" alt="header" style={{ position: 'absolute', top: '-27rem', left: '0rem', width: '100%', zIndex: 1, opacity: 0.4 }}/>
 
         </div>
@@ -143,7 +158,18 @@ useEffect(() => {
             </div>
             <div id="reviews">
               <Link to="/reviewpage" className="avg-rating-link">
-                <p>{avgRating} / 5</p>
+                <div className="rating-text">
+                  {avgRating} / 5
+                </div>
+                <div className='avg-star-rating'>
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <img
+                    key={index}
+                    src={index < Math.round(avgRating) ? "/images/rating-star.png" : ""}
+                    alt={index < Math.round(avgRating) ? "filled star" : ""}
+                    />
+                  ))}
+                </div>
               </Link>
             </div>
           </div>
@@ -151,8 +177,10 @@ useEffect(() => {
             <IconPicker co2Savings={co2Savings} userId={user ? user.user_id : null}/>
             <div className='emailSignature'  onClick={handleDownload} style={{ cursor: 'pointer' }}>
               <img src="/SvgIcons/Download.png" alt="download" className="download-icon"/>
-              
-    
+            </div>
+            
+            <div className='infoBox' onClick={handleShowInfo} style={{ cursor: 'pointer' }}>
+              <img src="/SvgIcons/Info.png" alt="info" className="info-icon"/>
             </div>
 
           </div>
@@ -160,7 +188,7 @@ useEffect(() => {
       </div>
       {showRankProgress && (
         <>
-          <div className="rank-overlay" onClick={handleCloseRankProgress}></div>
+          
           <RankProgressBar 
             currentCo2={currentCo2}
             currentRank={currentRank}
@@ -171,7 +199,6 @@ useEffect(() => {
 
 {showDownload && (
   <>
-    <div className="rank-overlay" onClick={handleCloseDownload}></div>
     <div className="rank-progress-container">
       <div className="rank-progress-header">
         <h3>Download to PNG?</h3>
@@ -189,7 +216,6 @@ useEffect(() => {
 )}
       {showCuriosa && (
         <>
-          <div className="rank-overlay" onClick={handleCloseCuriosa}></div>
           <div className="rank-progress-container">
             <div className="rank-progress-header">
               <h3>Congrats!</h3>
@@ -201,9 +227,23 @@ useEffect(() => {
           </div>
         </>
       )}
+
+{showInfo && (
+  <>
+    <div className="rank-progress-container">
+      <div className="rank-progress-header">
+        <h3>Information</h3>
+        <button className="close-button" onClick={handleCloseInfo}>×</button>
+      </div>
+      <p>Click the plus button to customize your tree. Drag icons to position them, and unlock more features by saving additional CO₂ </p>
+    </div>
+  </>
+)}
     </div>
   );
 }
+
+
 
 function App() {
   const [userIndex, setIndex] = useState(0);
