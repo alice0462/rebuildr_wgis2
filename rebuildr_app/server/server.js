@@ -15,18 +15,17 @@ app.use(cors({
 const PURCHASE_DB_PATH = path.join(__dirname, '../public/data/purchase_db.json');
 const PYTHON_SCRIPT_PATH = path.join(__dirname, '../scripts/predictor.py');
 
-app.get('/co2-savings/:userId', async (req, res) => {
+app.get('/co2-savings/all', async (req, res) => {
     try{
-        const userId = parseInt(req.params.userId);
 
         const purchaseData = JSON.parse(await fs.readFile(PURCHASE_DB_PATH, 'utf8'));
 
-        const userPurchases = purchaseData.filter(
+        /*const userPurchases = purchaseData.filter(
             purchase => purchase.seller_id === userId || purchase.buyer_id === userId
-        );
+        );*/
 
-        if (userPurchases.length === 0) {
-            return res.json({ total_co2_savings: 0 });
+        if (purchaseData.length === 0) {
+            return res.json([]);
         }
         
         const pythonProcess = spawn('python', [PYTHON_SCRIPT_PATH]);
@@ -34,7 +33,7 @@ app.get('/co2-savings/:userId', async (req, res) => {
         let stdoutData = '';
         let stderrData = '';
 
-        pythonProcess.stdin.write(JSON.stringify(userPurchases));
+        pythonProcess.stdin.write(JSON.stringify(purchaseData));
         pythonProcess.stdin.end();
 
         pythonProcess.stdout.on('data', (data) => {
@@ -53,7 +52,7 @@ app.get('/co2-savings/:userId', async (req, res) => {
 
             try {
                 const result = JSON.parse(stdoutData);
-                res.json({ total_co2_savings: result.total_co2_savings });
+                res.json(result);
             } catch (err) {
                 console.error(`Error parsing Python output: ${err.message}`);
                 res.status(500).json({ error: 'Invalid response from CO2 savings calculation' });

@@ -3,9 +3,9 @@ import './RankProgressBar.css';
 
 const RankProgressBar = ({ currentCo2, currentRank, onClose }) => {
   const rankThresholds = {
-    bronze: { min: 0, max: 300, next: 'silver' },
-    silver: { min: 300, max: 700, next: 'gold' },
-    gold: { min: 700, max: Infinity, next: null }
+    bronze: { min: 0, max: 1122, next: 'silver' },
+    silver: { min: 1122.5, max: 2177, next: 'gold' },
+    gold: { min: 2177, max: Infinity, next: null }
   };
 
   const calculateProgress = () => {

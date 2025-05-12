@@ -7,33 +7,10 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-model_path = os.path.join(os.path.dirname(__file__), '..', 'scripts/models', 'co2_savings_model.joblib')
-model = joblib.load(model_path)
-
 json_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'synonym_db.json')
 with open(json_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 synonym_df = pd.DataFrame(data)
-
-json_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'test_purchases.json')
-with open(json_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-test_purchase = pd.DataFrame(data)
-
-json_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'purchase_db.json')
-with open(json_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-purchase_df = pd.DataFrame(data)
-
-csv_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'climate_db.csv') 
-climate_df =  pd.read_csv(csv_path)
-climate_df.columns = ['Produktnamn', 'Kategori',
-       'A1-A3',
-       'A4',
-       'A5',
-       'Enhet för klimatpåverkan', 
-       'Omräkningsfaktor',
-       'Enhet för omräkningsfaktor']
 
 def find_category(description, synonym_df):
     categories = synonym_df.columns 
@@ -129,23 +106,6 @@ model = joblib.load(model_path)
 
 
 
-#print(predict_co2_savings(purchase_df,climate_df,model))
-co2_saved = 0
-for index, purchase in purchase_df.iterrows():
-    produktnamn = find_material(purchase['description'],synonym_df)
-    material_row = climate_df[climate_df['Produktnamn'] == produktnamn]
-    omr_faktor = material_row['Omräkningsfaktor']
-    volume, weight = calculate_volume_and_weight(
-            purchase['height'], purchase['length'], purchase['width'], purchase
-            ['Unit'], omr_faktor
-            )
-    Kategori=[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'Kategori']]
-    A1_A3=[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'A1-A3']]
-    A4=[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'A4']]
-    A5=[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'A5']]
-    Omräkningsfaktor =[climate_df.loc[climate_df['Produktnamn'] == produktnamn, 'Omräkningsfaktor']]
-    #print(Kategori)
-
 #print(co2_saved)
     
 
@@ -169,10 +129,13 @@ if __name__ == "__main__":
     purchase_data = json.loads(input_data)
     purchase_df = pd.DataFrame(purchase_data)
     
-    # Predict total CO2 savings
-    total_co2_savings = predict_co2_savings(purchase_df, climate_df, model)
-    total_co2_savings = total_co2_savings/2
+    results = []
+    for userID in range(10):
+        user_purchase_df = purchase_df[(purchase_df['buyer_id'] == userID) | (purchase_df['seller_id'] == userID)]
+        user_co2_savings = predict_co2_savings(user_purchase_df, climate_df, model)/2
+        results.append({'Userid': userID, 'co2_savings': int(user_co2_savings)/10})
+        
     # Output result as JSON
-    print(json.dumps({"total_co2_savings": total_co2_savings}))
+    print(json.dumps(results))
 
 

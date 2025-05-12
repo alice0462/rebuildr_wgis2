@@ -37,7 +37,7 @@ const handleClick = () => {
     );
 };
 
-const IconPicker = ({userId}) => {
+const IconPicker = ({userId,co2Savings}) => {
     const [selectedIcon, setSelectedIcon] = useState(STANDARD_ICON_ID);
     const [loadingId, setLoadingId] = useState(null);
     const currentActiveIcon = ICONS.find((icon) => icon.id === selectedIcon);
@@ -155,9 +155,9 @@ const IconPicker = ({userId}) => {
             .then(data => setClimateUsers(data)) 
             .catch(error => console.error('Error fetching user data:', error));
     }, []);
-
+    
     const currentUser = climateUsers.find(user => parseInt(user.user_id) === parseInt(userId));
-    const co2Saved = currentUser ? parseFloat(currentUser.co2_saved) : 0;
+    const co2Saved = currentUser ? parseFloat(co2Savings[userId].co2_savings) : 0;
 
     const onIconSelection = async (id) => {
 
