@@ -7,7 +7,7 @@
       "location": "Seattle, WA",
       "profile_picture": "https://example.com/profiles/alice.jpg",
       "interests": ["bricks", "lumber"],
-      "co2_saved": 120.5
+      "co2_saved": 1120.5
     },
     {
       "user_id": 1,
@@ -17,7 +17,7 @@
       "location": "Portland, OR",
       "profile_picture": null,
       "interests": ["tiles", "concrete"],
-      "co2_saved": 85.0
+      "co2_saved": 805.0
     },
     {
       "user_id": 2,
@@ -47,7 +47,7 @@
       "location": "Miami, FL",
       "profile_picture": "https://example.com/profiles/emma.jpg",
       "interests": ["tiles", "lumber"],
-      "co2_saved": 150.7
+      "co2_saved": 550.7
     },
     {
       "user_id": 5,
@@ -57,7 +57,7 @@
       "location": "Chicago, IL",
       "profile_picture": null,
       "interests": ["concrete", "steel"],
-      "co2_saved": 90.0
+      "co2_saved": 490.0
     },
     {
       "user_id": 6,
@@ -67,7 +67,7 @@
       "location": "Boston, MA",
       "profile_picture": "https://example.com/profiles/grace.jpg",
       "interests": ["bricks", "tiles"],
-      "co2_saved": 175.2
+      "co2_saved": 1075.2
     },
     {
       "user_id": 7,
@@ -77,7 +77,7 @@
       "location": "Phoenix, AZ",
       "profile_picture": null,
       "interests": ["lumber", "glass"],
-      "co2_saved": 60.8
+      "co2_saved": 360.8
     },
     {
       "user_id": 8,
@@ -87,7 +87,7 @@
       "location": "New York, NY",
       "profile_picture": "https://example.com/profiles/isabel.jpg",
       "interests": ["steel", "bricks"],
-      "co2_saved": 130.4
+      "co2_saved": 1030.4
     },
     {
       "user_id": 9,
@@ -97,6 +97,6 @@
       "location": "San Francisco, CA",
       "profile_picture": null,
       "interests": ["tiles", "concrete"],
-      "co2_saved": 95.6
+      "co2_saved": 195.6
     }
   ]
