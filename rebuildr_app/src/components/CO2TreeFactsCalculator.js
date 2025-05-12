@@ -2,7 +2,7 @@
 import { CO2TREEFACTS } from "./CO2TreeFacts";
 
 
-export async function calculateTreeFact(userId) {
+export async function calculateTreeFact(userId,co2Savings) {
 
     const response = await fetch('/data/user_db.json');
     const data = await response.json();
@@ -15,7 +15,7 @@ export async function calculateTreeFact(userId) {
 
     const randomTree = CO2TREEFACTS[randomIndex]
 
-    const co2Saved = user.co2_saved;
+    const co2Saved = co2Savings[userId].co2_savings;
 
     const calculation = Math.floor((parseInt(co2Saved) / randomTree.stores));
 
