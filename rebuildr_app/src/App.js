@@ -229,7 +229,7 @@ useEffect(() => {
       </div>
       <p>Click the plus button to customize your tree. <br/>
         Drag icons to position them, and unlock more features by saving additional CO₂.<br/>
-         If you want to remove one specific icon, doubble tap on it. <br/> </p>
+         If you want to remove one specific icon, double tap on it. <br/> </p>
     </div>
   </>
 )}
