@@ -198,9 +198,9 @@ const IconPicker = ({userId,co2Savings}) => {
     const filteredIcons = ICONS.filter(icon => icon.category === selectedCategory);
 
     const getRankBanner = () => {
-      if (co2Saved < 300) {
+      if (co2Saved < 1122) {
         return <img src="/SvgIcons/BannerBronze.png" alt="Bronze Banner" className="rank-banner-img" />;
-      } else if (co2Saved < 700) {
+      } else if (co2Saved < 2177) {
         return <img src="/SvgIcons/BannerSilver.png" alt="Silver Banner" className="rank-banner-img" />;
       } else {
         return <img src="/SvgIcons/BannerGold.png" alt="Gold Banner" className="rank-banner-img" />;
