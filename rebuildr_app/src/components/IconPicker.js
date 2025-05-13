@@ -15,16 +15,12 @@ const ICON = ({ id, source, label, locked, onClick, used, category}) => {
     e.dataTransfer.setData("application/icon-id", id);
 };  
 const handleClick = () => {
-  if (category !== 'trees') return;
-  
   if (locked) {
     onClick && onClick("You haven't saved enough CO₂ to unlock this icon!");
     return;
   }
 
-  if (onClick) {
-    onClick(id);
-  }
+  onClick && onClick(id); // Alla upplåsta ikoner kan klickas
 };
 
   
@@ -179,18 +175,17 @@ const IconPicker = ({userId}) => {
       const selectedIcon = ICONS.find(icon => icon.id === id);
       if (!selectedIcon) return;
     
-      if (selectedIcon.category === 'trees') {
-        setLoadingId(id);
-        await setIcon(id);
-        setSelectedIcon(id);
-        setLoadingId(null);
+      if (selectedIcon.unlockRequirement > co2Saved) {
+        setToastMessage("You haven't saved enough CO₂ to unlock this icon!");
         return;
       }
     
-      setLoadingId(id);
-      await setIcon(id);
-      setSelectedIcon(id);
-      setLoadingId(null);
+      if (selectedIcon.category === 'trees') {
+        setLoadingId(id);
+        await setIcon(id);             // sparar som huvudträd i backend
+        setSelectedIcon(id);           // visar trädet i UI
+        setLoadingId(null);
+      } 
     };
     
     const categories = [
