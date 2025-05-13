@@ -102,9 +102,10 @@ def predict_co2_savings(purchase_data, climate_db, model):
     return co2_saved
 
 
+
 #print(co2_saved)
     
-
+"""
 if __name__ == "__main__":
     
     # Load climate_df

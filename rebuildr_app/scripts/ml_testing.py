@@ -73,9 +73,9 @@ model = Pipeline(steps=[
 model.fit(X_train, y_train)
 
 # Export the model to a file
-#model_path = os.path.join(os.path.dirname(__file__), '..', 'scripts/models', 'co2_savings_model.joblib')
-#os.makedirs(os.path.dirname(model_path), exist_ok=True)  # Create models directory if it doesn't exist
-#joblib.dump(model, model_path)
+model_path = os.path.join(os.path.dirname(__file__), '..', 'scripts/models', 'co2_savings_model.joblib')
+os.makedirs(os.path.dirname(model_path), exist_ok=True)  # Create models directory if it doesn't exist
+joblib.dump(model, model_path)
 #print(f"Model saved to {model_path}")
 
 
