@@ -7,6 +7,7 @@ import IconPicker from './components/IconPicker.js';
 import RankProgressBar from './components/RankProgressBar.js';
 import { calculateTreeFact } from './components/CO2TreeFactsCalculator.js'; 
 import html2canvas from 'html2canvas';
+import StarRating from "./components/StarRating.js";
 
 export function HomePage({userIndex,handleNextIndex,avgRating}) {
   
@@ -155,20 +156,11 @@ useEffect(() => {
               <p>Saved <br/>{user ? user.co2_saved : 'Loading or user not found'} kg CO₂</p>
             </div>
             <div id="reviews">
-              <Link to="/reviewpage" className="avg-rating-link">
-                <div className="rating-text">
-                  {avgRating} / 5
-                </div>
-                <div className='avg-star-rating'>
-                  {Array.from({ length: 5 }, (_, index) => (
-                    <img
-                    key={index}
-                    src={index < Math.round(avgRating) ? "/images/rating-star.png" : ""}
-                    alt={index < Math.round(avgRating) ? "filled star" : ""}
-                    />
-                  ))}
-                </div>
-              </Link>
+              <div id="reviews">
+                <Link to="/reviewpage" className="avg-rating-link">
+                  <StarRating avgRating={avgRating} />
+                </Link>
+              </div>
             </div>
           </div>
           <div id="treeBox">
