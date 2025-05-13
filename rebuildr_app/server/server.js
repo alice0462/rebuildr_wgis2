@@ -28,7 +28,7 @@ app.get('/co2-savings/all', async (req, res) => {
             return res.json([]);
         }
         
-        const pythonProcess = spawn('python3', [PYTHON_SCRIPT_PATH]);
+        const pythonProcess = spawn('python', [PYTHON_SCRIPT_PATH]);
 
         let stdoutData = '';
         let stderrData = '';
