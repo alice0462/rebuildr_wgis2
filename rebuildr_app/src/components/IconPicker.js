@@ -88,9 +88,8 @@ const IconPicker = ({userId,co2Savings}) => {
         
         
         const handleStartDrag = (e, index) => {
-            e.preventDefault(); // Stoppar t.ex. scroll på mobil
-            
-            e.stopPropagation(); // Extra säkerhet
+            e.preventDefault(); 
+            e.stopPropagation(); 
             setDraggingItemIndex(index);
             document.body.classList.add("grabbing");
           };
@@ -101,12 +100,12 @@ const IconPicker = ({userId,co2Savings}) => {
             const move = (e) => {
               if (draggingItemIndex === null || !treeRef.current) return;
           
-              const touch = e.touches?.[0] || e; // För både touch och mus
+              const touch = e.touches?.[0] || e; 
               const rect = treeRef.current.getBoundingClientRect();
               const rawX = touch.clientX - rect.left - 20;
               const rawY = touch.clientY - rect.top - 20;
 
-              const maxX = rect.width - 50; // ikonens bredd
+              const maxX = rect.width - 50; 
               const maxY = rect.height - 50;
               const clampedX = Math.max(0, Math.min(rawX, maxX));
               const clampedY = Math.max(0, Math.min(rawY, maxY));
@@ -223,7 +222,8 @@ const IconPicker = ({userId,co2Savings}) => {
           <div className="plus-button" onClick={plusButton}>
             <img src="/SvgIcons/Plus.png" alt="Plus" />
           </div>
-          <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
+          <div ref={treeRef} className="main-tree-container" onClick={handleTreeClick} 
+            onDragOver={(e) => {e.preventDefault() ; e.dataTransfer.dropEffect = "move";}}onDrop={handleDrop}>
             {loadingId !== null && <div className="loader"></div>}
             <img
                 src={currentActiveIcon.source}
