@@ -22,6 +22,7 @@ export function HomePage({userIndex,handleNextIndex,avgRating,co2Savings}) {
   const [showDownload, setDownload] = useState(false);
   const [showInfo, setInfo] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [inuse, setInUse] = useState(false);
 
   useEffect(() => {
       fetch('/data/user_db.json')
@@ -61,27 +62,41 @@ export function HomePage({userIndex,handleNextIndex,avgRating,co2Savings}) {
     }
   }
 
+  
+
   const handleMedalClick = () => {
+    if(!inuse){
+    setInUse(true);
     setShowRankProgress(true);
+    }
   };
   
   const handleCloseRankProgress = () => {
+    setInUse(false);
     setShowRankProgress(false);
-  };
+  }; 
 
   const handleShowInfo = () => {
+    if(!inuse){
+    setInUse(true);
     setInfo(true);
+    }
   };
   
   const handleCloseInfo= () => {
+    setInUse(false);
     setInfo(false);
   };
 
   const handleDownload = () => {
+    if(!inuse){
+    setInUse(true);
     setDownload(true);
+    }
   };
   
   const handleCloseDownload = () => {
+    setInUse(false);
     setDownload(false);
   };
 
@@ -113,8 +128,9 @@ export function HomePage({userIndex,handleNextIndex,avgRating,co2Savings}) {
   };
 
   const handleCo2Click = async () => {
-    if (user && user.user_id !== undefined)
+    if (user && user.user_id !== undefined && !inuse)
       {
+        setInUse(true);
       try {
         const treeFact = await calculateTreeFact(user.user_id,co2Savings);
         setCuriosa(treeFact);
@@ -128,6 +144,7 @@ export function HomePage({userIndex,handleNextIndex,avgRating,co2Savings}) {
   };
 
   const handleCloseCuriosa = () => {
+    setInUse(false);
     setShowCuriosa(false);
   };
 
