@@ -23,7 +23,7 @@ export const ICONS = [
        alt: "Jacaranda Icon",
        label: "Jacaranda Tree",
        category: "trees",
-       unlockRequirement: 50
+       unlockRequirement: 75,
       },
   
       {
@@ -32,7 +32,7 @@ export const ICONS = [
        alt: "Tamarind Icon",
        label: 'Tamarind Tree',
        category: "trees",
-       unlockRequirement: 100
+       unlockRequirement: 150
       },
   
       {
@@ -41,7 +41,7 @@ export const ICONS = [
        alt: "Bonsai Icon",
        label: "Bonsai Tree",
        category: "trees",
-       unlockRequirement: 200
+       unlockRequirement: 300
       },
   
       {
@@ -50,7 +50,7 @@ export const ICONS = [
        alt: "Sequoia Icon",
        label: "Sequoia Tree",
        category: "trees",
-       unlockRequirement: 350
+       unlockRequirement: 600
       },
       {
         id: 7,
@@ -58,7 +58,7 @@ export const ICONS = [
         alt: "Argan Tree",
         label: "Argan Tree",
         category: "trees",
-        unlockRequirement: 500
+        unlockRequirement: 1200
         },
     
         {
@@ -67,7 +67,7 @@ export const ICONS = [
         alt: "Beech Tree",
         label: "Beech Tree",
         category: "trees",
-        unlockRequirement: 800
+        unlockRequirement: 2400
         },
    
       {
@@ -76,7 +76,7 @@ export const ICONS = [
        alt: "Wisteria Icon",
        label: 'Wisteria Tree',
        category: "trees",
-       unlockRequirement: 1000
+       unlockRequirement: 2800
       },
 
     
@@ -90,7 +90,7 @@ export const ICONS = [
     alt: "Red Apple",
     label: "Red Apple",
     category: "fruits",
-    unlockRequirement: 175
+    unlockRequirement: 50
     },
     {
     id: 11,
@@ -98,7 +98,7 @@ export const ICONS = [
     alt: "Cherry",
     label: "Cherry",
     category: "fruits",
-    unlockRequirement: 300
+    unlockRequirement: 200
     },
     {
     id: 12,
@@ -164,7 +164,7 @@ export const ICONS = [
     alt: "Bee",
     label: "Bee",
     category: "animals",
-    unlockRequirement: 450
+    unlockRequirement: 500
     },
     {
     id: 20,
@@ -172,7 +172,7 @@ export const ICONS = [
     alt: "Spider",
     label: "Spider",
     category: "animals",
-    unlockRequirement: 500
+    unlockRequirement: 600
     },
     {
     id: 21,
@@ -180,7 +180,7 @@ export const ICONS = [
     alt: "Frog",
     label: "Frog",
     category: "animals",
-    unlockRequirement: 600
+    unlockRequirement: 700
     },
     {
     id: 22,
@@ -188,7 +188,7 @@ export const ICONS = [
     alt: "Owl",
     label: "Owl",
     category: "animals",
-    unlockRequirement: 700
+    unlockRequirement: 800
     },
     {
     id: 23,
@@ -196,7 +196,7 @@ export const ICONS = [
     alt: "Butterfly",
     label: "Butterfly",
     category: "animals",
-    unlockRequirement: 800
+    unlockRequirement: 
     },
     {
     id: 24,
@@ -220,7 +220,7 @@ export const ICONS = [
     alt: "Tiger",
     label: "Tiger",
     category: "animals",
-    unlockRequirement: 1500
+    unlockRequirement: 1250
     },
     {
     id: 27,
@@ -228,7 +228,7 @@ export const ICONS = [
     alt: "Panda Bear",
     label: "Panda Bear",
     category: "animals",
-    unlockRequirement: 2000
+    unlockRequirement: 1500
     },
 
     //------flowers
@@ -238,7 +238,7 @@ export const ICONS = [
     alt: "Catharanthus",
     label: "Catharanthus",
     category: "flowers",
-    unlockRequirement: 100
+    unlockRequirement: 1000
     },
     {
     id: 51,
@@ -246,7 +246,7 @@ export const ICONS = [
     alt: "Bougainvillea",
     label: "Bougainvillea",
     category: "flowers",
-    unlockRequirement: 200
+    unlockRequirement: 1200
     },
     {
     id: 52,
@@ -254,7 +254,7 @@ export const ICONS = [
     alt: "Freesia",
     label: "Freesia",
     category: "flowers",
-    unlockRequirement: 300
+    unlockRequirement: 1350
     },
     {
     id: 53,
@@ -262,7 +262,7 @@ export const ICONS = [
     alt: "Rose",
     label: "Rose",
     category: "flowers",
-    unlockRequirement: 400
+    unlockRequirement: 1500
     },
     {
     id: 54,
@@ -270,7 +270,7 @@ export const ICONS = [
     alt: "Florals",
     label: "Florals",
     category: "flowers",
-    unlockRequirement: 500
+    unlockRequirement: 1600
     },
     {
     id: 55,
@@ -278,7 +278,7 @@ export const ICONS = [
     alt: "Roses",
     label: "Roses",
     category: "flowers",
-    unlockRequirement: 600
+    unlockRequirement: 1700
     },
     {
     id: 56,
@@ -286,7 +286,7 @@ export const ICONS = [
     alt: "Sun Flower",
     label: "Sun Flower",
     category: "flowers",
-    unlockRequirement: 700
+    unlockRequirement: 1800
     },
     {
     id: 57,
@@ -294,7 +294,7 @@ export const ICONS = [
     alt: "Cherry blossom",
     label: "Cherry blossom",
     category: "flowers",
-    unlockRequirement: 800
+    unlockRequirement: 1900
     },
     {
     id: 58,
@@ -302,7 +302,7 @@ export const ICONS = [
     alt: "Cactus",
     label: "Cactus",
     category: "flowers",
-    unlockRequirement: 1000
+    unlockRequirement: 2000
     },
     
 
@@ -314,7 +314,7 @@ export const ICONS = [
     alt: "Fence",
     label: "Fence",
     category: "random",
-    unlockRequirement: 400
+    unlockRequirement: 2000
     },
     {
     id: 81,
@@ -322,7 +322,7 @@ export const ICONS = [
     alt: "Watering Can",
     label: "Watering Can",
     category: "random",
-    unlockRequirement: 500
+    unlockRequirement: 2250
     },
     {
     id: 82,
@@ -330,7 +330,7 @@ export const ICONS = [
     alt: "Soil",
     label: "Soil",
     category: "random",
-    unlockRequirement: 600
+    unlockRequirement: 2500
     },
     {
     id: 83,
@@ -338,7 +338,7 @@ export const ICONS = [
     alt: "Cloud Sun",
     label: "Cloud Sun",
     category: "random",
-    unlockRequirement: 700
+    unlockRequirement: 2750
     },
     {
     id: 84,
@@ -346,7 +346,7 @@ export const ICONS = [
     alt: "Bench",
     label: "Bench",
     category: "random",
-    unlockRequirement: 800
+    unlockRequirement: 3000
     },
     { 
     id: 85,
@@ -354,7 +354,7 @@ export const ICONS = [
     alt: "Playground",
     label: "Playground",
     category: "random",
-    unlockRequirement: 900
+    unlockRequirement: 3250
     },
     {
     id: 86,
@@ -362,7 +362,7 @@ export const ICONS = [
     alt: "Tractor",
     label: "Tractor",
     category: "random",
-    unlockRequirement: 1000
+    unlockRequirement: 3500
     },
     {
     id: 87,
@@ -370,7 +370,7 @@ export const ICONS = [
     alt: "Planet",
     label: "Planet",
     category: "random",
-    unlockRequirement: 1100
+    unlockRequirement: 3750
     },
     {
     id: 88,
@@ -378,7 +378,7 @@ export const ICONS = [
     alt: "Rocket",
     label: "Rocket",
     category: "random",
-    unlockRequirement: 1500
+    unlockRequirement: 4000
     },
 
     //------lock
