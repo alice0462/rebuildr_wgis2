@@ -101,22 +101,7 @@ def predict_co2_savings(purchase_data, climate_db, model):
             
     return co2_saved
 
-"""
 
-json_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'purchase_db.json')
-with open(json_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-purchase_df = pd.DataFrame(data)
-
-csv_path = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'climate_db.csv')
-climate_df = pd.read_csv(csv_path)
-climate_df.columns = ['Produktnamn', 'Kategori', 'A1-A3', 'A4', 'A5', 
-                         'Enhet för klimatpåverkan', 'Omräkningsfaktor', 'Enhet för omräkningsfaktor']
-
-model_path = os.path.join(os.path.dirname(__file__), 'models', 'co2_savings_model.joblib')
-model = joblib.load(model_path)
-
-print( predict_co2_savings(purchase_df, climate_df, model))
 
 #print(co2_saved)
     
