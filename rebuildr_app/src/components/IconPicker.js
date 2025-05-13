@@ -4,35 +4,6 @@ import { ICONS } from './Icons.js';
 import classNames from 'classnames';
 import useClickOutside from './ClickOutside.js';
 
-const styles = `
-  .rotation-controls {
-    display: flex;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 4px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .rotate-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 2px 6px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-  }
-
-  .rotate-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-`;
-
-// Add styles to document
-const styleSheet = document.createElement("style");
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
 
 const STANDARD_ICON_ID = 1;
 
