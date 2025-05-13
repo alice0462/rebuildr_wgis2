@@ -1,7 +1,7 @@
 import os
+import joblib
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score, train_test_split
@@ -72,62 +72,14 @@ model = Pipeline(steps=[
 # Train model
 model.fit(X_train, y_train)
 
-def predict_co2_savings(material_name, volume, climate_db, model):
-    """
-    Predict CO2 savings (kg CO₂e) for a given material and weight.
-    
-    Parameters:
-    - material_name (str): Name of the material (Produktnamn).
-    - weight_kg (float): Weight of the material in kg.
-    - climate_df (pd.DataFrame): DataFrame with material data.
-    - model: Trained model pipeline.
-    - features (list): List of feature names used by the model.
-    
-    Returns:
-    - float: Predicted CO2 savings in kg CO₂e.
-    """
-    features = pd.DataFrame({
-    'volume':volume,
-    'Kategori':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'Kategori'].iloc[0]],
-    'A1-A3':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A1-A3'].iloc[0]],
-    'A4':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A4'].iloc[0]],
-    'A5':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'A5'].iloc[0]],
-    'Omräkningsfaktor':[climate_df.loc[climate_df['Produktnamn'] == material_name, 'Omräkningsfaktor'].iloc[0]]
-    })
-
-    # Find material in climate_df
-    material_row = climate_db[climate_db['Produktnamn'] == material_name]
-    if material_row.empty:
-        raise ValueError(f"Material '{material_name}' not found in climate_df")
-    
-    # Extract features for the material
-
-    
-    # Predict log-transformed CO2 savings
-    co2_savings_log_pred = model.predict(features)[0]
-    
-    # Reverse log transformation
-    co2_savings_pred = np.expm1(co2_savings_log_pred)
-    weight_kg = volume * material_row['Omräkningsfaktor'].iloc[0]
-    # Scale by weight (assuming CO2_savings_log was trained on total CO2 savings)
-    total_co2_savings = co2_savings_pred * weight_kg / material_row['Omräkningsfaktor'].iloc[0]
-    
-    return total_co2_savings
+# Export the model to a file
+#model_path = os.path.join(os.path.dirname(__file__), '..', 'scripts/models', 'co2_savings_model.joblib')
+#os.makedirs(os.path.dirname(model_path), exist_ok=True)  # Create models directory if it doesn't exist
+#joblib.dump(model, model_path)
+#print(f"Model saved to {model_path}")
 
 
-# Predict and evaluate
-y_pred = model.predict(X_test)
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-print(f'MSE: {mse:.2f}, R²: {r2:.2f}')
 
-co2 = predict_co2_savings('Spånskiva',1,climate_df,model)
-print(co2)
-weight = 1 * climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'Omräkningsfaktor'].iloc[0]
-co2_factor1= climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'A1-A3'].iloc[0]
-co2_factor2= climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'A4'].iloc[0]
-co2_factor3= climate_df.loc[climate_df['Produktnamn'] == 'Spånskiva', 'A5'].iloc[0]
-print(weight*(co2_factor1+co2_factor2+co2_factor3))
 
 
 """
