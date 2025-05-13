@@ -196,7 +196,7 @@ export const ICONS = [
     alt: "Butterfly",
     label: "Butterfly",
     category: "animals",
-    unlockRequirement: 
+    unlockRequirement: 850
     },
     {
     id: 24,
