@@ -227,7 +227,9 @@ useEffect(() => {
         <h3>Information</h3>
         <button className="close-button" onClick={handleCloseInfo}>×</button>
       </div>
-      <p>Click the plus button to customize your tree. Drag icons to position them, and unlock more features by saving additional CO₂ </p>
+      <p>Click the plus button to customize your tree. <br/>
+        Drag icons to position them, and unlock more features by saving additional CO₂.<br/>
+         If you want to remove one specific icon, doubble tap on it. <br/> </p>
     </div>
   </>
 )}

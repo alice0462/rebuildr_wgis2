@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow only your React app
+    origin: 'http://localhost:3000',  // Allow only your React app
     methods: ['GET', 'POST', 'OPTIONS'], // Allow specific methods
     allowedHeaders: ['Content-Type'], // Allow specific headers
 }));
