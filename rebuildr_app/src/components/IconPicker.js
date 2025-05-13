@@ -4,6 +4,36 @@ import { ICONS } from './Icons.js';
 import classNames from 'classnames';
 import useClickOutside from './ClickOutside.js';
 
+const styles = `
+  .rotation-controls {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .rotate-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .rotate-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+`;
+
+// Add styles to document
+const styleSheet = document.createElement("style");
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
+
 const STANDARD_ICON_ID = 1;
 
 const ICON = ({ id, source, label, locked, onClick, used, category}) => {
@@ -48,6 +78,7 @@ const IconPicker = ({userId,co2Savings}) => {
     const [itemToPlace, setItemToPlace] = useState(null);
     const [placedItems, setPlacedItems] = useState([]);
     const [draggingItemIndex, setDraggingItemIndex] = useState(null);
+    const [selectedItemIndex, setSelectedItemIndex] = useState(null);
     const treeRef = useRef(null);
     const [toastMessage, setToastMessage] = useState(null);
 
@@ -82,7 +113,7 @@ const IconPicker = ({userId,co2Savings}) => {
           const alreadyPlaced = placedItems.some(item => item.id === icon.id);
           if (alreadyPlaced) return;
         
-          setPlacedItems(prev => [...prev, { ...icon, x, y }]);
+          setPlacedItems(prev => [...prev, { ...icon, x, y, rotation: 0 }]);
         };
         
         
@@ -209,6 +240,16 @@ const IconPicker = ({userId,co2Savings}) => {
       }
     };
 
+    const handleIconClick = (index) => {
+      setSelectedItemIndex(selectedItemIndex === index ? null : index);
+    };
+
+    const handleRotate = (index, direction) => {
+      setPlacedItems(prev => prev.map((item, i) => 
+        i === index ? { ...item, rotation: (item.rotation + (direction === 'left' ? -45 : 45)) % 360 } : item
+      ));
+    };
+
     return (
         <div ref={ref} className="icon-picker">
           <div className="plus-button" onClick={plusButton}>
@@ -223,22 +264,26 @@ const IconPicker = ({userId,co2Savings}) => {
                 draggable={false}
             />
             {placedItems.map((item, index) => (
+              <div key={index} style={{ position: 'absolute', left: item.x, top: item.y }}>
                 <img
-                    key={index}
-                    src={item.source}
-                    alt={item.label}
-                    className={`placed-icon ${item.category}`}
-                    style={{
-                        left: item.x,
-                        top: item.y,
-                    }}
-                    onMouseDown={(e) => handleStartDrag(e, index)}
-                    onTouchStart={(e) => handleStartDrag(e, index)}
-                    onDoubleClick={(e) => {
-                        e.stopPropagation();
-                        setPlacedItems(prev => prev.filter((p, i) => i !== index));
-                    }}
+                  src={item.source}
+                  alt={item.label}
+                  className={`placed-icon ${item.category}`}
+                  style={{
+                    transform: `rotate(${item.rotation}deg)`,
+                    cursor: 'pointer'
+                  }}
+                  onMouseDown={(e) => handleStartDrag(e, index)}
+                  onTouchStart={(e) => handleStartDrag(e, index)}
+                  onClick={() => handleIconClick(index)}
                 />
+                {selectedItemIndex === index && (
+                  <div className="rotation-controls" style={{ position: 'absolute', top: '-30px', left: '50%', transform: 'translateX(-50%)' }}>
+                    <button onClick={() => handleRotate(index, 'left')} className="rotate-btn">↶</button>
+                    <button onClick={() => handleRotate(index, 'right')} className="rotate-btn">↷</button>
+                  </div>
+                )}
+              </div>
             ))}
             {toastMessage && (
                 <div className="toast">
