@@ -244,6 +244,11 @@ const IconPicker = ({userId,co2Savings}) => {
                   onMouseDown={(e) => handleStartDrag(e, index)}
                   onTouchStart={(e) => handleStartDrag(e, index)}
                   onClick={() => handleIconClick(index)}
+                  onDoubleClick={(e) => {
+                    e.stopPropagation();
+                    setPlacedItems(prev => prev.filter((p, i) => i !== index));
+                    setSelectedItemIndex(null);
+                  }}
                 />
                 {selectedItemIndex === index && (
                   <div className="rotation-controls" style={{ position: 'absolute', top: '-30px', left: '50%', transform: 'translateX(-50%)' }}>
