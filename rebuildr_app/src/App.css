@@ -153,11 +153,11 @@
     font-size: 0.625rem;
     border-radius: 0.3125rem;
     cursor: pointer;
-    color: white;
+    color: #333;
     background-color: #DDC7FF
   }
   .clear-button:hover {
-    color: #333
+    color: white;
   }
 
   .yesNo-buttons {
@@ -307,22 +307,22 @@
   
   .placed-icon.fruits {
     width: 2.5rem;
-    height: 2.5rem;
+    height: auto;
   }
   
   .placed-icon.animals {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: auto;
   }
   
   .placed-icon.flowers {
     width: 2.5rem;
-    height: 2.5rem;
+    height: auto;
   }
   
   .placed-icon.random {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 4rem;
+    height: auto;
   }
   
   body.grabbing {

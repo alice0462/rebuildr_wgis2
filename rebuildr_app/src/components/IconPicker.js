@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { setIcon } from './utils.js';
 import { ICONS } from './Icons.js';
 import classNames from 'classnames';
-import useClickOutside from './ClickOutside.js';
 
 const STANDARD_ICON_ID = 1;
 
@@ -146,8 +145,6 @@ const IconPicker = ({userId,co2Savings}) => {
         }, [climateUsers, userId]);
         
 
-    const ref = useClickOutside(() => setShowIconListVisibility(false));
-
     const onClose = () => {
         setShowIconListVisibility(false); 
       };
@@ -210,7 +207,7 @@ const IconPicker = ({userId,co2Savings}) => {
     };
 
     return (
-        <div ref={ref} className="icon-picker">
+        <div className="icon-picker">
           <div className="plus-button" onClick={plusButton}>
             <img src="/SvgIcons/Plus.png" alt="Plus" />
           </div>
