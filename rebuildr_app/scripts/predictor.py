@@ -101,10 +101,6 @@ def predict_co2_savings(purchase_data, climate_db, model):
             
     return co2_saved
 
-model_path = os.path.join(os.path.dirname(__file__), 'models', 'co2_savings_model.joblib')
-model = joblib.load(model_path)
-
-
 
 #print(co2_saved)
     
