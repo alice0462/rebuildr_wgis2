@@ -7,11 +7,7 @@ const Reviews = ({ avgRating }) => {
   const fullStarWidthRem = 5.5 * 0.8621 + 5.5 * 0.1379;
   const normalizedRating = Math.min(avgRating, 5);
 
-  const fillWidthRem = (normalizedRating / 5) * fullStarWidthRem + 0.05;
-
-      console.log("avgRating:", avgRating);
-      console.log("fullStarWidthRem:", fullStarWidthRem);
-      console.log("fillWidthRem:", fillWidthRem);
+  const fillWidthRem = (normalizedRating / 5) * fullStarWidthRem + 0.025;
 
   return (
     <div id="reviews">

@@ -153,11 +153,11 @@
     font-size: 0.625rem;
     border-radius: 0.3125rem;
     cursor: pointer;
-    color: white;
+    color: #333;
     background-color: #DDC7FF
   }
   .clear-button:hover {
-    color: #333
+    color: white;
   }
 
   .yesNo-buttons {
@@ -207,6 +207,29 @@
   .category-tabs .tab.active {
     background-color: #77A59D;
     color: rgb(3, 52, 38);
+  }
+
+    .rotation-controls {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .rotate-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .rotate-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
   }
   
   .icons-list {
@@ -307,22 +330,22 @@
   
   .placed-icon.fruits {
     width: 2.5rem;
-    height: 2.5rem;
+    height: auto;
   }
   
   .placed-icon.animals {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: auto;
   }
   
   .placed-icon.flowers {
     width: 2.5rem;
-    height: 2.5rem;
+    height: auto;
   }
   
   .placed-icon.random {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 4rem;
+    height: auto;
   }
   
   body.grabbing {
