@@ -21,17 +21,19 @@ export function HomePage({userIndex,handleNextIndex,avgRating,co2Savings}) {
   const [showCuriosa, setShowCuriosa] = useState(false);
   const [showDownload, setDownload] = useState(false);
   const [showInfo, setInfo] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-
-useEffect(() => {
-    fetch('/data/user_db.json')
-      .then((res) => res.json())
-      .then((data) => setUsers(data))
-      .catch((err) => console.error('Error loading user data:', err));
-  }, []);
-  
-  const user = users[userIndex];
-  
+  useEffect(() => {
+      fetch('/data/user_db.json')
+        .then((res) => res.json())
+        .then((data) => {
+          setUsers(data);
+          setLoading(true);
+        })
+        .catch((err) => console.error('Error loading user data:', err));
+    }, []);
+    const user = users[userIndex]; 
+   
   useEffect(() => {
     if (user) {
       const co2Value = co2Savings[userIndex].co2_savings;
@@ -129,6 +131,8 @@ useEffect(() => {
     setShowCuriosa(false);
   };
 
+
+if (loading) {
   return (
     <div className="app">
       <div id = "background"> 
@@ -142,7 +146,7 @@ useEffect(() => {
             <p>{user ? user.username : 'Loading or user not found'}</p>
           </div>
           <div id="profile-pic" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <img src="/SvgIcons/Edit-Profile.png" alt="Edit Profile" />
+            <img  src={user.profile_picture_path} alt="Edit Profile" />
           </div>
           </div>
         
@@ -233,6 +237,7 @@ useEffect(() => {
 )}
     </div>
   );
+  }
 }
 
 
