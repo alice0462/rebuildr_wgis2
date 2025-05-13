@@ -5,9 +5,9 @@
       "username": "GreenBuild Solutions",
       "password_hash": "fakehash_greenbuild123",
       "location": "Seattle, WA",
-      "profile_picture": "https://example.com/profiles/alice.jpg",
       "interests": ["bricks", "lumber"],
-      "co2_saved": 1120.5
+      "co2_saved": 1120.5,
+      "profile_picture_path":"/images/profileimage/Green_solutions.jpg" 
     },
     {
       "user_id": 1,
@@ -15,9 +15,9 @@
       "username": "BobBuilder",
       "password_hash": "fakehash_bob456",
       "location": "Portland, OR",
-      "profile_picture": null,
       "interests": ["tiles", "concrete"],
-      "co2_saved": 805.0
+      "co2_saved": 805.0,
+      "profile_picture_path":"/images/profileimage/bob_builder.jpg" 
     },
     {
       "user_id": 2,
@@ -25,9 +25,9 @@
       "username": "ReclaimBuild Co",
       "password_hash": "fakehash_reclaim789",
       "location": "Austin, TX",
-      "profile_picture": "https://example.com/profiles/carol.jpg",
       "interests": ["lumber", "steel"],
-      "co2_saved": 200.0
+      "co2_saved": 200.0,
+      "profile_picture_path":"/images/profileimage/reclaimedBuild.jpg" 
     },
     {
       "user_id": 3,
@@ -35,9 +35,9 @@
       "username": "DaveRecycle",
       "password_hash": "fakehash_dave101",
       "location": "Denver, CO",
-      "profile_picture": null,
       "interests": ["bricks", "glass"],
-      "co2_saved": 45.3
+      "co2_saved": 45.3,
+      "profile_picture_path":"/images/profileimage/daveRecycle.jpg" 
     },
     {
       "user_id": 4,
@@ -45,9 +45,9 @@
       "username": "EcoConstruct Inc",
       "password_hash": "fakehash_eco202",
       "location": "Miami, FL",
-      "profile_picture": "https://example.com/profiles/emma.jpg",
       "interests": ["tiles", "lumber"],
-      "co2_saved": 550.7
+      "co2_saved": 550.7,
+      "profile_picture_path":"/images/profileimage/ecoConstructInc.jpg"
     },
     {
       "user_id": 5,
@@ -55,9 +55,9 @@
       "username": "FrankFixer",
       "password_hash": "fakehash_frank303",
       "location": "Chicago, IL",
-      "profile_picture": null,
       "interests": ["concrete", "steel"],
-      "co2_saved": 490.0
+      "co2_saved": 490.0,
+      "profile_picture_path":"/images/profileimage/frankFixer.jpg"
     },
     {
       "user_id": 6,
@@ -65,9 +65,9 @@
       "username": "SustainBuild LLC",
       "password_hash": "fakehash_sustain404",
       "location": "Boston, MA",
-      "profile_picture": "https://example.com/profiles/grace.jpg",
       "interests": ["bricks", "tiles"],
-      "co2_saved": 1075.2
+      "co2_saved": 1075.2,
+      "profile_picture_path":"/images/profileimage/sustainbuild.jpg"
     },
     {
       "user_id": 7,
@@ -75,9 +75,9 @@
       "username": "HenryBuild",
       "password_hash": "fakehash_henry505",
       "location": "Phoenix, AZ",
-      "profile_picture": null,
       "interests": ["lumber", "glass"],
-      "co2_saved": 360.8
+      "co2_saved": 360.8,
+      "profile_picture_path":"/images/profileimage/henryBuild.jpg"
     },
     {
       "user_id": 8,
@@ -85,9 +85,9 @@
       "username": "RecycleWorks",
       "password_hash": "fakehash_recycle606",
       "location": "New York, NY",
-      "profile_picture": "https://example.com/profiles/isabel.jpg",
       "interests": ["steel", "bricks"],
-      "co2_saved": 1030.4
+      "co2_saved": 1030.4,
+      "profile_picture_path":"/images/profileimage/recucleworks.jpg"
     },
     {
       "user_id": 9,
@@ -95,8 +95,8 @@
       "username": "JackReuse",
       "password_hash": "fakehash_jack707",
       "location": "San Francisco, CA",
-      "profile_picture": null,
       "interests": ["tiles", "concrete"],
-      "co2_saved": 195.6
+      "co2_saved": 195.6,
+      "profile_picture_path":"/images/profileimage/jackReuse.jpg"
     }
   ]

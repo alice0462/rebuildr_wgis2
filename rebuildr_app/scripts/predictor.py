@@ -12,6 +12,8 @@ with open(json_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 synonym_df = pd.DataFrame(data)
 
+
+
 def find_category(description, synonym_df):
     categories = synonym_df.columns 
     best_cat = "" 
@@ -102,7 +104,6 @@ def predict_co2_savings(purchase_data, climate_db, model):
     return co2_saved
 
 
-#print(co2_saved)
     
 
 if __name__ == "__main__":
@@ -133,5 +134,4 @@ if __name__ == "__main__":
         
     # Output result as JSON
     print(json.dumps(results))
-
 
