@@ -176,7 +176,7 @@ if (loading) {
               )}
             </div>
             <div id="co2" onClick={handleCo2Click} style={{ cursor: 'pointer' }}>
-              <p>Saved Co2: <br/>{co2Savings[userIndex].co2_savings}</p>
+              <p>Saved CO₂e<br/>{co2Savings[userIndex].co2_savings} Kg</p>
             </div>
             <div id="reviews">
               <div id="reviews">
@@ -249,8 +249,8 @@ if (loading) {
         <button className="close-button" onClick={handleCloseInfo}>×</button>
       </div>
       <p>Click the plus button to customize your tree. <br/>
-        Drag icons to position them, and unlock more features by saving additional CO₂.<br/>
-         If you want to remove one specific icon, double tap on it. <br/> </p>
+        Drag icons to position them, and unlock more features by saving additional CO₂.<br/> <br/> 
+         To remove all icons, use the clear button. To remove one specific icon, double tap on it. <br/> </p>
     </div>
   </>
 )}

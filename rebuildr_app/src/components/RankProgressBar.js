@@ -56,7 +56,7 @@ const RankProgressBar = ({ currentCo2, currentRank, onClose }) => {
       <div className="progress-info">
         <p>{progress.toFixed(1)}% to {nextRank}</p>
         {remainingCo2 > 0 && (
-          <p>Save {remainingCo2} kg more CO₂ to reach {nextRank}</p>
+          <p>Save {remainingCo2.toFixed(1)} kg more CO₂ to reach {nextRank}</p>
         )}
       </div>
     </div>

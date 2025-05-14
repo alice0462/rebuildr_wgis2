@@ -471,6 +471,9 @@
     right: -8.5rem;
   }
 
+.stats {
+  font-size: 0.9rem;
+}
 
 
   .stats > div {
@@ -494,7 +497,7 @@
   .main-tree-img {
     width: 100%;
     height: auto;
-    margin-top: 4rem;
+    margin-top: 3rem;
     max-width: 18rem;
   }
 
